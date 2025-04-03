@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# IDE0320: 익명 함수를 정적으로 설정
+csharp_prefer_static_anonymous_function = true
