@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     // Assign on Inspector
     InputController inputController;
     [SerializeField] CameraController cameraController;
+    [SerializeField] PlayerInteractionTrigger interactionTrigger;
+    [SerializeField] GameObject playerHand;
 
     // Normal Class Instance
     PlayerActionMove actionMove;
@@ -24,11 +27,14 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     
     
+<<<<<<< Updated upstream
 
     // Player Status    
+=======
+    // Player Status
+>>>>>>> Stashed changes
     float moveSpeed = 5f;
     bool isMoving = false;
-
 
     #endregion
 
@@ -44,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         actionMove = new PlayerActionMove(transform, moveSpeed);
         actionLook = new PlayerActionLook(transform, mainCamera);
-        actionInteract = new PlayerActionInteract();
+        actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
     }
 
 
@@ -83,7 +89,8 @@ public class PlayerController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        // Inspector���� moveSpeed ���� �� ��� �ݿ�
+        // Inspector에서 moveSpeed 변경 시 즉시 반영
+
         if (actionMove != null)
         {
             actionMove.SetMoveSpeed(moveSpeed);
@@ -117,7 +124,22 @@ public class PlayerController : MonoBehaviour
 
     public void PerformInteract()
     {
-        actionInteract.Execute();
+        if (PlayerManager.Instance != null)
+        {
+            GameObject heldItem = PlayerManager.Instance.GetHeldItem();
+            if (heldItem != null)
+            {
+                // Look 로직 변경하면 수정 필요
+                actionInteract.Execute(transform.position + Vector3.down * 0.5f, heldItem);
+                PlayerManager.Instance.SetHeldItem(null);
+            }
+            else
+            {
+                GameObject nearest = actionInteract.Execute(transform.position);
+                PlayerManager.Instance.SetHeldItem(nearest);
+            }
+        }
+        
     }
 
     #endregion
