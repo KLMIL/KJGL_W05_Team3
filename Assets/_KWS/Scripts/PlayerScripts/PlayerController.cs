@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] PlayerInteractionTrigger interactionTrigger;
     [SerializeField] GameObject playerHand;
+    [SerializeField] GameObject playerHandContainer;
 
     // Normal Class Instance
     PlayerActionMove actionMove;
@@ -45,7 +46,8 @@ public class PlayerController : MonoBehaviour
         inputController.Initialize(this);
 
         actionMove = new PlayerActionMove(transform, moveSpeed);
-        actionLook = new PlayerActionLook(transform, mainCamera);
+        //actionLook = new PlayerActionLook(transform, mainCamera);
+        actionLook = new PlayerActionLook(playerHandContainer.transform, mainCamera);
         actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
     }
 
