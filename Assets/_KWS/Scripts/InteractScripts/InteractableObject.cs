@@ -29,4 +29,16 @@ public class InteractableObject : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
     }
+
+    public void OnDropped(Vector2 dropPosition, Vector2 playerPosition)
+    {
+        transform.position = dropPosition;
+        SlipableItem slipable = GetComponent<SlipableItem>();
+        if (slipable != null)
+        {
+            Debug.Log("Slipable called");
+            Vector2 direction = (dropPosition - playerPosition).normalized;
+            slipable.OnDropped(dropPosition, direction);
+        }
+    }
 }

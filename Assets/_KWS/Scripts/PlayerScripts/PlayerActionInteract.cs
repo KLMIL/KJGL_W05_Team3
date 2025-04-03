@@ -33,9 +33,9 @@ public class PlayerActionInteract
     }
 
     // 손에 물건이 있을 때
-    public void Execute(Vector2 dropPosition, GameObject heldItem)
+    public void Execute(Vector2 dropPosition, GameObject heldItem, Vector2 playerPosition)
     {
         heldItem.transform.SetParent(null);
-        heldItem.transform.position = dropPosition;
+        heldItem.GetComponent<InteractableObject>()?.OnDropped(dropPosition, playerPosition);
     }
 }

@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
                 dir.y = Mathf.Sin(angle * Mathf.Deg2Rad);
 
 
-                actionInteract.Execute(transform.position + dir * 1f, heldItem);
+                actionInteract.Execute(transform.position + dir * 1f, heldItem, transform.position);
                 PlayerManager.Instance.SetHeldItem(null);
             }
             else
