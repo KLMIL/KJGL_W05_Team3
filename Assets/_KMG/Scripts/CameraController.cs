@@ -34,6 +34,11 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            UIManager.Instance.CallFadeInFadeOut();
+        }
+
 
     }
     /// <summary>
