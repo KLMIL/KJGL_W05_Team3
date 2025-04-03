@@ -16,7 +16,7 @@ public class UI_Hand : MonoBehaviour
     /// <summary>
     /// Crossed On off Icon_Hand , Crowbar
     /// </summary>
-    public void HandIcon_Onoff()
+    public void HandIcon_OnOff()
     {
         hand.enabled = !hand.enabled;
         crowbar.enabled = !crowbar.enabled;
