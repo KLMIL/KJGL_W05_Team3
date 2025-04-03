@@ -27,12 +27,8 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     
     
-<<<<<<< Updated upstream
-
     // Player Status    
-=======
-    // Player Status
->>>>>>> Stashed changes
+
     float moveSpeed = 5f;
     bool isMoving = false;
 
