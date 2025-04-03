@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 4fabedccb51839549a0b9906dde1e79f
+guid: 26dc318d8d21be44ca113e6e318551cf
 AssetOrigin:
   serializedVersion: 1
   productId: 307236
   packageName: Flat pack - GUI
   packageVersion: 1.1
-  assetPath: Assets/CorePro/Flat Pack/Icons/App/4 x rectangle typeB rounded 10xp.png
+  assetPath: Assets/CorePro/Flat Pack/Icons/App/3 horizontal lines type 4.png
   uploadId: 740099
 TextureImporter:
   internalIDToNameTable: []
@@ -56,7 +56,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 28, y: 165, z: 28, w: 70}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_0
+      name: 3 horizontal lines type 4_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 90
-        width: 70
-        height: 70
+        x: 28
+        y: 165
+        width: 200
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,74 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bdd2a6ef3991ce4a8da9067cf7b0695
-      internalID: -1343762198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_1
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 90
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e445e1e56ff2514687d0f725dece887
-      internalID: 60885653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84464fad837386c4a897a78fce188618
-      internalID: -1857354242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 0
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3814d983715b6bd46ac2ca03db27793b
-      internalID: 999001187
+      spriteID: c83e2587bc62d8446a48b9327f8535d1
+      internalID: -661895138
       vertices: []
       indices: 
       edges: []
@@ -222,7 +156,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -231,10 +165,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      4 x rectangle typeB rounded 10xp_0: -1343762198
-      4 x rectangle typeB rounded 10xp_1: 60885653
-      4 x rectangle typeB rounded 10xp_2: -1857354242
-      4 x rectangle typeB rounded 10xp_3: 999001187
+      3 horizontal lines type 4_0: -1263878822
+      3 horizontal lines type 4_1: -661895138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

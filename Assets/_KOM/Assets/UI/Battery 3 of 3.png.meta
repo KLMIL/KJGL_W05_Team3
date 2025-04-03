@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 4fabedccb51839549a0b9906dde1e79f
+guid: 0b84478a19a8b4a40aad0fb9dbb2f761
 AssetOrigin:
   serializedVersion: 1
   productId: 307236
   packageName: Flat pack - GUI
   packageVersion: 1.1
-  assetPath: Assets/CorePro/Flat Pack/Icons/App/4 x rectangle typeB rounded 10xp.png
+  assetPath: Assets/CorePro/Flat Pack/Icons/Devices & electronics & technology/Battery
+    3 of 3.png
   uploadId: 740099
 TextureImporter:
   internalIDToNameTable: []
@@ -130,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_0
+      name: Battery 3 of 3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 90
-        width: 70
-        height: 70
+        x: 156
+        y: 220
+        width: 185
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bdd2a6ef3991ce4a8da9067cf7b0695
-      internalID: -1343762198
+      spriteID: 54bd8be54d7055144a260bba395f68ad
+      internalID: 614149474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_1
+      name: Battery 3 of 3_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 90
-        width: 70
-        height: 70
+        x: 167
+        y: 154
+        width: 47
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e445e1e56ff2514687d0f725dece887
-      internalID: 60885653
+      spriteID: ae32abf49b076c1489a7794cfab17c39
+      internalID: -876942604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_2
+      name: Battery 3 of 3_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 70
+        x: 217
+        y: 154
+        width: 47
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84464fad837386c4a897a78fce188618
-      internalID: -1857354242
+      spriteID: 5de8fffdec1f9f041b7ca9f440ce187f
+      internalID: 88896702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4 x rectangle typeB rounded 10xp_3
+      name: Battery 3 of 3_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 0
-        width: 70
-        height: 70
+        x: 267
+        y: 154
+        width: 47
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3814d983715b6bd46ac2ca03db27793b
-      internalID: 999001187
+      spriteID: 1c6c889830043ed4c98890e91574a22b
+      internalID: -1275071949
       vertices: []
       indices: 
       edges: []
@@ -231,10 +232,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      4 x rectangle typeB rounded 10xp_0: -1343762198
-      4 x rectangle typeB rounded 10xp_1: 60885653
-      4 x rectangle typeB rounded 10xp_2: -1857354242
-      4 x rectangle typeB rounded 10xp_3: 999001187
+      Battery 3 of 3_0: 614149474
+      Battery 3 of 3_1: -876942604
+      Battery 3 of 3_2: 88896702
+      Battery 3 of 3_3: -1275071949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
