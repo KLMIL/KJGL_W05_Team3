@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 
@@ -11,7 +12,9 @@ public class PlayerController : MonoBehaviour
 
     // Assign on Inspector
     InputController inputController;
-
+    [SerializeField] CameraController cameraController;
+    [SerializeField] PlayerInteractionTrigger interactionTrigger;
+    [SerializeField] GameObject playerHand;
 
     // Normal Class Instance
     PlayerActionMove actionMove;
@@ -24,11 +27,10 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     
     
+    // Player Status    
 
-    // Player Status
     float moveSpeed = 5f;
-
-
+    bool isMoving = false;
 
     #endregion
 
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         actionMove = new PlayerActionMove(transform, moveSpeed);
         actionLook = new PlayerActionLook(transform, mainCamera);
-        actionInteract = new PlayerActionInteract();
+        actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
     }
 
 
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        cameraController.ChangeLensSize(isMoving);
         actionMove.Execute(Time.deltaTime);
         actionLook.Execute();
     }
@@ -82,7 +85,8 @@ public class PlayerController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        // Inspectorø°º≠ moveSpeed ∫Ø∞Ê Ω√ ¡ÔΩ√ π›øµ
+        // InspectorÏóêÏÑú moveSpeed Î≥ÄÍ≤Ω Ïãú Ï¶âÏãú Î∞òÏòÅ
+
         if (actionMove != null)
         {
             actionMove.SetMoveSpeed(moveSpeed);
@@ -97,7 +101,15 @@ public class PlayerController : MonoBehaviour
     public void SetMoveInput(Vector2 input)
     {
         //moveInput = input;
-        actionMove.SetMoveInput(input);
+        if(input.magnitude <= 0f)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
+            actionMove.SetMoveInput(input);
     }
 
     public void SetLookInput(Vector2 input)
@@ -108,7 +120,22 @@ public class PlayerController : MonoBehaviour
 
     public void PerformInteract()
     {
-        actionInteract.Execute();
+        if (PlayerManager.Instance != null)
+        {
+            GameObject heldItem = PlayerManager.Instance.GetHeldItem();
+            if (heldItem != null)
+            {
+                // Look Î°úÏßÅ Î≥ÄÍ≤ΩÌïòÎ©¥ ÏàòÏ†ï ÌïÑÏöî
+                actionInteract.Execute(transform.position + Vector3.down * 0.5f, heldItem);
+                PlayerManager.Instance.SetHeldItem(null);
+            }
+            else
+            {
+                GameObject nearest = actionInteract.Execute(transform.position);
+                PlayerManager.Instance.SetHeldItem(nearest);
+            }
+        }
+        
     }
 
     #endregion
