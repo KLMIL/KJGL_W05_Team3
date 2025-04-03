@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d8c0020f851aa443b4b28239561bb25
+guid: 4a71c0e2ec81de34a86efe72068d9e7d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2460888065958745081
-    second: Concrete_02_Green_Square_1_0
+      213: -8990238196140150321
+    second: DepartBTmBorder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Concrete_02_Green_Square_1_0
+      name: DepartBTmBorder_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f3187b58a4d62220800000000000000
-      internalID: 2460888065958745081
+      spriteID: fc1fae03ef14c3380800000000000000
+      internalID: -8990238196140150321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Concrete_02_Green_Square_1_1
+      name: DepartBTmBorder_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b183e4aa5ac719479b93619728a5f36
-      internalID: 1652889573
+      spriteID: a43e44abfb740934daec9f8172907cd4
+      internalID: -1748090429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Concrete_02_Green_Square_1_2
+      name: DepartBTmBorder_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe2529aa97db8784bb58db5a3656cfb6
-      internalID: -46670474
+      spriteID: 49171a495bcd2d44284350ebcb34fdb3
+      internalID: -1452292529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Concrete_02_Green_Square_1_3
+      name: DepartBTmBorder_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3c8bb0b6792c46468945acd3b67c1f6
-      internalID: -447976915
+      spriteID: e7827b78243c35644929f24adbba5df7
+      internalID: 826550269
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8f94d957053835342847b2964659837e
     internalID: 0
     vertices: []
     indices: 
@@ -214,10 +214,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Concrete_02_Green_Square_1_0: 2460888065958745081
-      Concrete_02_Green_Square_1_1: 1652889573
-      Concrete_02_Green_Square_1_2: -46670474
-      Concrete_02_Green_Square_1_3: -447976915
+      DepartBTmBorder_0: -8990238196140150321
+      DepartBTmBorder_1: -1748090429
+      DepartBTmBorder_2: -1452292529
+      DepartBTmBorder_3: 826550269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
