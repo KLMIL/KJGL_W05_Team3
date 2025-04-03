@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 729913510411656765, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2531895084402725291, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
       propertyPath: m_Name
       value: Hand_R
@@ -159,13 +163,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5569176336104450840, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569176336104450840, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569176336104450840, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e36c3b41a0962c4782e48daf0dcaaaf, type: 3}
+    - target: {fileID: 5569176336104450840, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5593607400805537700, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
       propertyPath: m_Name
       value: CrowbarHand
       objectReference: {fileID: 0}
+    - target: {fileID: 5929425689442905764, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991345949339373719, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201037547628970956, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: subAnimator
+      value: 
+      objectReference: {fileID: 1658244884}
     - target: {fileID: 6620926507460198953, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
       propertyPath: m_Name
       value: Hand_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415311035917200190, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
+    - target: {fileID: 7698988633738532329, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698988633738532329, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 7750859578127647841, guid: dd33180806b961e41a6a0965cdb36736, type: 3}
       propertyPath: m_LocalPosition.x
