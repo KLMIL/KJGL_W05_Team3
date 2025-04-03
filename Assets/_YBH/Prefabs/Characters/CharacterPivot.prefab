@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 965545203312474731}
   - component: {fileID: 4111572054750062528}
   m_Layer: 0
-  m_Name: Character
+  m_Name: CharacterPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
