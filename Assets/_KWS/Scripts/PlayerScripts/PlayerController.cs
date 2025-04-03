@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     
     
 
-    // Player Status
+    // Player Status    
     float moveSpeed = 5f;
     bool isMoving = false;
 

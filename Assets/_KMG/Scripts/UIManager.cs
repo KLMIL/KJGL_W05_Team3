@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         _instance = this;
-    }
+    }  
 
     public void DisableAll()
     {
