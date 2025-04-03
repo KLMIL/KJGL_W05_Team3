@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     // Assign on Inspector
     InputController inputController;
-
+    [SerializeField] CameraController cameraController;
 
     // Normal Class Instance
     PlayerActionMove actionMove;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     // Player Status
     float moveSpeed = 5f;
-
+    bool isMoving = false;
 
 
     #endregion
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        cameraController.ChangeLensSize(isMoving);
         actionMove.Execute(Time.deltaTime);
         actionLook.Execute();
     }
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        // Inspector¿¡¼­ moveSpeed º¯°æ ½Ã Áï½Ã ¹Ý¿µ
+        // Inspectorï¿½ï¿½ï¿½ï¿½ moveSpeed ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½
         if (actionMove != null)
         {
             actionMove.SetMoveSpeed(moveSpeed);
@@ -97,7 +98,15 @@ public class PlayerController : MonoBehaviour
     public void SetMoveInput(Vector2 input)
     {
         //moveInput = input;
-        actionMove.SetMoveInput(input);
+        if(input.magnitude <= 0f)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
+            actionMove.SetMoveInput(input);
     }
 
     public void SetLookInput(Vector2 input)
