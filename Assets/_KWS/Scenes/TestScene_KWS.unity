@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 1051799745}
   - component: {fileID: 1051799744}
   - component: {fileID: 1051799743}
+  - component: {fileID: 1051799746}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -402,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1157627551}
+  heldItem: {fileID: 0}
 --- !u!114 &1051799744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +432,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051799746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051799741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf8ef1d8eab4914c8033da7ac09f9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fieldCanvas: {fileID: 0}
+  _craftCanvas: {fileID: 0}
+  _shelterCanvas: {fileID: 0}
+  _conversationCanvas: {fileID: 0}
+  _fadeInFadeOut: {fileID: 0}
 --- !u!1 &1157627549
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +500,7 @@ MonoBehaviour:
   cameraController: {fileID: 963076111}
   interactionTrigger: {fileID: 935019393}
   playerHand: {fileID: 783558676}
+  playerHandContainer: {fileID: 1787961379}
 --- !u!50 &1157627552
 Rigidbody2D:
   serializedVersion: 5
@@ -714,6 +734,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &1787961379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7286985052575791665, guid: 5c4b02cff8d3e6349977286a1331a191, type: 3}
+  m_PrefabInstance: {fileID: 783558674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951734352
 GameObject:
   m_ObjectHideFlags: 0

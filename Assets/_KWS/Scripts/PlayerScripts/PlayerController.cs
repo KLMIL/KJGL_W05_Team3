@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetMoveInput(Vector2 input)
     {
-        //moveInput = input;
         if(input.magnitude <= 0f)
         {
             isMoving = false;
@@ -116,7 +115,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetLookInput(Vector2 input)
     {
-        //lookInput = input;
         actionLook.SetLookInput(input);
     }
 
@@ -127,8 +125,13 @@ public class PlayerController : MonoBehaviour
             GameObject heldItem = PlayerManager.Instance.GetHeldItem();
             if (heldItem != null)
             {
-                // Look 로직 변경하면 수정 필요
-                actionInteract.Execute(transform.position + Vector3.down * 0.5f, heldItem);
+                float angle = actionLook.GetPlayerLookRotationAngle();
+                Vector3 dir = Vector3.zero;
+                dir.x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                dir.y = Mathf.Sin(angle * Mathf.Deg2Rad);
+
+
+                actionInteract.Execute(transform.position + dir * 1f, heldItem);
                 PlayerManager.Instance.SetHeldItem(null);
             }
             else
