@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Make Singleton
     static GameManager _instance;
     public static GameManager Instance => _instance;
 
+
+    // Assign on Inspector
     [SerializeField] PlayerManager playerManager;
 
 

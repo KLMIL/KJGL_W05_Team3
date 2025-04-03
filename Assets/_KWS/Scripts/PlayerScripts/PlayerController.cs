@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XInput;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +10,13 @@ public class PlayerController : MonoBehaviour
 
 
     // Assign on Inspector
-    [SerializeField] InputManager inputManager;
+    InputController inputController;
 
+
+    // Normal Class Instance
+    PlayerActionMove actionMove;
+    PlayerActionLook actionLook;
+    PlayerActionInteract actionInteract;
 
 
     // Player Inputs
@@ -22,6 +28,8 @@ public class PlayerController : MonoBehaviour
     // Player Status
     float moveSpeed = 5f;
 
+
+
     #endregion
 
 
@@ -31,73 +39,76 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
-        inputManager = new InputManager();
-        inputManager.Initialize(this);
+        inputController = new InputController();
+        inputController.Initialize(this);
+
+        actionMove = new PlayerActionMove(transform, moveSpeed);
+        actionLook = new PlayerActionLook(transform, mainCamera);
+        actionInteract = new PlayerActionInteract();
     }
 
 
     private void OnEnable()
     {
-        if (inputManager != null)
+        if (inputController != null)
         {
-            inputManager.EnablePlayerInputActions();
+            inputController.EnablePlayerInputActions();
         }
     }
 
     private void OnDisable()
     {
-        if (inputManager != null)
+        if (inputController != null)
         {
-            inputManager.DisablePlayerInputActions();
+            inputController.DisablePlayerInputActions();
         }
     }
 
     private void Update()
     {
-        Move();
-        Look();
+        actionMove.Execute(Time.deltaTime);
+        actionLook.Execute();
+    }
+
+    private void OnDestroy()
+    {
+        inputController?.DisablePlayerInputActions();
     }
 
     #endregion
 
 
-    #region Input Functions
 
-    private void Move()
+#if UNITY_EDITOR
+    private void OnValidate()
     {
-        Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * moveSpeed * Time.deltaTime;
-        transform.position += movement;
-    }
-
-    private void Look()
-    {
-        if (lookInput != Vector2.zero)
+        // Inspector에서 moveSpeed 변경 시 즉시 반영
+        if (actionMove != null)
         {
-            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(lookInput.x, lookInput.y, 0));
-            Vector3 direction = (mouseWorldPosition - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            actionMove.SetMoveSpeed(moveSpeed);
         }
     }
 
-    #endregion
+#endif
 
 
     #region Input Action Functions
 
     public void SetMoveInput(Vector2 input)
     {
-        moveInput = input;
+        //moveInput = input;
+        actionMove.SetMoveInput(input);
     }
 
     public void SetLookInput(Vector2 input)
     {
-        lookInput = input;
+        //lookInput = input;
+        actionLook.SetLookInput(input);
     }
 
     public void PerformInteract()
     {
-        Debug.Log("Interact action performed");
+        actionInteract.Execute();
     }
 
     #endregion

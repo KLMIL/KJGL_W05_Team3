@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager // : MonoBehaviour
+public class InputController
 {
-    //static InputManager _instance;
-    //public static InputManager Instance => _instance;
+    static InputController _instance;
+    public static InputController Instance => _instance;
 
 
     InputSystem_Actions inputActions;
@@ -12,26 +12,20 @@ public class InputManager // : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        //if (_instance != null && _instance != this) {
-        //    Destroy(gameObject);
-        //    return;
-        //}
-        //_instance = this;
-
-
-    }
-
     public void Initialize(PlayerController playerController)
     {
-        inputActions = new InputSystem_Actions();
+        if (_instance != null && _instance != this)
+        {
+            return;
+        }
+        _instance = this;
 
+        inputActions = new InputSystem_Actions();
         inputActions.Enable();
 
         if (playerController == null)
         {
-            Debug.Log("Player Controller null Error on InputManager");
+            Debug.Log("Player Controller null Error on Input Controller");
             return;
         }
         this.playerController = playerController;
@@ -42,7 +36,7 @@ public class InputManager // : MonoBehaviour
     {
         if (playerController == null)
         {
-            Debug.Log("Player Controller null Error on InputManager");
+            Debug.Log("Player Controller null Error on Input Controller");
             return;
         }
 

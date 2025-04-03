@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    // Make Singleton
     static PlayerManager _instance;
     public static PlayerManager Instance => _instance;
 
+
+    // Assign on Inspector
     [SerializeField] PlayerController playerController;
     
 
@@ -23,6 +26,7 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("PlayerController null error on PlayerManager");
         }
     }
+
 
     public PlayerController GetPlayerController()
     {

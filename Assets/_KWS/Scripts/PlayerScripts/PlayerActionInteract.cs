@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class PlayerActionInteract : MonoBehaviour
+public class PlayerActionInteract
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Execute()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Interact action performed");
     }
 }

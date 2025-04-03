@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcd28eda69c39a498646ffedc069f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 1051799742}
 --- !u!212 &193527162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -231,7 +230,6 @@ GameObject:
   - component: {fileID: 1051799745}
   - component: {fileID: 1051799744}
   - component: {fileID: 1051799743}
-  - component: {fileID: 1051799742}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -239,18 +237,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1051799742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051799741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d237f04cfb7bd4fb6754104483e89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1051799743
 MonoBehaviour:
   m_ObjectHideFlags: 0
