@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestMovingScript : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
