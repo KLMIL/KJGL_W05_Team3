@@ -7,4 +7,5 @@ public class ProductSO : ScriptableObject
     public string productName;
     public Sprite productImage;
     public IngredientTuple[] productRequirements;
+    public string productInfo;
 }

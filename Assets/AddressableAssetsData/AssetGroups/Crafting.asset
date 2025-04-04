@@ -19,13 +19,13 @@ MonoBehaviour:
     m_Address: Chair
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Crafting
+    - Product
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e17ee9599bdf65440a256a49239e2d0b
     m_Address: Table
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Crafting
+    - Product
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 50ea65af664f08340b2b0385c8e0d6a1, type: 2}

@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - SlipGround
   - NPC
+  - Transition
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objects
+    uniqueID: 165924839
+    locked: 0
+  - name: character
+    uniqueID: 759088747
     locked: 0
   m_RenderingLayers:
   - Default

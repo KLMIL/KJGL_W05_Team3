@@ -32,6 +32,12 @@ public class PlayerInteractionTrigger : MonoBehaviour
             {
                 nearbyInteractables.Add(collision.gameObject);
             }
+        } else if (collision.gameObject.CompareTag("Transition"))
+        {
+            if (!nearbyInteractables.Contains(collision.gameObject))
+            {
+                nearbyInteractables.Add(collision.gameObject);
+            }
         }
     }
 

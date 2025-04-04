@@ -30,7 +30,7 @@ public class ShelterManager : MonoBehaviour
 
     private void Start()
     {
-        //Invoke(nameof(TMP), 1f);
+        Invoke(nameof(TMP), 1f);
     }
 
     public void NPC()
@@ -63,8 +63,6 @@ public class ShelterManager : MonoBehaviour
         _chestSystem.AddIngredient(Ingredients.wood, 2);
         ReadIngredients(_chestSystem.Ingredients);
 
-        _craftingSystem.CraftProduct(0);
-        _craftingSystem.CraftProduct(1);
         _craftingSystem.CraftProduct("Chair");
         _craftingSystem.CraftProduct("Table");
         _craftingSystem.CraftProduct("Invaild");
