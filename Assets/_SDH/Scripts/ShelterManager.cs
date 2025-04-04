@@ -35,23 +35,23 @@ public class ShelterManager : MonoBehaviour
 
     private void TMP() // Test Debug Code
     {
-        ReadItems(_chestSystem.Ingredients);
+        ReadIngredients(_chestSystem.Ingredients);
         _chestSystem.AddIngredient(Ingredients.wood, 2);
-        ReadItems(_chestSystem.Ingredients);
+        ReadIngredients(_chestSystem.Ingredients);
 
         _craftingSystem.CraftProduct(0);
         _craftingSystem.CraftProduct(1);
         _craftingSystem.CraftProduct("Chair");
         _craftingSystem.CraftProduct("Table");
-        _craftingSystem.CraftProduct("Chairr");
+        _craftingSystem.CraftProduct("Invaild");
     }
 
-    private void ReadItems(int[] items)
+    private void ReadIngredients(int[] ingredients)
     {
         string s = "";
-        for(int i = 0; i < items.Length; i++)
+        for(int i = 0; i < ingredients.Length; i++)
         {
-            s += System.Enum.GetName(typeof(Ingredients), i) + ":" + items[i] + " ";
+            s += System.Enum.GetName(typeof(Ingredients), i) + ":" + ingredients[i] + " ";
         }
         Debug.Log(s);
     }

@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CraftingSO", menuName = "Scriptable Objects/CraftingSO")]
-public class RecipeSO : ScriptableObject
+[CreateAssetMenu(fileName = "ProductSO", menuName = "Scriptable Objects/ProductSO")]
+public class ProductSO : ScriptableObject
 {
     public string productName;
     public Sprite productImage;
