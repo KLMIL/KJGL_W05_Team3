@@ -7,6 +7,7 @@ public class ShelterManager : MonoBehaviour
 
     public ChestSystem _chestSystem;
     public CraftingSystem _craftingSystem;
+    public DisassembleSystem _disassembleSystem;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class ShelterManager : MonoBehaviour
     {
         _chestSystem = new ChestSystem();
         _craftingSystem = new CraftingSystem();
+        _disassembleSystem = new DisassembleSystem();
     }
 
     private void Start()
@@ -37,11 +39,11 @@ public class ShelterManager : MonoBehaviour
         _chestSystem.AddIngredient(Ingredients.wood, 2);
         ReadItems(_chestSystem.Ingredients);
 
-        _craftingSystem.CraftItem(0);
-        _craftingSystem.CraftItem(1);
-        _craftingSystem.CraftItem("Chair");
-        _craftingSystem.CraftItem("Table");
-        _craftingSystem.CraftItem("Chairr");
+        _craftingSystem.CraftProduct(0);
+        _craftingSystem.CraftProduct(1);
+        _craftingSystem.CraftProduct("Chair");
+        _craftingSystem.CraftProduct("Table");
+        _craftingSystem.CraftProduct("Chairr");
     }
 
     private void ReadItems(int[] items)

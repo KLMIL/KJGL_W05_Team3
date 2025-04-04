@@ -12,7 +12,7 @@ public class RecipeSO : ScriptableObject
     [Serializable]
     public struct ProductTuple
     {
-        public Ingredients item;
+        public Ingredients ingredient;
         public int figure;
     }
 }

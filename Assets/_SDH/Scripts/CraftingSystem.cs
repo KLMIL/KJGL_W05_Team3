@@ -6,25 +6,25 @@ public class CraftingSystem
 {
     private readonly CraftingDatabase _craftingDatabase;
 
-    // »ı¼ºÀÚ
+    // ìƒì„±ì
     public CraftingSystem()
     {
         _craftingDatabase = new CraftingDatabase();
     }
 
-    public bool CraftItem(string productName)
+    public bool CraftProduct(string productName)
     {
-        return CraftItem(_craftingDatabase.GetRecipe(productName));
+        return CraftProduct(_craftingDatabase.GetRecipe(productName));
     }
 
-    public bool CraftItem(int productIndex)
+    public bool CraftProduct(int productIndex)
     {
-        return CraftItem(_craftingDatabase.GetRecipe(productIndex));
+        return CraftProduct(_craftingDatabase.GetRecipe(productIndex));
     }
 
-    public bool CraftItem(RecipeSO recipe)
+    public bool CraftProduct(RecipeSO recipe)
     {
-        int[] items = ShelterManager.Instance._chestSystem.Ingredients;
+        int[] ingredients = ShelterManager.Instance._chestSystem.Ingredients;
 
         if(recipe == null)
         {
@@ -34,7 +34,7 @@ public class CraftingSystem
 
         foreach (RecipeSO.ProductTuple elem in recipe.productRequirements)
         {
-            if (items[(int)elem.item] < elem.figure) // ÇÊ¿äÇÑ Àç·áº¸´Ù ºÎÁ·ÇÏ°Ô °®°í ÀÖ´Ù¸é
+            if (ingredients[(int)elem.ingredient] < elem.figure) // í•„ìš”í•œ ì¬ë£Œë³´ë‹¤ ë¶€ì¡±í•˜ê²Œ ê°–ê³  ìˆë‹¤ë©´
             {
                 return false;
             }
