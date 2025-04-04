@@ -12,6 +12,11 @@ public class PlayerActionInteract
         playerHand = hand;
     }
 
+    // 상대가 NPC일 때
+    public void Execute()
+    {
+
+    }
 
     // 손에 물건이 없을 때
     public GameObject Execute(Vector2 playerPosition)

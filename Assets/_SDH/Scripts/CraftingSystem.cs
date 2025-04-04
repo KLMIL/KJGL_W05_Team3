@@ -1,40 +1,24 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingSystem
 {
-    private readonly CraftingDatabase _craftingDatabase;
-
-    // »ý¼ºÀÚ
-    public CraftingSystem()
+    public bool CraftProduct(string productName)
     {
-        _craftingDatabase = new CraftingDatabase();
+        return CraftProduct(DatabaseManager.Instance.GetProduct(productName));
     }
 
-    public bool CraftItem(string productName)
+    public bool CraftProduct(ProductSO product)
     {
-        return CraftItem(_craftingDatabase.GetRecipe(productName));
-    }
-
-    public bool CraftItem(int productIndex)
-    {
-        return CraftItem(_craftingDatabase.GetRecipe(productIndex));
-    }
-
-    public bool CraftItem(RecipeSO recipe)
-    {
-        int[] items = ShelterManager.Instance._chestSystem.Ingredients;
-
-        if(recipe == null)
+        if(product == null)
         {
-            Debug.Log("invaild recipe");
             return false;
         }
+        
+        Debug.Log(product.productName);
 
-        foreach (RecipeSO.ProductTuple elem in recipe.productRequirements)
+        foreach (IngredientTuple elem in product.productRequirements)
         {
-            if (items[(int)elem.item] < elem.figure) // ÇÊ¿äÇÑ Àç·áº¸´Ù ºÎÁ·ÇÏ°Ô °®°í ÀÖ´Ù¸é
+            if (ShelterManager.Instance._chestSystem.Ingredients[(int)elem.ingredient] < elem.figure) // í•„ìš”í•œ ìž¬ë£Œë³´ë‹¤ ë¶€ì¡±í•˜ê²Œ ê°–ê³  ìžˆë‹¤ë©´
             {
                 return false;
             }
