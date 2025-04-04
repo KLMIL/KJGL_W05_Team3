@@ -10,11 +10,14 @@ using UnityEngine;
 // 그냥 들 수 있는 아이템이 있고, 끌차가 있어야 들 수 있는 아이템이 있다.
 
 
-public class InteractableObject : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
+    [SerializeField] string itemName;
+    [SerializeField] IngredientTuple[] ingredientInfo = new IngredientTuple[4];
+
     [SerializeField] bool canHoldDirectly = true;
     [SerializeField] bool requiresCart = false;
-    [SerializeField] string itemTag = "Interactable";
+
 
 
     public void Interact(Transform playerHand)

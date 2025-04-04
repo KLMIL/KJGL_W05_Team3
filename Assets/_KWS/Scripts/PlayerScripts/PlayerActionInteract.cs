@@ -21,6 +21,8 @@ public class PlayerActionInteract
     // 손에 물건이 없을 때
     public GameObject Execute(Vector2 playerPosition)
     {
+        Debug.Log("Executed");
+
         GameObject nearest = trigger.GetNearObject(playerPosition);
         if (nearest == null)
         {
@@ -28,7 +30,7 @@ public class PlayerActionInteract
             return null;
         }
 
-        InteractableObject interactable = nearest.GetComponent<InteractableObject>();
+        Interactable interactable = nearest.GetComponent<Interactable>();
         if (interactable != null)
         {
             interactable.Interact(playerHand);
@@ -41,6 +43,6 @@ public class PlayerActionInteract
     public void Execute(Vector2 dropPosition, GameObject heldItem, Vector2 playerPosition)
     {
         heldItem.transform.SetParent(null);
-        heldItem.GetComponent<InteractableObject>()?.OnDropped(dropPosition, playerPosition);
+        heldItem.GetComponent<Interactable>()?.OnDropped(dropPosition, playerPosition);
     }
 }
