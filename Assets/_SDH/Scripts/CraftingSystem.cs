@@ -32,7 +32,7 @@ public class CraftingSystem
             return false;
         }
 
-        foreach (RecipeSO.ProductTuple elem in recipe.productRequirements)
+        foreach (ProductTuple elem in recipe.productRequirements)
         {
             if (ingredients[(int)elem.ingredient] < elem.figure) // 필요한 재료보다 부족하게 갖고 있다면
             {
