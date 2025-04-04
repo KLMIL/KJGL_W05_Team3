@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     // Assign on Inspector
     [SerializeField] PlayerController playerController;
-
+    public PlayerController PlayerController => playerController;
 
     // Player Status
     [SerializeField] private GameObject heldItem;

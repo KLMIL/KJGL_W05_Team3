@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     // Player Inputs
     Vector2 moveInput;
     Vector2 lookInput;
-    
-    
+
+
     // Player Status    
 
     float moveSpeed = 5f;
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetMoveInput(Vector2 input)
     {
-        if(input.magnitude <= 0f)
+        if (input.magnitude <= 0f)
         {
             isMoving = false;
         }
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = true;
         }
-            actionMove.SetMoveInput(input);
+        actionMove.SetMoveInput(input);
     }
 
     public void SetLookInput(Vector2 input)
@@ -123,6 +123,14 @@ public class PlayerController : MonoBehaviour
         if (PlayerManager.Instance != null)
         {
             GameObject heldItem = PlayerManager.Instance.GetHeldItem();
+            GameObject nearest = actionInteract.Execute(transform.position);
+            
+            //가장 가까운 오브젝트가 이동 오브젝트 일때 상호작용시 이동
+            if(nearest != null && nearest.CompareTag("Transition")){
+                nearest.GetComponent<TransitionSystem>().Transition();
+                return;
+            }
+
             if (heldItem != null)
             {
                 float angle = actionLook.GetPlayerLookRotationAngle();
@@ -136,7 +144,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                GameObject nearest = actionInteract.Execute(transform.position);
+                
                 if (nearest.CompareTag("NPC"))
                 {
                     GameManager.Instance.ShelterManger.NPC();
@@ -151,7 +159,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     #endregion
