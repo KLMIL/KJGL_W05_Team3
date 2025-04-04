@@ -137,7 +137,18 @@ public class PlayerController : MonoBehaviour
             else
             {
                 GameObject nearest = actionInteract.Execute(transform.position);
-                PlayerManager.Instance.SetHeldItem(nearest);
+                if (nearest.CompareTag("NPC"))
+                {
+                    GameManager.Instance.ShelterManger.NPC();
+                }
+                else if (nearest.CompareTag("Interactable"))
+                {
+                    PlayerManager.Instance.SetHeldItem(nearest);
+                }
+                else
+                {
+                    /* Do Nothing */
+                }
             }
         }
         

@@ -26,6 +26,12 @@ public class PlayerInteractionTrigger : MonoBehaviour
             {
                 nearbyInteractables.Add(collision.gameObject);
             }
+        }else if (collision.gameObject.CompareTag("NPC"))
+        {
+            if (!nearbyInteractables.Contains(collision.gameObject))
+            {
+                nearbyInteractables.Add(collision.gameObject);
+            }
         }
     }
 

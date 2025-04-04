@@ -6,9 +6,13 @@ public class GameManager : MonoBehaviour
     static GameManager _instance;
     public static GameManager Instance => _instance;
 
+    public PlayerManager PlayerManager { get { return playerManager; } }
+    public ShelterManager ShelterManger { get { return shelterManager; } }
+
 
     // Assign on Inspector
     [SerializeField] PlayerManager playerManager;
+    [SerializeField] ShelterManager shelterManager;
 
 
     private void Awake()

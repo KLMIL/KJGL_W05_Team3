@@ -30,7 +30,12 @@ public class ShelterManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(TMP), 1f);
+        //Invoke(nameof(TMP), 1f);
+    }
+
+    public void NPC()
+    {
+        Debug.Log("talk to NPC");
     }
 
     public bool Craft(ProductSO product)
