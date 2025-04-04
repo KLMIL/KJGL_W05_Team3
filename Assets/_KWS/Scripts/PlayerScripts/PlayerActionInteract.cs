@@ -2,8 +2,40 @@ using UnityEngine;
 
 public class PlayerActionInteract
 {
-    public void Execute()
+    private PlayerInteractionTrigger trigger;
+    private Transform playerHand;
+
+
+    public PlayerActionInteract(PlayerInteractionTrigger triggerRef, Transform hand)
     {
-        Debug.Log("Interact action performed");
+        trigger = triggerRef;
+        playerHand = hand;
+    }
+
+
+    // 손에 물건이 없을 때
+    public GameObject Execute(Vector2 playerPosition)
+    {
+        GameObject nearest = trigger.GetNearObject(playerPosition);
+        if (nearest == null)
+        {
+            Debug.Log("No interactable object nearby");
+            return null;
+        }
+
+        InteractableObject interactable = nearest.GetComponent<InteractableObject>();
+        if (interactable != null)
+        {
+            interactable.Interact(playerHand);
+        }
+
+        return nearest;
+    }
+
+    // 손에 물건이 있을 때
+    public void Execute(Vector2 dropPosition, GameObject heldItem, Vector2 playerPosition)
+    {
+        heldItem.transform.SetParent(null);
+        heldItem.GetComponent<InteractableObject>()?.OnDropped(dropPosition, playerPosition);
     }
 }

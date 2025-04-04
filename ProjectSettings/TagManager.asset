@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Interactable
+  - SlipGround
   layers:
   - Default
   - TransparentFX
@@ -15,6 +17,7 @@ TagManager:
   - 
   - 
   - 
+  - Ground
   - 
   - 
   - 
@@ -24,8 +27,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Trigger
   - 
   - 
   - 
@@ -40,9 +42,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Character
-    uniqueID: 3231904849
     locked: 0
   m_RenderingLayers:
   - Default
