@@ -621,18 +621,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2850767021889037014, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6517037095866289420, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8179539050911488006, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
