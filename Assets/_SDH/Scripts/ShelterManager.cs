@@ -33,6 +33,25 @@ public class ShelterManager : MonoBehaviour
         Invoke(nameof(TMP), 1f);
     }
 
+    public bool Craft(ProductSO product)
+    {
+        if (_craftingSystem.CraftProduct(product))
+        {
+            _chestSystem.MinusIngredients(product);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool Disassemble(InteractableSO interactable)
+    {
+        _chestSystem.AddIngredients(interactable);
+        return true;
+    }
+
     private void TMP() // Test Debug Code
     {
         ReadIngredients(_chestSystem.Ingredients);
