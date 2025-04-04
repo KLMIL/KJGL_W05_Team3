@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class DisassembleSystem
 {
-    public void DisassembleProduct()
+    public IngredientTuple[] DisassembleInteractable(InteractableSO interactable)
     {
-
+        return interactable.interactableRewards;
     }
 }
