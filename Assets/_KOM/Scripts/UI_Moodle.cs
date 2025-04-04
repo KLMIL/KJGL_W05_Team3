@@ -1,13 +1,12 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.XR;
+
 
 public class UI_Moodle : MonoBehaviour
-{
-
+{    
     Image cold;
-    Image wet;
-
+    Image wet;    
     void Start()
     {
         cold = GetComponentInChildren<Icon_Cold>().gameObject.GetComponent<Image>();
@@ -17,19 +16,53 @@ public class UI_Moodle : MonoBehaviour
         wet.enabled = false;
     }
     /// <summary>
-    /// On Off Icon_Cold
+    /// true false Icon_Cold
     /// </summary>
-    public void ColdIcon_OnOff()
+    public void ColdIcon_OnOff(bool onOff)
     {
-        cold.enabled = !cold.enabled;
-        wet.enabled = false; // ¥Ÿ∏• æ∆¿Ãƒ‹¿Ã ƒ—¡Æ¿÷¿ª ∞ÊøÏ ≤®æﬂ«‘
+        cold.enabled = onOff;
+        wet.enabled = false; // Îã§Î•∏ ÏïÑÏù¥ÏΩòÏù¥ ÏºúÏ†∏ÏûàÏùÑ Í≤ΩÏö∞ Í∫ºÏïºÌï®
+        if (!onOff) return;
+        StartCoroutine(FlickerCor(cold));
     }
     /// <summary>
-    /// On Off Icon_Wet
+    /// true false Icon_Wet
     /// </summary>
-    public void WetIcon_OnOff()
+    public void WetIcon_OnOff(bool onOff)
     {
-        wet.enabled = !wet.enabled;
-        cold.enabled = false; // ¥Ÿ∏• æ∆¿Ãƒ‹¿Ã ƒ—¡Æ¿÷¿ª ∞ÊøÏ ≤®æﬂ«‘
+        wet.enabled = onOff;
+        cold.enabled = false; // Îã§Î•∏ ÏïÑÏù¥ÏΩòÏù¥ ÏºúÏ†∏ÏûàÏùÑ Í≤ΩÏö∞ Í∫ºÏïºÌï®
+        if (!onOff) return;
+        StartCoroutine(FlickerCor(wet));
+    }
+
+    IEnumerator FlickerCor(Image image)
+    {
+        while (image.enabled)
+        {
+            Color color = image.color;
+            while (color.a > 0f)
+            {
+                float alpha = Mathf.MoveTowards(color.a, 0, Time.fixedDeltaTime * 3f);
+                color.a = alpha;
+                image.color = color;
+                //Debug.Log("FlickerCor daltaTime" + alpha);
+                yield return new WaitForFixedUpdate();
+                yield return new WaitForFixedUpdate();
+            }
+            yield return new WaitForSeconds(0.5f);
+
+            while (color.a < 1f)
+            {
+                float alpha = Mathf.MoveTowards(color.a, 1f, Time.fixedDeltaTime * 3f);
+                color.a = alpha;
+                image.color = color;
+               // Debug.Log("FlickerCor daltaTime" + alpha);
+                yield return new WaitForFixedUpdate();
+                yield return new WaitForFixedUpdate();
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
