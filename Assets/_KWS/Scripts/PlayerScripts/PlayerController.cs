@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 
@@ -12,6 +13,9 @@ public class PlayerController : MonoBehaviour
     // Assign on Inspector
     InputController inputController;
     [SerializeField] CameraController cameraController;
+    [SerializeField] PlayerInteractionTrigger interactionTrigger;
+    [SerializeField] GameObject playerHand;
+    [SerializeField] GameObject playerHandContainer;
 
     // Normal Class Instance
     PlayerActionMove actionMove;
@@ -24,11 +28,10 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     
     
+    // Player Status    
 
-    // Player Status
     float moveSpeed = 5f;
     bool isMoving = false;
-
 
     #endregion
 
@@ -43,8 +46,9 @@ public class PlayerController : MonoBehaviour
         inputController.Initialize(this);
 
         actionMove = new PlayerActionMove(transform, moveSpeed);
-        actionLook = new PlayerActionLook(transform, mainCamera);
-        actionInteract = new PlayerActionInteract();
+        //actionLook = new PlayerActionLook(transform, mainCamera);
+        actionLook = new PlayerActionLook(playerHandContainer.transform, mainCamera);
+        actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
     }
 
 
@@ -83,7 +87,8 @@ public class PlayerController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        // Inspector���� moveSpeed ���� �� ��� �ݿ�
+        // Inspector에서 moveSpeed 변경 시 즉시 반영
+
         if (actionMove != null)
         {
             actionMove.SetMoveSpeed(moveSpeed);
@@ -97,7 +102,6 @@ public class PlayerController : MonoBehaviour
 
     public void SetMoveInput(Vector2 input)
     {
-        //moveInput = input;
         if(input.magnitude <= 0f)
         {
             isMoving = false;
@@ -111,13 +115,43 @@ public class PlayerController : MonoBehaviour
 
     public void SetLookInput(Vector2 input)
     {
-        //lookInput = input;
         actionLook.SetLookInput(input);
     }
 
     public void PerformInteract()
     {
-        actionInteract.Execute();
+        if (PlayerManager.Instance != null)
+        {
+            GameObject heldItem = PlayerManager.Instance.GetHeldItem();
+            if (heldItem != null)
+            {
+                float angle = actionLook.GetPlayerLookRotationAngle();
+                Vector3 dir = Vector3.zero;
+                dir.x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                dir.y = Mathf.Sin(angle * Mathf.Deg2Rad);
+
+
+                actionInteract.Execute(transform.position + dir * 1f, heldItem, transform.position);
+                PlayerManager.Instance.SetHeldItem(null);
+            }
+            else
+            {
+                GameObject nearest = actionInteract.Execute(transform.position);
+                if (nearest.CompareTag("NPC"))
+                {
+                    GameManager.Instance.ShelterManger.NPC();
+                }
+                else if (nearest.CompareTag("Interactable"))
+                {
+                    PlayerManager.Instance.SetHeldItem(nearest);
+                }
+                else
+                {
+                    /* Do Nothing */
+                }
+            }
+        }
+        
     }
 
     #endregion

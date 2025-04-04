@@ -9,6 +9,10 @@ public class PlayerManager : MonoBehaviour
 
     // Assign on Inspector
     [SerializeField] PlayerController playerController;
+
+
+    // Player Status
+    [SerializeField] private GameObject heldItem;
     
 
 
@@ -31,5 +35,16 @@ public class PlayerManager : MonoBehaviour
     public PlayerController GetPlayerController()
     {
         return playerController;
+    }
+
+
+    public void SetHeldItem(GameObject item)
+    {
+        heldItem = item;
+    }
+
+    public GameObject GetHeldItem()
+    {
+        return heldItem;
     }
 }

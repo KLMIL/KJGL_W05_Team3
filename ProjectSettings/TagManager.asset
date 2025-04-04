@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Interactable
+  - SlipGround
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -11,8 +14,11 @@ TagManager:
   - 
   - Water
   - UI
-  - UI_Crafting
-  - UI_Info
+  - 
+  - 
+  - 
+  - 
+  - Ground
   - 
   - 
   - 
@@ -22,10 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Trigger
   - 
   - 
   - 
@@ -40,12 +43,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI_Crafting
-    uniqueID: 3105711017
-    locked: 0
-  - name: UI_Info
-    uniqueID: 2680369987
     locked: 0
   m_RenderingLayers:
   - Default
