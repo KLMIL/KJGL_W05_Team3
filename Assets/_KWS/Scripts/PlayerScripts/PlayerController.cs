@@ -125,5 +125,10 @@ public class PlayerController : MonoBehaviour
         actionInteract.Execute(transform.position, heldItem, lookAngle);
     }
 
+    public void PerformAttack()
+    {
+        Debug.Log("Mouse left button attack executed");
+    }
+
     #endregion
 }
