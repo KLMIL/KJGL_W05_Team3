@@ -24,8 +24,6 @@ public class CraftingSystem
 
     public bool CraftProduct(ProductSO product)
     {
-        int[] ingredients = ShelterManager.Instance._chestSystem.Ingredients;
-
         if(product == null)
         {
             Debug.Log("invaild product recipe");
@@ -34,7 +32,7 @@ public class CraftingSystem
 
         foreach (IngredientTuple elem in product.productRequirements)
         {
-            if (ingredients[(int)elem.ingredient] < elem.figure) // 필요한 재료보다 부족하게 갖고 있다면
+            if (ShelterManager.Instance._chestSystem.Ingredients[(int)elem.ingredient] < elem.figure) // 필요한 재료보다 부족하게 갖고 있다면
             {
                 return false;
             }

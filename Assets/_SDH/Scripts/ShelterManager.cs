@@ -46,7 +46,7 @@ public class ShelterManager : MonoBehaviour
         _craftingSystem.CraftProduct("Invaild");
     }
 
-    private void ReadIngredients(int[] ingredients)
+    private void ReadIngredients(int[] ingredients) // Test Debug Code
     {
         string s = "";
         for(int i = 0; i < ingredients.Length; i++)
