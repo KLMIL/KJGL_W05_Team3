@@ -17,6 +17,9 @@ public class UI_Moodle : MonoBehaviour
         //reset
         cold.enabled = false;
         wet.enabled = false;
+        //Test
+        //PlayerIsCold(true);
+        //ColdIcon_OnOff(true);
     }
     public void PlayerIsCold(bool cold)
     {
