@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public float Health => health;
     float coldGage = 10;
     float currentColdGage;
+    float coldGageAmount = 0;
     [SerializeField] bool isCold = false;
     bool freezing;
     bool canTakeDamage = true;
@@ -45,7 +46,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isCold && !freezing)
         {
-            currentColdGage += Time.deltaTime;
+            currentColdGage += Time.deltaTime * coldGageAmount;
             if(currentColdGage >= coldGage)
             {
                 freezing = true;
