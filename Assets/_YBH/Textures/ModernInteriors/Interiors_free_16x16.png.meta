@@ -6772,7 +6772,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6794,7 +6794,7 @@ TextureImporter:
         width: 13
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6825,6 +6825,28 @@ TextureImporter:
       bones: []
       spriteID: ce14a83db26db664dabf88b572dd3372
       internalID: -1960255447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interiors_free_16x16_270
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1296
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a950e43ce2fa9641ae6dbb74842b251
+      internalID: 854361138
       vertices: []
       indices: 
       edges: []
@@ -7034,6 +7056,7 @@ TextureImporter:
       Interiors_free_16x16_268: -488047493
       Interiors_free_16x16_269: -1960255447
       Interiors_free_16x16_27: 5238491007755207016
+      Interiors_free_16x16_270: 854361138
       Interiors_free_16x16_28: 8125419082765186210
       Interiors_free_16x16_29: 4758480125874657293
       Interiors_free_16x16_3: 1937461651617386689
