@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +22,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         _instance = this;
-    }  
+    }
 
     public void DisableAll()
     {
@@ -65,7 +66,7 @@ public class UIManager : MonoBehaviour
             float currentAlpha = fade.color.a;
             float newAlpha = Mathf.MoveTowards(currentAlpha, 1f, changeSpeed * Time.deltaTime);
             fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, newAlpha);
-           yield  return null;
+            yield return null;
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
 
