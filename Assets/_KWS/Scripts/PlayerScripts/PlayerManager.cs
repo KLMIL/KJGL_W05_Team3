@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEditor.XR;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -13,8 +15,14 @@ public class PlayerManager : MonoBehaviour
 
     // Player Status
     [SerializeField] private GameObject heldItem;
-    
 
+    float health = 100;
+    public float Health => health;
+    float coldGage = 10;
+    float currentColdGage;
+    [SerializeField] bool isCold = false;
+    bool freezing;
+    bool canTakeDamage = true;
 
     private void Awake()
     {
@@ -29,7 +37,27 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("PlayerController null error on PlayerManager");
         }
+
+        currentColdGage = 0;
     }
+
+    private void Update()
+    {
+        if (isCold && !freezing)
+        {
+            currentColdGage += Time.deltaTime;
+            if(currentColdGage >= coldGage)
+            {
+                freezing = true;
+            }
+        }
+        if (freezing && canTakeDamage)
+        {
+            canTakeDamage = false;
+            StartCoroutine(TakeFreezeDamage());
+        }
+    }
+
 
 
     public PlayerController GetPlayerController()
@@ -46,5 +74,17 @@ public class PlayerManager : MonoBehaviour
     public GameObject GetHeldItem()
     {
         return heldItem;
+    }
+
+    public void DamagePlayer(float damage)
+    {
+        health -= damage;
+    }
+
+    public IEnumerator TakeFreezeDamage()
+    {
+        DamagePlayer(1f);
+        yield return new WaitForSeconds(0.5f);
+        canTakeDamage = true;
     }
 }
