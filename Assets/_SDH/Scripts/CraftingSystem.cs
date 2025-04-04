@@ -32,7 +32,7 @@ public class CraftingSystem
             return false;
         }
 
-        foreach (ProductTuple elem in product.productRequirements)
+        foreach (IngredientTuple elem in product.productRequirements)
         {
             if (ingredients[(int)elem.ingredient] < elem.figure) // 필요한 재료보다 부족하게 갖고 있다면
             {

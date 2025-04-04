@@ -6,12 +6,5 @@ public class ProductSO : ScriptableObject
 {
     public string productName;
     public Sprite productImage;
-    public ProductTuple[] productRequirements;
-}
-
-[Serializable]
-public struct ProductTuple
-{
-    public Ingredients ingredient;
-    public int figure;
+    public IngredientTuple[] productRequirements;
 }
