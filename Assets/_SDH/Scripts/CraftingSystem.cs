@@ -1,34 +1,20 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingSystem
 {
-    private readonly CraftingDatabase _craftingDatabase;
-
-    // 생성자
-    public CraftingSystem()
-    {
-        _craftingDatabase = new CraftingDatabase();
-    }
-
     public bool CraftProduct(string productName)
     {
-        return CraftProduct(_craftingDatabase.GetProduct(productName));
-    }
-
-    public bool CraftProduct(int productIndex)
-    {
-        return CraftProduct(_craftingDatabase.GetProduct(productIndex));
+        return CraftProduct(DatabaseManager.Instance.GetProduct(productName));
     }
 
     public bool CraftProduct(ProductSO product)
     {
         if(product == null)
         {
-            Debug.Log("invaild product recipe");
             return false;
         }
+        
+        Debug.Log(product.productName);
 
         foreach (IngredientTuple elem in product.productRequirements)
         {
