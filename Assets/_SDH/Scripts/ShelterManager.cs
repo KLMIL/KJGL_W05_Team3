@@ -7,6 +7,7 @@ public class ShelterManager : MonoBehaviour
 
     public ChestSystem _chestSystem;
     public CraftingSystem _craftingSystem;
+    public DisassembleSystem _disassembleSystem;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class ShelterManager : MonoBehaviour
     {
         _chestSystem = new ChestSystem();
         _craftingSystem = new CraftingSystem();
+        _disassembleSystem = new DisassembleSystem();
     }
 
     private void Start()
@@ -31,25 +33,44 @@ public class ShelterManager : MonoBehaviour
         Invoke(nameof(TMP), 1f);
     }
 
-    private void TMP() // Test Debug Code
+    public bool Craft(ProductSO product)
     {
-        ReadItems(_chestSystem.Ingredients);
-        _chestSystem.AddIngredient(Ingredients.wood, 2);
-        ReadItems(_chestSystem.Ingredients);
-
-        _craftingSystem.CraftItem(0);
-        _craftingSystem.CraftItem(1);
-        _craftingSystem.CraftItem("Chair");
-        _craftingSystem.CraftItem("Table");
-        _craftingSystem.CraftItem("Chairr");
+        if (_craftingSystem.CraftProduct(product))
+        {
+            _chestSystem.MinusIngredients(product);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    private void ReadItems(int[] items)
+    public bool Disassemble(InteractableSO interactable)
+    {
+        _chestSystem.AddIngredients(interactable);
+        return true;
+    }
+
+    private void TMP() // Test Debug Code
+    {
+        ReadIngredients(_chestSystem.Ingredients);
+        _chestSystem.AddIngredient(Ingredients.wood, 2);
+        ReadIngredients(_chestSystem.Ingredients);
+
+        _craftingSystem.CraftProduct(0);
+        _craftingSystem.CraftProduct(1);
+        _craftingSystem.CraftProduct("Chair");
+        _craftingSystem.CraftProduct("Table");
+        _craftingSystem.CraftProduct("Invaild");
+    }
+
+    private void ReadIngredients(int[] ingredients) // Test Debug Code
     {
         string s = "";
-        for(int i = 0; i < items.Length; i++)
+        for(int i = 0; i < ingredients.Length; i++)
         {
-            s += System.Enum.GetName(typeof(Ingredients), i) + ":" + items[i] + " ";
+            s += System.Enum.GetName(typeof(Ingredients), i) + ":" + ingredients[i] + " ";
         }
         Debug.Log(s);
     }

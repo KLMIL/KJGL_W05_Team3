@@ -7,44 +7,44 @@ using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class CraftingDatabase
 {
-    private readonly List<RecipeSO> _recipes = new();
+    private readonly List<ProductSO> _products = new();
 
-    // »ý¼ºÀÚ
+    // ìƒì„±ìž
     public CraftingDatabase()
     {
         Addressables.LoadResourceLocationsAsync("Crafting").Completed += (handle) =>
         {
             foreach (IResourceLocation item in handle.Result)
             {
-                Addressables.LoadAssetAsync<RecipeSO>(item.PrimaryKey).Completed += (op) =>
+                Addressables.LoadAssetAsync<ProductSO>(item.PrimaryKey).Completed += (op) =>
                 {
-                    _recipes.Add(op.Result);
+                    _products.Add(op.Result);
                     Addressables.Release(op);
                 };
             }
         };
     }
 
-    public RecipeSO GetRecipe(string productName)
+    public ProductSO GetProduct(string productName)
     {
-        for(int i = 0; i < _recipes.Count; i++)
+        for(int i = 0; i < _products.Count; i++)
         {
-            if (_recipes[i].productName == productName)
+            if (_products[i].productName == productName)
             {
-                return GetRecipe(i);
+                return GetProduct(i);
             }
         }
 
         return null;
     }
 
-    public RecipeSO GetRecipe(int productIndex)
+    public ProductSO GetProduct(int productIndex)
     {
-        if (productIndex < 0 || productIndex > _recipes.Count - 1)
+        if (productIndex < 0 || productIndex > _products.Count - 1)
         {
             return null;
         }
 
-        return _recipes[productIndex];
+        return _products[productIndex];
     }
 }
