@@ -13,8 +13,7 @@ public class PlayerActionInteract
     }
 
 
-    // 상대가 NPC일 때
-    public void Execute(Vector2 playerPosition, GameObject heldItem, float lookAngle)
+    public void ExecuteInteract(Vector2 playerPosition, GameObject heldItem, float lookAngle)
     {
         GameObject nearest = trigger.GetNearObject(playerPosition);
 
@@ -58,6 +57,12 @@ public class PlayerActionInteract
         // 0. 아무 상호작용이 없을 때
         Debug.Log("No nearest interactable object");
         return;
+    }
+
+    public void ExecuteAttack(Vector2 playerPosition)
+    {
+        Debug.Log("Attack Executed");
+        //interactable.OnDamaged();
     }
 
 
