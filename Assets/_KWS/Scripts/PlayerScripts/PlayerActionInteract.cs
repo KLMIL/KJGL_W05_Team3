@@ -62,8 +62,13 @@ public class PlayerActionInteract
 
     public void ExecuteAttack(Vector2 playerPosition)
     {
-        Debug.Log("Attack Executed");
-        //interactable.OnDamaged();
+        GameObject onHoverObj = PlayerManager.Instance.GetLastHoveredObject();
+
+        if (onHoverObj != null && onHoverObj.CompareTag("Interactable"))
+        {
+            onHoverObj.GetComponent<Interactable>().OnDamaged();
+            PlayerManager.Instance.SetLastHoveredObject(null);
+        }
     }
 
 

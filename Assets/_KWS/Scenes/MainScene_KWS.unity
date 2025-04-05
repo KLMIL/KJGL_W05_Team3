@@ -664,6 +664,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1825314913664446291, guid: 72c83564caa469e4283364ec230cd0c9, type: 3}
+      propertyPath: id
+      value: InteractableTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825314913664446291, guid: 72c83564caa469e4283364ec230cd0c9, type: 3}
+      propertyPath: wastePrefab
+      value: 
+      objectReference: {fileID: 508393938246102222, guid: 6150ac34ea37cfa40adc25e5eda2d1ca, type: 3}
     - target: {fileID: 5753908726070667291, guid: 72c83564caa469e4283364ec230cd0c9, type: 3}
       propertyPath: m_Name
       value: TestInteractable
@@ -1578,6 +1586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   interactable: {fileID: 0}
+  wastePrefab: {fileID: 0}
 --- !u!1001 &1703709999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1812,6 +1821,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152982479100802785, guid: 2f490dee33e584f42be71fa49f4fb207, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3357983883202151398, guid: 2f490dee33e584f42be71fa49f4fb207, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.38
