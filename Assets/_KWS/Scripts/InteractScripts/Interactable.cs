@@ -15,8 +15,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] string id;
     [SerializeField] InteractableSO interactable;
 
-    [SerializeField] bool canHoldDirectly = true;
-    [SerializeField] bool requiresCart = false;
+    //[SerializeField] bool canHoldDirectly = true;
+    //[SerializeField] bool requiresCart = false;
 
     public string Id => id;
 

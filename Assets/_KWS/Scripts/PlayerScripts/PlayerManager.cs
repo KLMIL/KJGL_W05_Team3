@@ -17,7 +17,9 @@ public class PlayerManager : MonoBehaviour
     public Lantern LanternInstance => _lantern;
 
     // Player Status
-    [SerializeField] private GameObject heldItem;
+    [SerializeField] GameObject heldItem;
+    [SerializeField] GameObject lastHoveredObject;
+
 
     float health = 100;
     public float Health => health;
@@ -91,5 +93,15 @@ public class PlayerManager : MonoBehaviour
         DamagePlayer(1f);
         yield return new WaitForSeconds(0.5f);
         canTakeDamage = true;
+    }
+
+    public void SetLastHoveredObject(GameObject obj)
+    {
+        lastHoveredObject = obj;
+    }
+
+    public GameObject GetLastHoveredObject()
+    {
+        return lastHoveredObject;
     }
 }
