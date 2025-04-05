@@ -23,6 +23,7 @@ public class PlayerActionLook
         lookInput = input;
     }
 
+    // 외부에서 Look 함수 호출
     public void Execute()
     {
         if (playerTransform == null || mainCamera == null) return;
@@ -39,6 +40,8 @@ public class PlayerActionLook
         CheckMouseHover();
     }
 
+
+    // 마우스가 Interactable 오브젝트 위에 올라갈 때
     private void CheckMouseHover()
     {
         Vector3 mousePosition = Input.mousePosition;
@@ -50,6 +53,7 @@ public class PlayerActionLook
         {
             SetTint(lastHoveredObject, false);
             lastHoveredObject = null;
+            PlayerManager.Instance.SetLastHoveredObject(lastHoveredObject);
         }
 
         if (hit.collider != null)
@@ -65,6 +69,7 @@ public class PlayerActionLook
                     if (interactable != null)
                     {
                         lastHoveredObject = targetObject;
+                        PlayerManager.Instance.SetLastHoveredObject(lastHoveredObject);
                         SetTint(targetObject, true);
                     }
                 }
@@ -72,6 +77,7 @@ public class PlayerActionLook
         }
     }
 
+    // 색깔 변경
     private void SetTint(GameObject target, bool enable)
     {
         SpriteRenderer renderer = target.GetComponent<SpriteRenderer>();
