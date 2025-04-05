@@ -196,6 +196,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9022023332674600416, guid: 5c4b02cff8d3e6349977286a1331a191, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022023332674600416, guid: 5c4b02cff8d3e6349977286a1331a191, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -621,6 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1157627551}
   heldItem: {fileID: 0}
+  isCold: 0
 --- !u!114 &1051799744
 MonoBehaviour:
   m_ObjectHideFlags: 0

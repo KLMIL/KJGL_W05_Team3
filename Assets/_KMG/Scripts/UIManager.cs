@@ -34,22 +34,43 @@ public class UIManager : MonoBehaviour
 
     public void ToggleFieldCanavs()
     {
+        if(_fieldCanvas == null)
+        {
+            Debug.LogWarning("Field Canvas is null");
+            return;
+        }
+        _fieldCanvas.enabled = !_fieldCanvas.enabled;
 
     }
 
     public void ToggleCraftCanavs()
     {
-
+        if (_craftCanvas == null)
+        {
+            Debug.LogWarning("Craft Canvas is null");
+            return;
+        }
+        _craftCanvas.enabled = !_craftCanvas.enabled;
     }
 
     public void ToggleShelterCanvas()
     {
-
+        if (_shelterCanvas == null)
+        {
+            Debug.LogWarning("Shelter Canvas is null");
+            return;
+        }
+        _shelterCanvas.enabled = !_shelterCanvas.enabled;
     }
 
     public void ToggleConversationCanvas()
     {
-
+        if (_conversationCanvas == null)
+        {
+            Debug.LogWarning("Conversation Canvas is null");
+            return;
+        }
+        _conversationCanvas.enabled = !_conversationCanvas.enabled;
     }
 
     public void CallFadeInFadeOut()

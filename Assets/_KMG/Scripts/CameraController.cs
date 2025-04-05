@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -75,7 +76,7 @@ public class CameraController : MonoBehaviour
     /// </summary>
     /// <param name="targetSize"></param>
     /// <returns></returns>
-    private System.Collections.IEnumerator SmoothLensSizeChange(float targetSize)
+    private IEnumerator SmoothLensSizeChange(float targetSize)
     {
         float startSize = cam.Lens.OrthographicSize; // Current size
         float elapsedTime = 0f;
