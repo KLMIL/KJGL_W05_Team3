@@ -1031,9 +1031,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1816815807555901747, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2404331232848012948, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
       propertyPath: m_Name
       value: FieldCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850767021889037014, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836864781883257284, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517037095866289420, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1124,6 +1140,10 @@ PrefabInstance:
     - target: {fileID: 3914967252535159080, guid: 8c91892ebbc4b1d49a88ff4c34bca3da, type: 3}
       propertyPath: m_Name
       value: CraftCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914967252535159080, guid: 8c91892ebbc4b1d49a88ff4c34bca3da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7935354866707988857, guid: 8c91892ebbc4b1d49a88ff4c34bca3da, type: 3}
       propertyPath: m_Pivot.x
