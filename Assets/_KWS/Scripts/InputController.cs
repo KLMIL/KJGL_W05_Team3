@@ -44,6 +44,7 @@ public class InputController
         inputActions.Player.Move.canceled += OnMove;
         inputActions.Player.Look.performed += OnLook;
         inputActions.Player.Interact.performed += OnInteract;
+        inputActions.Player.Attack.performed += OnAttack;
     }
 
     public void DisablePlayerInputActions()
@@ -53,6 +54,7 @@ public class InputController
         inputActions.Player.Move.canceled -= OnMove;
         inputActions.Player.Look.performed -= OnLook;
         inputActions.Player.Interact.performed -= OnInteract;
+        inputActions.Player.Attack.performed -= OnAttack;
     }
 
 
@@ -72,5 +74,10 @@ public class InputController
     private void OnInteract(InputAction.CallbackContext context)
     {
         playerController.PerformInteract();
+    }
+
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        playerController.PerformAttack();
     }
 }

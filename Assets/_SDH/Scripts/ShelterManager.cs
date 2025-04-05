@@ -65,7 +65,7 @@ public class ShelterManager : MonoBehaviour
 
         _craftingSystem.CraftProduct("Chair");
         _craftingSystem.CraftProduct("Table");
-        _craftingSystem.CraftProduct("Invaild");
+        //_craftingSystem.CraftProduct("Invalid");
     }
 
     private void ReadIngredients(int[] ingredients) // Test Debug Code
