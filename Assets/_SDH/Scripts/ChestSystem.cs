@@ -62,6 +62,6 @@ public class ChestSystem
 
     public void RenewIngredients()
     {
-        UIManager.Instance.UpdateIngredientsUI(ingredients);
+        UIManager.Instance.UpdateIngredientsUI(ingredients, medicines);
     }
 }
