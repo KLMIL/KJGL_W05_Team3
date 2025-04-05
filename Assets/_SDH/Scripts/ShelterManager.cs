@@ -67,10 +67,16 @@ public class ShelterManager : MonoBehaviour
         }
     }
 
+    public bool Disassemble(InteractableSO interactable)
+    {
+        _chestSystem.AddIngredients(interactable);
+        return true;
+    }
+
     private void TMP() // Test Debug Code
     {
         ReadIngredients(_chestSystem.Ingredients);
-        _chestSystem.AddIngredient((int)Ingredients.wood, 2);
+        _chestSystem.AddIngredient(Ingredients.wood, 2);
         ReadIngredients(_chestSystem.Ingredients);
 
         _craftingSystem.CraftProduct("Chair");
@@ -86,10 +92,5 @@ public class ShelterManager : MonoBehaviour
             s += System.Enum.GetName(typeof(Ingredients), i) + ":" + ingredients[i] + " ";
         }
         Debug.Log(s);
-    }
-
-    public void GetMedicine()
-    {
-        _chestSystem.Medicines++;
     }
 }
