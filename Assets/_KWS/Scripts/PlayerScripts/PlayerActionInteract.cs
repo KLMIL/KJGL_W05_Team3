@@ -15,10 +15,11 @@ public class PlayerActionInteract
 
     public void ExecuteInteract(Vector2 playerPosition, GameObject heldItem, float lookAngle)
     {
-        GameObject nearest = trigger.GetNearObject(playerPosition);
+        GameObject nearestObj = trigger.GetNearObject(playerPosition);
+        GameObject onHoverObj = PlayerManager.Instance.GetLastHoveredObject();
 
         // 1. NPC한테 말 걸 때 (손 체크는 안해도 됨)
-        if (nearest != null && nearest.CompareTag("NPC"))
+        if (nearestObj != null && nearestObj.CompareTag("NPC"))
         {
             GameManager.Instance.ShelterManger.NPC();
             return;
@@ -26,18 +27,18 @@ public class PlayerActionInteract
 
 
         // 2. 이동 오브젝트와 상호작용 했을 때
-        if (nearest != null && nearest.CompareTag("Transition"))
+        if (nearestObj != null && nearestObj.CompareTag("Transition"))
         {
-            nearest.GetComponent<TransitionSystem>().Transition();
+            nearestObj.GetComponent<TransitionSystem>().Transition();
             return;
         }
 
 
         // 3. 손에 물건이 없어서 물건을 들 때
-        if (heldItem == null && nearest != null && nearest.CompareTag("Interactable"))
+        if (heldItem == null && onHoverObj != null && onHoverObj.CompareTag("Interactable"))
         {
-            PickupItem(playerPosition, nearest);
-            PlayerManager.Instance.SetHeldItem(nearest);
+            PickupItem(playerPosition, onHoverObj);
+            PlayerManager.Instance.SetHeldItem(onHoverObj);
             return;
         }
 
@@ -61,8 +62,13 @@ public class PlayerActionInteract
 
     public void ExecuteAttack(Vector2 playerPosition)
     {
-        Debug.Log("Attack Executed");
-        //interactable.OnDamaged();
+        GameObject onHoverObj = PlayerManager.Instance.GetLastHoveredObject();
+
+        if (onHoverObj != null && onHoverObj.CompareTag("Interactable"))
+        {
+            onHoverObj.GetComponent<Interactable>().OnDamaged();
+            PlayerManager.Instance.SetLastHoveredObject(null);
+        }
     }
 
 

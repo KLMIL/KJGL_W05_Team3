@@ -15,8 +15,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] string id;
     [SerializeField] InteractableSO interactable;
 
-    [SerializeField] bool canHoldDirectly = true;
-    [SerializeField] bool requiresCart = false;
+    //[SerializeField] bool canHoldDirectly = true;
+    //[SerializeField] bool requiresCart = false;
+    [SerializeField] GameObject wastePrefab;
 
     public string Id => id;
 
@@ -47,6 +48,14 @@ public class Interactable : MonoBehaviour
 
     public void OnDamaged()
     {
-        Debug.Log("Interactable damaged by player");
+        if(wastePrefab != null)
+        {
+            Destroy(gameObject);
+            Instantiate(wastePrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Not dismantable interactable");
+        }
     }
 }
