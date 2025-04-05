@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     public PlayerController PlayerController => playerController;
 
+    [SerializeField] Lantern _lantern;
+    public Lantern LanternInstance => _lantern;
+
     // Player Status
     [SerializeField] private GameObject heldItem;
 

@@ -44,4 +44,9 @@ public class Interactable : MonoBehaviour
             slipable.OnDropped(dropPosition, direction);
         }
     }
+
+    public void OnDamaged()
+    {
+        Debug.Log("Interactable damaged by player");
+    }
 }

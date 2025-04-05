@@ -13,13 +13,12 @@ public class PlayerActionInteract
     }
 
 
-    // 상대가 NPC일 때
-    public void Execute(Vector2 playerPosition, GameObject heldItem, float lookAngle)
+    public void ExecuteInteract(Vector2 playerPosition, GameObject heldItem, float lookAngle)
     {
         GameObject nearest = trigger.GetNearObject(playerPosition);
 
         // 1. NPC한테 말 걸 때 (손 체크는 안해도 됨)
-        if (nearest.CompareTag("NPC"))
+        if (nearest != null && nearest.CompareTag("NPC"))
         {
             GameManager.Instance.ShelterManger.NPC();
             return;
@@ -35,7 +34,7 @@ public class PlayerActionInteract
 
 
         // 3. 손에 물건이 없어서 물건을 들 때
-        if (heldItem == null && nearest.CompareTag("Interactable"))
+        if (heldItem == null && nearest != null && nearest.CompareTag("Interactable"))
         {
             PickupItem(playerPosition, nearest);
             PlayerManager.Instance.SetHeldItem(nearest);
@@ -58,6 +57,12 @@ public class PlayerActionInteract
         // 0. 아무 상호작용이 없을 때
         Debug.Log("No nearest interactable object");
         return;
+    }
+
+    public void ExecuteAttack(Vector2 playerPosition)
+    {
+        Debug.Log("Attack Executed");
+        //interactable.OnDamaged();
     }
 
 

@@ -122,12 +122,17 @@ public class PlayerController : MonoBehaviour
     {
         GameObject heldItem = PlayerManager.Instance.GetHeldItem();
         float lookAngle = actionLook.GetPlayerLookRotationAngle();
-        actionInteract.Execute(transform.position, heldItem, lookAngle);
+        actionInteract.ExecuteInteract(transform.position, heldItem, lookAngle);
     }
 
     public void PerformAttack()
     {
-        Debug.Log("Mouse left button attack executed");
+        actionInteract.ExecuteAttack(transform.position);
+    }
+
+    public void PerformLantern()
+    {
+        PlayerManager.Instance.LanternInstance.ToggleLantern();
     }
 
     #endregion

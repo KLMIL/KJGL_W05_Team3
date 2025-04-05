@@ -5,18 +5,49 @@ public class Lantern : MonoBehaviour
 {
     [SerializeField] float battery;
     [SerializeField] float lifeTime;
-    bool isOn = false;
-    float basicLightRadius;
-    float deadLightRadius;
+    [SerializeField] bool isOn = false;
+    [SerializeField] float basicLightRadius;
+    [SerializeField] float deadLightRadius;
     Light2D lanterenLight;
+    int batteryCount = 3;
+    bool reducedAtThird = false;
+    bool reducedAtTwoThirds = false;
 
+    private void Awake()
+    {
+        lanterenLight = GetComponent<Light2D>();
+        lanterenLight.pointLightOuterRadius = deadLightRadius;
+    }
     void Update()
     {
         if (isOn)
         {
-            battery += Time.deltaTime;
+            battery += Time.deltaTime; // Increment battery time
+
+            // Check 1/3 of lifetime
+            if (battery >= lifeTime / 3 && !reducedAtThird)
+            {
+                batteryCount -= 1;
+                Debug.Log("Battery reduced at 1/3. Remaining: " + batteryCount);
+                UIManager.Instance.UpdateBatteryUI();
+                reducedAtThird = true;
+            }
+
+            // Check 2/3 of lifetime
+            if (battery >= (lifeTime * 2) / 3 && !reducedAtTwoThirds)
+            {
+                batteryCount -= 1;
+                Debug.Log("Battery reduced at 2/3. Remaining: " + batteryCount);
+                UIManager.Instance.UpdateBatteryUI();
+                reducedAtTwoThirds = true;
+            }
+
+            // Check full lifetime (3/3)
             if (battery >= lifeTime)
             {
+                batteryCount -= 1; // Final reduction
+                Debug.Log("Battery fully depleted. Remaining: " + batteryCount);
+                UIManager.Instance.UpdateBatteryUI();
                 isOn = false;
                 RadiusToDead();
             }
@@ -45,11 +76,20 @@ public class Lantern : MonoBehaviour
             if (isOn)
             {
                 RadiusToBasic();
-            } else
+            }
+            else
             {
                 RadiusToDead();
             }
         }
+    }
 
+    public void Charge()
+    {
+        battery = 0;
+        reducedAtThird = false;
+        reducedAtTwoThirds = false;
+        batteryCount = 3;
+        UIManager.Instance.ChargeBatteryUI();
     }
 }
