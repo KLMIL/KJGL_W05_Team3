@@ -36,6 +36,13 @@ public class ShelterManager : MonoBehaviour
     public void EnterShelter()
     {
         Debug.Log("You enter shelter");
+
+        var item = PlayerManager.Instance.GetHeldItem();
+
+        if (item) // 아이템을 들고 있으면 분해
+        {
+            
+        }
     }
 
     public void NPC()

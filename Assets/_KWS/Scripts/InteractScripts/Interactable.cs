@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] bool canHoldDirectly = true;
     [SerializeField] bool requiresCart = false;
 
-
+    public string Id => id;
 
     public void Interact(Transform playerHand)
     {
