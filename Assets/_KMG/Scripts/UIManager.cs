@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +10,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas _shelterCanvas;
     [SerializeField] Canvas _conversationCanvas;
     [SerializeField] Canvas _fadeInFadeOut;
-
-    UI_HPbar hpBar;
-    UI_Battery battery;
 
     static UIManager _instance;
     public static UIManager Instance => _instance;
@@ -26,9 +22,6 @@ public class UIManager : MonoBehaviour
             return;
         }
         _instance = this;
-
-        hpBar = _fieldCanvas.GetComponentInChildren<UI_HPbar>();
-        battery = _fieldCanvas.GetComponentInChildren<UI_Battery>();
     }
 
     public void DisableAll()
@@ -108,29 +101,5 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
-    }
-
-    public void UpdateHealthUI(float damage)
-    {
-        hpBar.PlayerDamaged(damage);
-    }
-
-    public void UpdateBatteryUI()
-    {
-        battery.LowBattery();
-    }
-
-    public void ChargeBatteryUI()
-    {
-        battery.ChargeBattery();
-    }
-
-    public void UpdateIngredientsUI(int[] ingredients)
-    {
-        Transform ingredientUI = _shelterCanvas.transform.GetChild(0);
-        ingredientUI.GetChild(4).GetComponent<TextMeshProUGUI>().text = ingredients[0].ToString();
-        ingredientUI.GetChild(5).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
-        ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
-        ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
     }
 }

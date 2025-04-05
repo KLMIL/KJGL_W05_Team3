@@ -8,7 +8,7 @@ public enum Ingredients
 
 public class ChestSystem
 {
-    public int[] Ingredients => ingredients;
+    public int[] Ingredients { get { return ingredients; } }
     private int[] ingredients;
 
     public ChestSystem()

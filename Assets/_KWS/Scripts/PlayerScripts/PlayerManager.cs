@@ -13,9 +13,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     public PlayerController PlayerController => playerController;
 
-    [SerializeField] Lantern _lantern;
-    public Lantern LanternInstance => _lantern;
-
     // Player Status
     [SerializeField] private GameObject heldItem;
 
@@ -23,7 +20,7 @@ public class PlayerManager : MonoBehaviour
     public float Health => health;
     float coldGage = 10;
     float currentColdGage;
-    float coldGageAmount = 1;
+    float coldGageAmount = 0;
     [SerializeField] bool isCold = false;
     bool freezing;
     bool canTakeDamage = true;
@@ -83,7 +80,6 @@ public class PlayerManager : MonoBehaviour
     public void DamagePlayer(float damage)
     {
         health -= damage;
-        UIManager.Instance.UpdateHealthUI(health);
     }
 
     public IEnumerator TakeFreezeDamage()

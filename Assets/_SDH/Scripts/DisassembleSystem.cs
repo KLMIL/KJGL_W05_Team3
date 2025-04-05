@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class DisassembleSystem
 {
-    public IngredientTuple[] Disassemble(GameObject interactable)
+    public IngredientTuple[] DisassembleInteractable(InteractableSO interactable)
     {
-        string id = interactable?.GetComponent<Interactable>()?.Id;
-
-        if (id == null)
-        {
-            Debug.Log("notem");
-        }
+        return interactable.interactableRewards;
     }
 }

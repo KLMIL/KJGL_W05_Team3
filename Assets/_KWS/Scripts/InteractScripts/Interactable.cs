@@ -12,13 +12,13 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] string id;
-    [SerializeField] InteractableSO interactable;
+    [SerializeField] string itemName;
+    [SerializeField] IngredientTuple[] ingredientInfo = new IngredientTuple[4];
 
     [SerializeField] bool canHoldDirectly = true;
     [SerializeField] bool requiresCart = false;
 
-    public string Id => id;
+
 
     public void Interact(Transform playerHand)
     {
@@ -43,10 +43,5 @@ public class Interactable : MonoBehaviour
             Vector2 direction = (dropPosition - playerPosition).normalized;
             slipable.OnDropped(dropPosition, direction);
         }
-    }
-
-    public void OnDamaged()
-    {
-        Debug.Log("Interactable damaged by player");
     }
 }

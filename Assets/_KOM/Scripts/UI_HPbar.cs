@@ -5,9 +5,9 @@ public class UI_HPbar : MonoBehaviour
 {
     Image hpBar;
 
-    float maxHpBar_Gauge;
+    int maxHpBar_Gauge;
     [SerializeField]
-    float currentHpBar_Gauge = 100;
+    int currentHpBar_Gauge = 100;
     void Start()
     {
         hpBar = gameObject.GetComponent<Image>();
@@ -17,16 +17,16 @@ public class UI_HPbar : MonoBehaviour
         UpdateHPBar();
     }
 
-    public void PlayerDamaged(float health)
+    public void PlayerDamaged()
     {
-        currentHpBar_Gauge = health;
+        currentHpBar_Gauge--;
+        if (currentHpBar_Gauge <= 0 ) { currentHpBar_Gauge = 0; }
         UpdateHPBar();
     }
-    public void UpgradeMaxHp(float health)
+    public void UpgradeMaxHp(int plusHP)
     {
-        maxHpBar_Gauge = health;
-        currentHpBar_Gauge = health;
-        UpdateHPBar();
+        maxHpBar_Gauge += plusHP;
+        currentHpBar_Gauge += plusHP;
     }
     void UpdateHPBar()
     {

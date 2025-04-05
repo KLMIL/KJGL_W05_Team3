@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms;
 
 
 public class UI_Moodle : MonoBehaviour
-{    /*
+{    
     Image cold;
     Image wet;
     Image isCold;
@@ -17,9 +17,6 @@ public class UI_Moodle : MonoBehaviour
         //reset
         cold.enabled = false;
         wet.enabled = false;
-        //Test
-        //PlayerIsCold(true);
-        //ColdIcon_OnOff(true);
     }
     public void PlayerIsCold(bool cold)
     {
@@ -30,25 +27,22 @@ public class UI_Moodle : MonoBehaviour
     /// </summary>
     public void ColdIcon_OnOff(bool onOff)
     {
-        cold.gameObject.SetActive(onOff);
         cold.enabled = onOff;
         wet.enabled = false; // 다른 아이콘이 켜져있을 경우 꺼야함
         if (!onOff) return;
         StartCoroutine(FlickerCor(cold));
-
     }
     /// <summary>
     /// true false Icon_Wet
     /// </summary>
     public void WetIcon_OnOff(bool onOff)
     {
-        cold.gameObject.SetActive(onOff);
         wet.enabled = onOff;
         cold.enabled = false; // 다른 아이콘이 켜져있을 경우 꺼야함
         if (!onOff) return;
         StartCoroutine(FlickerCor(wet));
-
     }
+
     IEnumerator FlickerCor(Image image)
     {
         while (image.enabled)
@@ -77,5 +71,5 @@ public class UI_Moodle : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
-    }*/
+    }
 }
