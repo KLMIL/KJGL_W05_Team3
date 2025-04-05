@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public enum Ingredients
 {
     wood,
@@ -10,28 +8,33 @@ public enum Ingredients
 
 public class ChestSystem
 {
-    public int[] Ingredients => ingredients;
+    public int[] Ingredients { get { return ingredients; } }
     private int[] ingredients;
-    public int Medicines { get { return medicines; } set { medicines = value; } }
-    private int medicines;
 
     public ChestSystem()
     {
-        ingredients = new int[4];
+        ingredients = new int[System.Enum.GetNames(typeof(Ingredients)).Length];
     }
 
     public void AddIngredients(InteractableSO interactable)
     {
-        if(interactable == null)
-        {
-            Debug.Log("interactable null");
-            return;
-        }
-
         foreach (IngredientTuple elem in interactable.interactableRewards)
         {
             AddIngredient((int)elem.ingredient, elem.figure);
         }
+    }
+
+    public void AddIngredients(IngredientTuple[] ingredients)
+    {
+        foreach(IngredientTuple elem in ingredients)
+        {
+            AddIngredient((int)elem.ingredient, elem.figure);
+        }
+    }
+
+    public void AddIngredient(Ingredients ingredient, int count)
+    {
+        AddIngredient((int)ingredient, count);
     }
 
     public void AddIngredient(int ingredient, int count)
@@ -41,16 +44,23 @@ public class ChestSystem
 
     public void MinusIngredients(ProductSO product) // No count check
     {
-        if (product == null)
-        {
-            Debug.Log("product null");
-            return;
-        }
-
         foreach (IngredientTuple elem in product.productRequirements)
         {
             MinusIngredient((int)elem.ingredient, elem.figure);
         }
+    }
+
+    public void MinusIngredients(IngredientTuple[] ingredients) // No count check
+    {
+        foreach (IngredientTuple elem in ingredients)
+        {
+            MinusIngredient((int)elem.ingredient, elem.figure);
+        }
+    }
+
+    public void MinusIngredient(Ingredients ingredient, int count)
+    {
+        MinusIngredient((int)ingredient, count);
     }
 
     public void MinusIngredient(int ingredient, int count)
@@ -60,8 +70,8 @@ public class ChestSystem
         ingredients[ingredient] -= count;
     }
 
-    public void RenewIngredients()
+    private void RenewIngredientsUI()
     {
-        UIManager.Instance.UpdateIngredientsUI(ingredients, medicines);
+        // renew UI
     }
 }
