@@ -76,7 +76,7 @@ public class ShelterManager : MonoBehaviour
     private void TMP() // Test Debug Code
     {
         ReadIngredients(_chestSystem.Ingredients);
-        _chestSystem.AddIngredient(Ingredients.wood, 2);
+        _chestSystem.AddIngredient((int)Ingredients.wood, 2);
         ReadIngredients(_chestSystem.Ingredients);
 
         _craftingSystem.CraftProduct("Chair");
