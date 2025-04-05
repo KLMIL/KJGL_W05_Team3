@@ -8,8 +8,8 @@ public class CameraController : MonoBehaviour
     bool _isShaking = false;
 
     //이동 중 카메라 변화
-    float moveSize = 5;              //움직일 시 카메라 사이즈
-    float idleSize = 7;              //서있을 시 카메라 사이즈
+    float moveSize = 9;              //움직일 시 카메라 사이즈
+    float idleSize = 10;              //서있을 시 카메라 사이즈
     float transitionDuration = 0.5f; //카메라 변화 속도
     Coroutine sizeChangeCoroutine;
     private void Awake()
