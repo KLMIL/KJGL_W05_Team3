@@ -1637,7 +1637,7 @@ PrefabInstance:
     - target: {fileID: 5839356524396045822, guid: 74cd4b4a5b1d67849bb8e29de9024fbe, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7750859576694480603}
     - target: {fileID: 9123453967278244046, guid: 74cd4b4a5b1d67849bb8e29de9024fbe, type: 3}
       propertyPath: _craftCanvas
       value: 
@@ -1870,6 +1870,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3357983883202151398, guid: 2f490dee33e584f42be71fa49f4fb207, type: 3}
   m_PrefabInstance: {fileID: 2909689941577759387}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7750859576694480603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8948852872453300177, guid: 2f490dee33e584f42be71fa49f4fb207, type: 3}
+  m_PrefabInstance: {fileID: 2909689941577759387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcd28eda69c39a498646ffedc069f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
