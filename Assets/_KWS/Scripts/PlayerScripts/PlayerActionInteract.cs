@@ -54,7 +54,7 @@ public class PlayerActionInteract
             PlayerManager.Instance.SetHeldItem(null);
             return;
         }
-
+        
         // 0. 아무 상호작용이 없을 때
         Debug.Log("No nearest interactable object");
         return;

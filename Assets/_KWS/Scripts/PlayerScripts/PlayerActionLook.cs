@@ -47,7 +47,10 @@ public class PlayerActionLook
         Vector3 mousePosition = Input.mousePosition;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+        int triggerLayer = LayerMask.NameToLayer("PlayerTrigger");
+        int layerMask = ~(1 << triggerLayer);
+
+        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero, 11f, layerMask);
 
         if (lastHoveredObject != null)
         {
