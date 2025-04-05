@@ -30,7 +30,12 @@ public class ShelterManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(TMP), 1f);
+        //Invoke(nameof(TMP), 1f);
+    }
+
+    public void EnterShelter()
+    {
+        Debug.Log("You enter shelter");
     }
 
     public void NPC()
