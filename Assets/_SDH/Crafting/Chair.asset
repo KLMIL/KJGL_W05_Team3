@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Chair
   m_EditorClassIdentifier: 
   productName: Chair
-  productImage: {fileID: 0}
+  productImage: {fileID: 357585243727820222, guid: 0a1ac3967251e4540a2c921e23ec644f, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 2
+  productInfo: 

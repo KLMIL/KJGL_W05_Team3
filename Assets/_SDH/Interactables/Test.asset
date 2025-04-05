@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   interactableName: Test
-  interactableImage: {fileID: 0}
+  interactableImage: {fileID: -5623194428626525839, guid: 15d4a5efb8acadb419a2bc30232f1785, type: 3}
   interactableRewards:
   - ingredient: 0
     figure: 2
