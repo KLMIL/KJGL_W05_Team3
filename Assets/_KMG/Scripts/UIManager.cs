@@ -158,4 +158,12 @@ public class UIManager : MonoBehaviour
             craftInfo.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = product.productInfo;
         }
     }
+
+    public void CraftButtonClick(int itemCode)
+    {
+        GameManager.Instance.upgrades[itemCode] = false;
+        string productName = GameManager.Instance.UpgradeNames[itemCode];
+        ProductSO product = DatabaseManager.Instance.GetProduct(productName);
+        ShelterManager.Instance.Craft(product);
+    }
 }
