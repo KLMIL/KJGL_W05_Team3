@@ -20,13 +20,16 @@ public class PlayerInteractionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Interactable"))
-        {
-            if (!nearbyInteractables.Contains(collision.gameObject))
-            {
-                nearbyInteractables.Add(collision.gameObject);
-            }
-        }else if (collision.gameObject.CompareTag("NPC"))
+        //if (collision.gameObject.CompareTag("Interactable"))
+        //{
+        //    if (!nearbyInteractables.Contains(collision.gameObject))
+        //    {
+        //        nearbyInteractables.Add(collision.gameObject);
+        //    }
+        //} else 
+        
+        
+        if (collision.gameObject.CompareTag("NPC"))
         {
             if (!nearbyInteractables.Contains(collision.gameObject))
             {
@@ -38,6 +41,10 @@ public class PlayerInteractionTrigger : MonoBehaviour
             {
                 nearbyInteractables.Add(collision.gameObject);
             }
+        }
+        else
+        {
+            /* Do Nothing on else */
         }
     }
 

@@ -45,6 +45,7 @@ public class InputController
         inputActions.Player.Look.performed += OnLook;
         inputActions.Player.Interact.performed += OnInteract;
         inputActions.Player.Attack.performed += OnAttack;
+        inputActions.Player.Lantern.performed += OnLantern;
     }
 
     public void DisablePlayerInputActions()
@@ -55,6 +56,7 @@ public class InputController
         inputActions.Player.Look.performed -= OnLook;
         inputActions.Player.Interact.performed -= OnInteract;
         inputActions.Player.Attack.performed -= OnAttack;
+        inputActions.Player.Lantern.performed -= OnLantern;
     }
 
 
@@ -79,5 +81,10 @@ public class InputController
     private void OnAttack(InputAction.CallbackContext context)
     {
         playerController.PerformAttack();
+    }
+
+    private void OnLantern(InputAction.CallbackContext context)
+    {
+        playerController.PerformLantern();
     }
 }

@@ -101,18 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: InteractableTest
-  ingredientInfo:
-  - ingredient: 0
-    figure: 1
-  - ingredient: 1
-    figure: 1
-  - ingredient: 2
-    figure: 1
-  - ingredient: 3
-    figure: 1
-  canHoldDirectly: 1
-  requiresCart: 0
+  id: 
+  interactable: {fileID: 0}
+  wastePrefab: {fileID: 508393938246102222, guid: 6150ac34ea37cfa40adc25e5eda2d1ca, type: 3}
 --- !u!61 &3781339513972363484
 BoxCollider2D:
   m_ObjectHideFlags: 0
