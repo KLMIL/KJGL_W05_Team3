@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleFieldCanavs()
     {
-        if(_fieldCanvas == null)
+        if (_fieldCanvas == null)
         {
             Debug.LogWarning("Field Canvas is null");
             return;
@@ -110,9 +110,9 @@ public class UIManager : MonoBehaviour
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
     }
 
-    public void UpdateHealthUI(float damage)
+    public void UpdateHealthUI(float health)
     {
-        hpBar.PlayerDamaged(damage);
+        hpBar.PlayerDamaged(health);
     }
 
     public void UpdateBatteryUI()
