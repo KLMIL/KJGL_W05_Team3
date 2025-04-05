@@ -123,4 +123,9 @@ public class UIManager : MonoBehaviour
     {
         battery.ChargeBattery();
     }
+
+    public void UpdateIngredientsUI(int[] ingredients)
+    {
+
+    }
 }
