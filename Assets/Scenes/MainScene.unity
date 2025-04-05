@@ -408,6 +408,7 @@ MonoBehaviour:
   interactionTrigger: {fileID: 5420892428917927689}
   playerHand: {fileID: 1473276014}
   playerHandContainer: {fileID: 1473276013}
+  moveSpeed: 5
 --- !u!1001 &491717190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1037,6 +1038,22 @@ PrefabInstance:
     - target: {fileID: 2404331232848012948, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272007708072907820, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757010018940175982, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517037095866289420, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803763522783981373, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

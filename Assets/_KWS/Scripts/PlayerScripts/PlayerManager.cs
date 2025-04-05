@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
     public float Health => health;
     float coldGage = 10;
     float currentColdGage;
-    float coldGageAmount = 0;
+    float coldGageAmount = 1;
     [SerializeField] bool isCold = false;
     bool freezing;
     bool canTakeDamage = true;
@@ -80,6 +80,7 @@ public class PlayerManager : MonoBehaviour
     public void DamagePlayer(float damage)
     {
         health -= damage;
+        UIManager.Instance.UpdateHealthUI(health);
     }
 
     public IEnumerator TakeFreezeDamage()

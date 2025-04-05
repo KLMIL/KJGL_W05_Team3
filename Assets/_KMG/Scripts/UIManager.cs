@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas _conversationCanvas;
     [SerializeField] Canvas _fadeInFadeOut;
 
+    UI_HPbar hpBar;
+    UI_Battery battery;
+
     static UIManager _instance;
     public static UIManager Instance => _instance;
 
@@ -22,6 +25,9 @@ public class UIManager : MonoBehaviour
             return;
         }
         _instance = this;
+
+        hpBar = _fieldCanvas.GetComponentInChildren<UI_HPbar>();
+        battery = _fieldCanvas.GetComponent<UI_Battery>();
     }
 
     public void DisableAll()
@@ -101,5 +107,20 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
+    }
+
+    public void UpdateHealthUI(float damage)
+    {
+        hpBar.PlayerDamaged(damage);
+    }
+
+    public void UpdateBatteryUI()
+    {
+        battery.LowBattery();
+    }
+
+    public void ChargeBatteryUI()
+    {
+        battery.ChargeBattery();
     }
 }
