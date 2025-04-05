@@ -130,5 +130,10 @@ public class PlayerController : MonoBehaviour
         actionInteract.ExecuteAttack(transform.position);
     }
 
+    public void PerformLantern()
+    {
+        PlayerManager.Instance.LanternInstance.ToggleLantern();
+    }
+
     #endregion
 }
