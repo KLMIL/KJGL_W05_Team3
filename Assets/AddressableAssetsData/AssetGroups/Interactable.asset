@@ -10,26 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Crafting
+  m_Name: Interactable
   m_EditorClassIdentifier: 
-  m_GroupName: Crafting
-  m_GUID: 9961e722b01e07540abc09e22d0a0f5c
+  m_GroupName: Interactable
+  m_GUID: 58a519f71fac99b4eae47a6c513011ab
   m_SerializeEntries:
-  - m_GUID: 7f3d334b652795f4394393c9bd070462
-    m_Address: Chair
+  - m_GUID: fad46ae8603c5584c9e6b49b18d11e15
+    m_Address: Test
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Product
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e17ee9599bdf65440a256a49239e2d0b
-    m_Address: Table
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Product
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 50ea65af664f08340b2b0385c8e0d6a1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: a941215519a00e54e82fc59232bc7bb7, type: 2}
-    - {fileID: 11400000, guid: 0edea3544494ead46a80b12166f4bd69, type: 2}
+    - {fileID: 11400000, guid: 8f575107ff81568429253041cae8c909, type: 2}
+    - {fileID: 11400000, guid: a0e0f1b6c114b394d80a9235a191dd22, type: 2}
