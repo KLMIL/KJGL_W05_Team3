@@ -1150,6 +1150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1816815807555901747, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2404331232848012948, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
       propertyPath: m_Name
       value: FieldCanvas
@@ -1157,6 +1161,14 @@ PrefabInstance:
     - target: {fileID: 2404331232848012948, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850767021889037014, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836864781883257284, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4272007708072907820, guid: 4d24d3b58543bc545939f7069c01a014, type: 3}
       propertyPath: m_Enabled
