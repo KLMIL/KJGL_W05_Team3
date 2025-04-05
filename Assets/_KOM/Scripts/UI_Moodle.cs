@@ -1,19 +1,26 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
 
 
 public class UI_Moodle : MonoBehaviour
 {    
     Image cold;
-    Image wet;    
+    Image wet;
+    Image isCold;
     void Start()
     {
         cold = GetComponentInChildren<Icon_Cold>().gameObject.GetComponent<Image>();
         wet = GetComponentInChildren<Icon_Wet>().gameObject.GetComponent<Image>();
+        isCold = transform.GetChild(0).GetComponent<Image>();
         //reset
         cold.enabled = false;
         wet.enabled = false;
+    }
+    public void PlayerIsCold(bool cold)
+    {
+        isCold.gameObject.SetActive(cold);
     }
     /// <summary>
     /// true false Icon_Cold

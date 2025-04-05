@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetMoveInput(Vector2 input)
     {
-        if (input.magnitude <= 0f)
+        if (input.magnitude <= 0.1f)
         {
             isMoving = false;
         }
@@ -120,46 +120,14 @@ public class PlayerController : MonoBehaviour
 
     public void PerformInteract()
     {
-        if (PlayerManager.Instance != null)
-        {
-            GameObject heldItem = PlayerManager.Instance.GetHeldItem();
-            GameObject nearest = actionInteract.Execute(transform.position);
-            
-            //가장 가까운 오브젝트가 이동 오브젝트 일때 상호작용시 이동
-            if(nearest != null && nearest.CompareTag("Transition")){
-                nearest.GetComponent<TransitionSystem>().Transition();
-                return;
-            }
+        GameObject heldItem = PlayerManager.Instance.GetHeldItem();
+        float lookAngle = actionLook.GetPlayerLookRotationAngle();
+        actionInteract.Execute(transform.position, heldItem, lookAngle);
+    }
 
-            if (heldItem != null)
-            {
-                float angle = actionLook.GetPlayerLookRotationAngle();
-                Vector3 dir = Vector3.zero;
-                dir.x = Mathf.Cos(angle * Mathf.Deg2Rad);
-                dir.y = Mathf.Sin(angle * Mathf.Deg2Rad);
-
-
-                actionInteract.Execute(transform.position + dir * 1f, heldItem, transform.position);
-                PlayerManager.Instance.SetHeldItem(null);
-            }
-            else
-            {
-                
-                if (nearest.CompareTag("NPC"))
-                {
-                    GameManager.Instance.ShelterManger.NPC();
-                }
-                else if (nearest.CompareTag("Interactable"))
-                {
-                    PlayerManager.Instance.SetHeldItem(nearest);
-                }
-                else
-                {
-                    /* Do Nothing */
-                }
-            }
-        }
-
+    public void PerformAttack()
+    {
+        Debug.Log("Mouse left button attack executed");
     }
 
     #endregion
