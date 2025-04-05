@@ -13,39 +13,37 @@ public class PlayerActionInteract
     }
 
 
-    // 상대가 NPC일 때
-    public void Execute(Vector2 playerPosition, GameObject heldItem, float lookAngle)
+    public void ExecuteInteract(Vector2 playerPosition, GameObject heldItem, float lookAngle)
     {
-        GameObject nearest = trigger.GetNearObject(playerPosition);
+        GameObject nearestObj = trigger.GetNearObject(playerPosition);
+        GameObject onHoverObj = PlayerManager.Instance.GetLastHoveredObject();
 
-        // 1. NPC랑 대화할 때
-        // 동혁씨 구현해주세요
-
-
-        // 2. 이동 오브젝트와 상호작용 했을 때
-        if (nearest != null && nearest.CompareTag("Transition"))
+        // 1. NPC한테 말 걸 때 (손 체크는 안해도 됨)
+        if (nearestObj != null && nearestObj.CompareTag("NPC"))
         {
-            nearest.GetComponent<TransitionSystem>().Transition();
+            GameManager.Instance.ShelterManger.NPC();
             return;
         }
 
 
-        // 3. NPC한테 말 걸 때
-        if (heldItem == null && nearest.CompareTag("NPC"))
+        // 2. 이동 오브젝트와 상호작용 했을 때
+        if (nearestObj != null && nearestObj.CompareTag("Transition"))
         {
-            GameManager.Instance.ShelterManger.NPC();
+            nearestObj.GetComponent<TransitionSystem>().Transition();
+            return;
         }
 
 
-        // 4. 손에 물건이 없어서 물건을 들 때
-        if (heldItem == null && nearest.CompareTag("Interactable"))
+        // 3. 손에 물건이 없어서 물건을 들 때
+        if (heldItem == null && onHoverObj != null && onHoverObj.CompareTag("Interactable"))
         {
-            PickupItem(playerPosition, nearest);
-            PlayerManager.Instance.SetHeldItem(nearest);
+            PickupItem(playerPosition, onHoverObj);
+            PlayerManager.Instance.SetHeldItem(onHoverObj);
+            return;
         }
 
 
-        // 5. 손에 물건이 있어서 물건을 내려둘 때
+        // 4. 손에 물건이 있어서 물건을 내려둘 때
         if (heldItem != null)
         {
             Vector2 dir = Vector3.zero;
@@ -54,6 +52,22 @@ public class PlayerActionInteract
 
             DropItem(playerPosition, dir, heldItem);
             PlayerManager.Instance.SetHeldItem(null);
+            return;
+        }
+
+        // 0. 아무 상호작용이 없을 때
+        Debug.Log("No nearest interactable object");
+        return;
+    }
+
+    public void ExecuteAttack(Vector2 playerPosition)
+    {
+        GameObject onHoverObj = PlayerManager.Instance.GetLastHoveredObject();
+
+        if (onHoverObj != null && onHoverObj.CompareTag("Interactable"))
+        {
+            onHoverObj.GetComponent<Interactable>().OnDamaged();
+            PlayerManager.Instance.SetLastHoveredObject(null);
         }
     }
 
