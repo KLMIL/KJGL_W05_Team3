@@ -25,8 +25,12 @@ public class PlayerActionInteract
             return;
         }
 
-        // 1. NPC랑 대화할 때
-        // 동혁씨 구현해주세요
+        // 1. NPC한테 말 걸 때 (손 체크는 안해도 됨)
+        if (nearest.CompareTag("NPC"))
+        {
+            GameManager.Instance.ShelterManger.NPC();
+            return;
+        }
 
 
         // 2. 이동 오브젝트와 상호작용 했을 때
@@ -37,15 +41,7 @@ public class PlayerActionInteract
         }
 
 
-        // 3. NPC한테 말 걸 때
-        if (heldItem == null && nearest.CompareTag("NPC"))
-        {
-            GameManager.Instance.ShelterManger.NPC();
-            return;
-        }
-
-
-        // 4. 손에 물건이 없어서 물건을 들 때
+        // 3. 손에 물건이 없어서 물건을 들 때
         if (heldItem == null && nearest.CompareTag("Interactable"))
         {
             PickupItem(playerPosition, nearest);
@@ -54,7 +50,7 @@ public class PlayerActionInteract
         }
 
 
-        // 5. 손에 물건이 있어서 물건을 내려둘 때
+        // 4. 손에 물건이 있어서 물건을 내려둘 때
         if (heldItem != null)
         {
             Vector2 dir = Vector3.zero;
