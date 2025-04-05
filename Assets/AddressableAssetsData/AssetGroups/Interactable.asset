@@ -15,6 +15,21 @@ MonoBehaviour:
   m_GroupName: Interactable
   m_GUID: 58a519f71fac99b4eae47a6c513011ab
   m_SerializeEntries:
+  - m_GUID: 8cd05b27563b88346930b437ca761478
+    m_Address: Conveyor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bc4f01bffa272499e36622f2795bd8
+    m_Address: Escalator
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca9ea6dd6e228fb41a3a2337199fa1ed
+    m_Address: Escape
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fad46ae8603c5584c9e6b49b18d11e15
     m_Address: Test
     m_ReadOnly: 0

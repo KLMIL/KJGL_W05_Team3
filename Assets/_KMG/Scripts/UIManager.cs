@@ -134,4 +134,28 @@ public class UIManager : MonoBehaviour
         ingredientUI.GetChild(8).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
         ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
     }
+
+    public void UpdateCraftingUI()
+    {
+        Transform craftPage = _craftCanvas.transform.GetChild(0);
+        for(int i = 0; i < GameManager.Instance.upgrades.Length; i++)
+        {
+            GameObject craftInfo = craftPage.GetChild(i).gameObject;
+            if (GameManager.Instance.upgrades[i])
+            {
+                craftInfo.SetActive(false);
+                continue;
+            }
+            string productName = GameManager.Instance.UpgradeNames[i];
+            ProductSO product = DatabaseManager.Instance.GetProduct(name);
+
+            craftInfo.transform.GetChild(0).GetComponent<Image>().sprite = product.productImage;
+            for(int j = 1; j < 5; j++)
+            {
+                craftInfo.transform.GetChild(j).GetComponent<TextMeshProUGUI>().text = product.productRequirements[j].figure.ToString();
+            }
+            craftInfo.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = name;
+            craftInfo.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = product.productInfo;
+        }
+    }
 }
