@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     // Player Status    
 
-    float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 5f;
     bool isMoving = false;
 
     #endregion
