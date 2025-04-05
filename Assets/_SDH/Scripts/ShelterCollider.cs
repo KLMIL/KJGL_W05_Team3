@@ -9,4 +9,12 @@ public class ShelterCollider : MonoBehaviour
             ShelterManager.Instance.EnterShelter();
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            ShelterManager.Instance.ExitShelter();
+        }
+    }
 }
