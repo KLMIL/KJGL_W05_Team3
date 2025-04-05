@@ -12,8 +12,8 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] string itemName;
-    [SerializeField] IngredientTuple[] ingredientInfo = new IngredientTuple[4];
+    [SerializeField] string id;
+    [SerializeField] InteractableSO interactable;
 
     [SerializeField] bool canHoldDirectly = true;
     [SerializeField] bool requiresCart = false;

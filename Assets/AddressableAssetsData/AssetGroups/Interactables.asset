@@ -10,23 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Crafting
+  m_Name: Interactables
   m_EditorClassIdentifier: 
-  m_GroupName: Crafting
+  m_GroupName: Interactables
   m_GUID: 9961e722b01e07540abc09e22d0a0f5c
-  m_SerializeEntries:
-  - m_GUID: 7f3d334b652795f4394393c9bd070462
-    m_Address: Chair
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Product
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e17ee9599bdf65440a256a49239e2d0b
-    m_Address: Table
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Product
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 50ea65af664f08340b2b0385c8e0d6a1, type: 2}
   m_SchemaSet:

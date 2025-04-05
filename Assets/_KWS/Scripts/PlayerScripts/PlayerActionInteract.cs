@@ -18,6 +18,13 @@ public class PlayerActionInteract
     {
         GameObject nearest = trigger.GetNearObject(playerPosition);
 
+        // 0. 가까운 상호작용 오브젝트가 없을 때
+        if(nearest == null)
+        {
+            Debug.Log("No nearest interactable object");
+            return;
+        }
+
         // 1. NPC랑 대화할 때
         // 동혁씨 구현해주세요
 
@@ -34,6 +41,7 @@ public class PlayerActionInteract
         if (heldItem == null && nearest.CompareTag("NPC"))
         {
             GameManager.Instance.ShelterManger.NPC();
+            return;
         }
 
 
@@ -42,6 +50,7 @@ public class PlayerActionInteract
         {
             PickupItem(playerPosition, nearest);
             PlayerManager.Instance.SetHeldItem(nearest);
+            return;
         }
 
 
@@ -54,6 +63,7 @@ public class PlayerActionInteract
 
             DropItem(playerPosition, dir, heldItem);
             PlayerManager.Instance.SetHeldItem(null);
+            return;
         }
     }
 

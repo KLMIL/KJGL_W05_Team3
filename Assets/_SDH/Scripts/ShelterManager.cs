@@ -33,6 +33,11 @@ public class ShelterManager : MonoBehaviour
         Invoke(nameof(TMP), 1f);
     }
 
+    public void EnterShelter()
+    {
+        Debug.Log("You enter shelter");
+    }
+
     public void NPC()
     {
         Debug.Log("talk to NPC");
