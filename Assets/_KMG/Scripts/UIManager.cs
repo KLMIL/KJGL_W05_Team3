@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         _instance = this;
 
         hpBar = _fieldCanvas.GetComponentInChildren<UI_HPbar>();
-        battery = _fieldCanvas.GetComponent<UI_Battery>();
+        battery = _fieldCanvas.GetComponentInChildren<UI_Battery>();
     }
 
     public void DisableAll()
