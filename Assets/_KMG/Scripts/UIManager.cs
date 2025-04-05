@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -126,6 +127,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateIngredientsUI(int[] ingredients)
     {
-
+        Transform ingredientUI = _shelterCanvas.transform.GetChild(0);
+        ingredientUI.GetChild(4).GetComponent<TextMeshProUGUI>().text = ingredients[0].ToString();
+        ingredientUI.GetChild(5).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
+        ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
+        ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
     }
 }
