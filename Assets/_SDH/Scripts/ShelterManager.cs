@@ -30,7 +30,23 @@ public class ShelterManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(TMP), 1f);
+        //Invoke(nameof(TMP), 1f);
+    }
+
+    public void EnterShelter() // 들고 온 것 분해
+    {
+        Debug.Log("You enter shelter");
+        UIManager.Instance.ToggleShelterCanvas(); // on
+
+        var interactable = _disassembleSystem.Disassemble(PlayerManager.Instance.GetHeldItem());
+        _chestSystem.AddIngredients(interactable);
+        _chestSystem.RenewIngredients();
+    }
+
+    public void ExitShelter()
+    {
+        Debug.Log("You exit shelter");
+        UIManager.Instance.ToggleShelterCanvas(); // off
     }
 
     public void NPC()
