@@ -20,15 +20,13 @@ public class UI_Battery : MonoBehaviour
 
     // RGB (0 255 100) Green, (255 200 0) Yellow, (255 50 0) Red, (180 180 180) Gray
     /// <summary>
-    /// ë² í„°ë¦¬ ì†Œëª¨ í•¨ìˆ˜
+    /// º£ÅÍ¸® ¼Ò¸ð ÇÔ¼ö
     /// </summary>
     public void LowBattery()
     {
         ConsumeBattery();
     }
-    /// <summary>
-    /// ë² í„°ë¦¬
-    /// </summary>
+
     void ConsumeBattery()
     {
         batteryCount--;
@@ -57,7 +55,7 @@ public class UI_Battery : MonoBehaviour
         }
     }
     /// <summary>
-    /// BatteryCharge ë² í„°ë¦¬ ì¶©ì „
+    /// BatteryCharge º£ÅÍ¸® ÃæÀü
     /// </summary>
     public void ChargeBattery()
     {

@@ -13,19 +13,14 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     public PlayerController PlayerController => playerController;
 
-    [SerializeField] Lantern _lantern;
-    public Lantern LanternInstance => _lantern;
-
     // Player Status
-    [SerializeField] GameObject heldItem;
-    [SerializeField] GameObject lastHoveredObject;
-
+    [SerializeField] private GameObject heldItem;
 
     float health = 100;
     public float Health => health;
     float coldGage = 10;
     float currentColdGage;
-    float coldGageAmount = 1;
+    float coldGageAmount = 0;
     [SerializeField] bool isCold = false;
     bool freezing;
     bool canTakeDamage = true;
@@ -85,7 +80,6 @@ public class PlayerManager : MonoBehaviour
     public void DamagePlayer(float damage)
     {
         health -= damage;
-        UIManager.Instance.UpdateHealthUI(health);
     }
 
     public IEnumerator TakeFreezeDamage()
@@ -93,15 +87,5 @@ public class PlayerManager : MonoBehaviour
         DamagePlayer(1f);
         yield return new WaitForSeconds(0.5f);
         canTakeDamage = true;
-    }
-
-    public void SetLastHoveredObject(GameObject obj)
-    {
-        lastHoveredObject = obj;
-    }
-
-    public GameObject GetLastHoveredObject()
-    {
-        return lastHoveredObject;
     }
 }

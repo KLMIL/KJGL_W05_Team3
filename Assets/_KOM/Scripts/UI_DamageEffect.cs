@@ -4,14 +4,23 @@ using System.Collections;
 
 public class UI_DamageEffect : MonoBehaviour
 {
-    /*
     Image effectImage;
     Coroutine flickerCor;
     void Start()
     {
-        effectImage = GetComponent<Image>(); 
-        effectImage.gameObject.SetActive(false);
-        //Ïù¥ÎØ∏ÏßÄ Ï∂îÍ∞Ä
+        effectImage = GetComponent<Image>();
+        //¿ÃπÃ¡ˆ √ﬂ∞°
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerDamaged(true);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerDamaged(false);
+        }
     }
     /// <summary>
     /// PlayerDamaged = true, false
@@ -27,13 +36,7 @@ public class UI_DamageEffect : MonoBehaviour
             effectImage.color = new Color(effectImage.color.r, effectImage.color.g, effectImage.color.b, 0);
             return;
         }
-        if (isTakingDamage)
-        {
-            StopCoroutine(flickerCor);
-            effectImage.gameObject.SetActive(true);
-            effectImage.enabled = true;
-            flickerCor = StartCoroutine(FlickerCor());
-        }
+        flickerCor = StartCoroutine(FlickerCor());
 
     }
 
@@ -55,5 +58,5 @@ public class UI_DamageEffect : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-    }*/
+    }
 }

@@ -12,14 +12,13 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] string id;
-    [SerializeField] InteractableSO interactable;
+    [SerializeField] string itemName;
+    [SerializeField] IngredientTuple[] ingredientInfo = new IngredientTuple[4];
 
-    //[SerializeField] bool canHoldDirectly = true;
-    //[SerializeField] bool requiresCart = false;
-    [SerializeField] GameObject wastePrefab;
+    [SerializeField] bool canHoldDirectly = true;
+    [SerializeField] bool requiresCart = false;
 
-    public string Id => id;
+
 
     public void Interact(Transform playerHand)
     {
@@ -43,19 +42,6 @@ public class Interactable : MonoBehaviour
             Debug.Log("Slipable called");
             Vector2 direction = (dropPosition - playerPosition).normalized;
             slipable.OnDropped(dropPosition, direction);
-        }
-    }
-
-    public void OnDamaged()
-    {
-        if(wastePrefab != null)
-        {
-            Destroy(gameObject);
-            Instantiate(wastePrefab, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.Log("Not dismantable interactable");
         }
     }
 }
