@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     // Player Status    
 
-    [SerializeField] float moveSpeed = 5f;
+    float moveSpeed = 5f;
     bool isMoving = false;
 
     #endregion
@@ -122,17 +122,12 @@ public class PlayerController : MonoBehaviour
     {
         GameObject heldItem = PlayerManager.Instance.GetHeldItem();
         float lookAngle = actionLook.GetPlayerLookRotationAngle();
-        actionInteract.ExecuteInteract(transform.position, heldItem, lookAngle);
+        actionInteract.Execute(transform.position, heldItem, lookAngle);
     }
 
     public void PerformAttack()
     {
-        actionInteract.ExecuteAttack(transform.position);
-    }
-
-    public void PerformLantern()
-    {
-        PlayerManager.Instance.LanternInstance.ToggleLantern();
+        Debug.Log("Mouse left button attack executed");
     }
 
     #endregion
