@@ -10,13 +10,11 @@ public class DisassembleSystem
             return null;
         }
 
-        string id = item.GetComponent<Interactable>().Id;
-
-        InteractableSO interactable = DatabaseManager.Instance.GetInteractable(id);
+        InteractableSO interactable = item.GetComponent<Interactable>().InteractableSO;
 
         if (interactable == null)
         {
-            Debug.Log("Wrong interactable id");
+            Debug.Log("No interactableSO in object");
             return null;
         }
 

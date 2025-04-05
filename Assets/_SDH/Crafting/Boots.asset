@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boots
   m_EditorClassIdentifier: 
   productName: Table
-  productImage: {fileID: 0}
+  productImage: {fileID: -8841490917199087839, guid: c2a3daa1c468eb8458f0e746f73b3cd7, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 3

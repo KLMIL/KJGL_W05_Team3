@@ -13,13 +13,19 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] string id;
-    [SerializeField] InteractableSO interactable;
-
-    //[SerializeField] bool canHoldDirectly = true;
-    //[SerializeField] bool requiresCart = false;
     [SerializeField] GameObject wastePrefab;
 
     public string Id => id;
+    public InteractableSO InteractableSO => interactableSO;
+
+    InteractableSO interactableSO;
+
+    private void Awake()
+    {
+        interactableSO = DatabaseManager.Instance.GetInteractable(id);
+
+        GetComponent<SpriteRenderer>().sprite = interactableSO.interactableImage;
+    }
 
     public void Interact(Transform playerHand)
     {
