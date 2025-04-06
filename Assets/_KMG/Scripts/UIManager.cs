@@ -58,6 +58,10 @@ public class UIManager : MonoBehaviour
             return;
         }
         _craftCanvas.enabled = !_craftCanvas.enabled;
+        if (_craftCanvas.enabled)
+        {
+            UpdateCraftingUI();
+        }
     }
 
     public void ToggleShelterCanvas()
