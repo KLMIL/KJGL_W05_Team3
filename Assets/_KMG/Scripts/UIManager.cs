@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -141,25 +144,21 @@ public class UIManager : MonoBehaviour
 
     public void UpdateCraftingUI()
     {
-        Transform craftPage = _craftCanvas.transform.GetChild(0);
+        Button[] craftButtons = _craftCanvas.transform.GetComponentsInChildren<Button>();
+        ProductSO[] products = DatabaseManager.Instance.Products;
+
+        if(products.Length != GameManager.Instance.upgrades.Length || products.Length != craftButtons.Length)
+        {
+            Debug.Log("Products = " + products.Length + ", GameManager Upgrades = " + GameManager.Instance.upgrades.Length + ", craft Buttons = " + craftButtons.Length);
+        }
+
         for(int i = 0; i < GameManager.Instance.upgrades.Length; i++)
         {
-            GameObject craftInfo = craftPage.GetChild(i).gameObject;
-            if (GameManager.Instance.upgrades[i])
-            {
-                craftInfo.SetActive(false);
-                continue;
-            }
-            string productName = GameManager.Instance.UpgradeNames[i];
-            ProductSO product = DatabaseManager.Instance.GetProduct(name);
+            CraftButton craftButton = craftButtons[i].AddComponent<CraftButton>();
 
-            craftInfo.transform.GetChild(0).GetComponent<Image>().sprite = product.productImage;
-            for(int j = 1; j < 5; j++)
-            {
-                craftInfo.transform.GetChild(j).GetComponent<TextMeshProUGUI>().text = product.productRequirements[j].figure.ToString();
-            }
-            craftInfo.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = name;
-            craftInfo.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = product.productInfo;
+            craftButton.Product = products[i];
+            craftButton.ItemInfo = _craftCanvas.transform.GetChild(6); // hard coding
+            craftButton.Init();
         }
     }
 

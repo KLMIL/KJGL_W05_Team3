@@ -17,7 +17,7 @@ public class ChestSystem
 
     public ChestSystem()
     {
-        ingredients = new int[4];
+        ingredients = new int[System.Enum.GetNames(typeof(Ingredients)).Length];
     }
 
     public void AddIngredients(InteractableSO interactable)
