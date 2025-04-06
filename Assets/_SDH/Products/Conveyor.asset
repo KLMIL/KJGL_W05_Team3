@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Conveyor
   m_EditorClassIdentifier: 
-  productName: "\uCEE8\uBCA0\uC774\uC5B4 \uBCA8\uD2B8 \uC218\uB9AC"
+  productName: Conveyor
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 1
