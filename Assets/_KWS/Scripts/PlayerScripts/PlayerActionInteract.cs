@@ -21,7 +21,7 @@ public class PlayerActionInteract
         // 1. NPC한테 말 걸 때 (손 체크는 안해도 됨)
         if (nearestObj != null && nearestObj.CompareTag("NPC"))
         {
-            GameManager.Instance.ShelterManger.NPC();
+            GameManager.Instance.ShelterManger.TalkNPCAndOpenCrafting();
             return;
         }
 
