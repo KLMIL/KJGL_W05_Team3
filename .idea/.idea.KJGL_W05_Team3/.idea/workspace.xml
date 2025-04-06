@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a056bb3d-ea1b-40f3-8cf7-c08cbed18427" name="변경" comment="" />
+    <list default="true" id="a056bb3d-ea1b-40f3-8cf7-c08cbed18427" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KJGL_W05_Team3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KJGL_W05_Team3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Scenes/Main_YBH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Scenes/Main_YBH.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

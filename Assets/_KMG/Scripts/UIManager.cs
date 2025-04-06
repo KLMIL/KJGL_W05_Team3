@@ -110,9 +110,9 @@ public class UIManager : MonoBehaviour
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
     }
 
-    public void UpdateHealthUI(float damage)
+    public void UpdateHealthUI(float health)
     {
-        hpBar.PlayerDamaged(damage);
+        hpBar.PlayerDamaged(health);
     }
 
     public void UpdateBatteryUI()
@@ -132,6 +132,45 @@ public class UIManager : MonoBehaviour
         ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
         ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
         ingredientUI.GetChild(8).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
-        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
+        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString() ;
+    }
+
+    public void UpdateCraftingUI()
+    {
+        Transform craftPage = _craftCanvas.transform.GetChild(0);
+        for(int i = 0; i < GameManager.Instance.upgrades.Length; i++)
+        {
+            GameObject craftInfo = craftPage.GetChild(i).gameObject;
+            if (GameManager.Instance.upgrades[i])
+            {
+                craftInfo.SetActive(false);
+                continue;
+            }
+            string productName = GameManager.Instance.UpgradeNames[i];
+            ProductSO product = DatabaseManager.Instance.GetProduct(name);
+
+            craftInfo.transform.GetChild(0).GetComponent<Image>().sprite = product.productImage;
+            for(int j = 1; j < 5; j++)
+            {
+                craftInfo.transform.GetChild(j).GetComponent<TextMeshProUGUI>().text = product.productRequirements[j].figure.ToString();
+            }
+            craftInfo.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = name;
+            craftInfo.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = product.productInfo;
+        }
+    }
+
+    public void CraftButtonClick(int itemCode)
+    {
+        string productName = GameManager.Instance.UpgradeNames[itemCode];
+        ProductSO product = DatabaseManager.Instance.GetProduct(productName);
+        bool craftSuccess = ShelterManager.Instance.Craft(product);
+        if (craftSuccess)
+        {
+            GameManager.Instance.upgrades[itemCode] = true;
+
+        } else
+        {
+            return;
+        }
     }
 }

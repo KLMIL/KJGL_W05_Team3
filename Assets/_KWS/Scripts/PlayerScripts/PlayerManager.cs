@@ -19,7 +19,8 @@ public class PlayerManager : MonoBehaviour
     // Player Status
     [SerializeField] GameObject heldItem;
     [SerializeField] GameObject lastHoveredObject;
-
+    public bool HasBoots { get; set; }
+    public bool HasClothing { get; set; }
 
     float health = 100;
     public float Health => health;
@@ -43,7 +44,8 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("PlayerController null error on PlayerManager");
         }
-
+        HasBoots = false;
+        HasClothing = false;
         currentColdGage = 0;
     }
 

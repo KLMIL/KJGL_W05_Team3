@@ -16,13 +16,13 @@ MonoBehaviour:
   m_GUID: 9961e722b01e07540abc09e22d0a0f5c
   m_SerializeEntries:
   - m_GUID: 7f3d334b652795f4394393c9bd070462
-    m_Address: Chair
+    m_Address: Clothing
     m_ReadOnly: 0
     m_SerializedLabels:
     - Product
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e17ee9599bdf65440a256a49239e2d0b
-    m_Address: Table
+    m_Address: Boots
     m_ReadOnly: 0
     m_SerializedLabels:
     - Product
