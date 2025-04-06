@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
 
     InteractableSO interactableSO;
 
-    private void Awake()
+    private void Start()
     {
         interactableSO = DatabaseManager.Instance.GetInteractable(id);
 
