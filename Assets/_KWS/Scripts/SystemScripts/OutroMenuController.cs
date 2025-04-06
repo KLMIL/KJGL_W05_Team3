@@ -41,7 +41,7 @@ public class OutroMenuController : MonoBehaviour
 
         // 기존 Invoke 취소 후 새로 설정
         CancelInvoke();
-        Invoke("ShowSecondImage", 1f); // 1초 후 두 번째 이미지 표시
+        Invoke("ShowSecondImage", 2f); // 1초 후 두 번째 이미지 표시
     }
 
     private void ShowSecondImage()
