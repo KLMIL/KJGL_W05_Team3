@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     float currentColdGage;
     float coldGageAmount = 1;
     [SerializeField] bool isCold = false;
-    bool freezing;
+    bool freezing = false;
     bool canTakeDamage = true;
 
     private void Awake()
@@ -105,5 +105,14 @@ public class PlayerManager : MonoBehaviour
     public GameObject GetLastHoveredObject()
     {
         return lastHoveredObject;
+    }
+
+    public void NewDay()
+    {
+        currentColdGage = 0;
+        isCold = false;
+        freezing = false;
+        health = 100f;
+
     }
 }

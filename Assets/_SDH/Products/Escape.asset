@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Escape
   m_EditorClassIdentifier: 
-  productName: Escape
+  productName: "\uD0C8\uCD9C\uAD6C \uC218\uB9AC"
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
     figure: 999
   - ingredient: 3
     figure: 999
-  productInfo: Hi I am Escape
+  productInfo: "\uD0C8\uCD9C\uAD6C\uC758 \uC804\uC6D0\uC744 \uC791\uB3D9\uC2DC\uD0A8\uB2E4."

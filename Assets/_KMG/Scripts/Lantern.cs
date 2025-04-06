@@ -5,7 +5,7 @@ public class Lantern : MonoBehaviour
 {
     [SerializeField] float battery;
     [SerializeField] float lifeTime;
-    [SerializeField] bool isOn = false;
+    bool isOn = false;
     [SerializeField] float basicLightRadius;
     [SerializeField] float deadLightRadius;
     Light2D lanterenLight;
@@ -90,6 +90,7 @@ public class Lantern : MonoBehaviour
         reducedAtThird = false;
         reducedAtTwoThirds = false;
         batteryCount = 3;
+        isOn = false;
         UIManager.Instance.ChargeBatteryUI();
     }
 }
