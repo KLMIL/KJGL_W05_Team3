@@ -3,88 +3,96 @@ using UnityEngine.InputSystem;
 
 public class InputController
 {
-    static InputController _instance;
-    public static InputController Instance => _instance;
+    private InputSystem_Actions _inputActions;
+    private PlayerController _playerController;
 
-
-    InputSystem_Actions inputActions;
-    PlayerController playerController;
-
-
+    public InputController()
+    {
+        _inputActions = new InputSystem_Actions();
+        _inputActions.Enable();
+        Debug.Log("InputController 생성자 - InputActions 활성화");
+    }
 
     public void Initialize(PlayerController playerController)
     {
-        if (_instance != null && _instance != this)
-        {
-            return;
-        }
-        _instance = this;
-
-        inputActions = new InputSystem_Actions();
-        inputActions.Enable();
-
         if (playerController == null)
         {
-            Debug.Log("Player Controller null Error on Input Controller");
+            Debug.LogError("Player Controller null Error on Input Controller Initialize");
             return;
         }
-        this.playerController = playerController;
+        _playerController = playerController;
+        Debug.Log("InputController 초기화 - PlayerController 연결");
     }
-
 
     public void EnablePlayerInputActions()
     {
-        if (playerController == null)
+        if (_playerController == null)
         {
-            Debug.Log("Player Controller null Error on Input Controller");
+            Debug.LogError("Player Controller null Error on Input Controller");
             return;
         }
 
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Move.canceled += OnMove;
-        inputActions.Player.Look.performed += OnLook;
-        inputActions.Player.Interact.performed += OnInteract;
-        inputActions.Player.Attack.performed += OnAttack;
-        inputActions.Player.Lantern.performed += OnLantern;
+        _inputActions.Enable();
+
+        _inputActions.Player.Move.performed -= OnMove;
+        _inputActions.Player.Move.canceled -= OnMove;
+        _inputActions.Player.Look.performed -= OnLook;
+        _inputActions.Player.Interact.performed -= OnInteract;
+        _inputActions.Player.Attack.performed -= OnAttack;
+        _inputActions.Player.Lantern.performed -= OnLantern;
+
+        _inputActions.Player.Move.performed += OnMove;
+        _inputActions.Player.Move.canceled += OnMove;
+        _inputActions.Player.Look.performed += OnLook;
+        _inputActions.Player.Interact.performed += OnInteract;
+        _inputActions.Player.Attack.performed += OnAttack;
+        _inputActions.Player.Lantern.performed += OnLantern;
+
+        Debug.Log("Player Input Actions 활성화");
     }
 
     public void DisablePlayerInputActions()
     {
-        inputActions.Disable();
-        inputActions.Player.Move.performed -= OnMove;
-        inputActions.Player.Move.canceled -= OnMove;
-        inputActions.Player.Look.performed -= OnLook;
-        inputActions.Player.Interact.performed -= OnInteract;
-        inputActions.Player.Attack.performed -= OnAttack;
-        inputActions.Player.Lantern.performed -= OnLantern;
+        _inputActions.Player.Move.performed -= OnMove;
+        _inputActions.Player.Move.canceled -= OnMove;
+        _inputActions.Player.Look.performed -= OnLook;
+        _inputActions.Player.Interact.performed -= OnInteract;
+        _inputActions.Player.Attack.performed -= OnAttack;
+        _inputActions.Player.Lantern.performed -= OnLantern;
+
+        _inputActions.Disable();
+        Debug.Log("Player Input Actions 비활성화");
     }
-
-
 
     private void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveInput = context.ReadValue<Vector2>();
-        playerController.SetMoveInput(moveInput);
+        Debug.Log($"OnMove: {moveInput}");
+        _playerController?.SetMoveInput(moveInput);
     }
 
     private void OnLook(InputAction.CallbackContext context)
     {
         Vector2 lookInput = context.ReadValue<Vector2>();
-        playerController.SetLookInput(lookInput);
+        Debug.Log($"OnLook: {lookInput}");
+        _playerController?.SetLookInput(lookInput);
     }
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        playerController.PerformInteract();
+        Debug.Log("OnInteract");
+        _playerController?.PerformInteract();
     }
 
     private void OnAttack(InputAction.CallbackContext context)
     {
-        playerController.PerformAttack();
+        Debug.Log("OnAttack");
+        _playerController?.PerformAttack();
     }
 
     private void OnLantern(InputAction.CallbackContext context)
     {
-        playerController.PerformLantern();
+        Debug.Log("OnLantern");
+        _playerController?.PerformLantern();
     }
 }

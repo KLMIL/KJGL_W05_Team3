@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour
 
     public void StartNewDay()
     {
+        UIManager.Instance.CallFadeInFadeOut();
+        UIManager.Instance.ToggleConversationCanvas();
         playerManager.LanternInstance.Charge();
         playerManager.NewDay();
     }
