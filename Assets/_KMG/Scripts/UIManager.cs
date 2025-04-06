@@ -132,7 +132,7 @@ public class UIManager : MonoBehaviour
         ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
         ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
         ingredientUI.GetChild(8).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
-        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
+        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString() ;
     }
 
     public void UpdateCraftingUI()
