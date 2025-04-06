@@ -40,7 +40,7 @@ public class PlayerActionInteract
         // TEMP. Campfire에 말 걸 때
         if (nearestObj != null && nearestObj.CompareTag("Campfire"))
         {
-            if (ShelterManager.Instance._chestSystem.IsWoodExist())
+            if (!ShelterManager.Instance._chestSystem.IsWoodExist())
             {
                 nearestObj.GetComponent<CampfireSystem>().IgniteCampfire();
                 ShelterManager.Instance._chestSystem.MinusIngredient((int)Ingredients.wood, 1);

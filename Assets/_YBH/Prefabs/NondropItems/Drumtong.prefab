@@ -279,6 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currTime: 0
   _isIgnited: 0
+  campfireOnSprite: {fileID: 21300000, guid: 1953b39323296af469822c9f8d6fae03, type: 3}
+  campfireOffSprite: {fileID: 21300000, guid: c3a9c44c53d9481449804dae94de7bbe, type: 3}
 --- !u!198 &1005815514310052207
 ParticleSystem:
   m_ObjectHideFlags: 0

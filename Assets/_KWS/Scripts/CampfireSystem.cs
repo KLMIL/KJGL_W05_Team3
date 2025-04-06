@@ -6,13 +6,20 @@ public class CampfireSystem : MonoBehaviour
     [SerializeField] float _currTime = 0f;
     [SerializeField] bool _isIgnited = false;
 
+    [SerializeField] Sprite campfireOnSprite;
+    [SerializeField] Sprite campfireOffSprite;
+
     Light light;
     ParticleSystem fireParticle;
+    SpriteRenderer spriteRenderer;
+
+
 
     private void Awake()
     {
         light = GetComponent<Light>();
         fireParticle = GetComponent<ParticleSystem>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -43,6 +50,7 @@ public class CampfireSystem : MonoBehaviour
         _currTime = 0;
         light.enabled = true;
         fireParticle.Play();
+        spriteRenderer.sprite = campfireOnSprite;
         PlayerManager.Instance.NearCampfire = true;
     }
 
@@ -52,6 +60,7 @@ public class CampfireSystem : MonoBehaviour
         _isIgnited = false;
         light.enabled = false;
         fireParticle.Stop();
+        spriteRenderer.sprite = campfireOffSprite;
         PlayerManager.Instance.NearCampfire = false;
     }
 
