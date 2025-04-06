@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3067893106132482942}
   - component: {fileID: 2537965401371036286}
   m_Layer: 0
-  m_Name: Interiors_free_16x16_37
+  m_Name: BookShelf3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
