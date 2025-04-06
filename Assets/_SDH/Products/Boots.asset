@@ -16,5 +16,11 @@ MonoBehaviour:
   productImage: {fileID: 7902364575885455685, guid: f242582e1d2698c4f84fcf2e6d3e2b26, type: 3}
   productRequirements:
   - ingredient: 0
-    figure: 3
+    figure: 0
+  - ingredient: 1
+    figure: 0
+  - ingredient: 3
+    figure: 5
+  - ingredient: 2
+    figure: 2
   productInfo: "\uB530\uB73B\uD55C \uBD80\uCE20\uB2E4"
