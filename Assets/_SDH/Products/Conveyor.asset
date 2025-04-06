@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Conveyor
   m_EditorClassIdentifier: 
-  productName: Conveyor
+  productName: "\uCEE8\uBCA0\uC774\uC5B4 \uBCA8\uD2B8 \uC218\uB9AC"
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 1
     figure: 5
-  productInfo: Hi I am Coneyor
+  productInfo: "\uC790\uC6D0\uC744 \uBE60\uB974\uAC8C \uBCF4\uB0BC \uC218 \uC788\uB2E4."

@@ -164,13 +164,18 @@ public class UIManager : MonoBehaviour
 
     public void CraftButtonClick(int itemCode)
     {
+        if (GameManager.Instance.upgrades[itemCode])
+        {
+            Debug.Log("Item already crafted");
+            return;
+        }
         string productName = GameManager.Instance.UpgradeNames[itemCode];
         ProductSO product = DatabaseManager.Instance.GetProduct(productName);
         bool craftSuccess = ShelterManager.Instance.Craft(product);
         if (craftSuccess)
         {
             GameManager.Instance.upgrades[itemCode] = true;
-
+            GameManager.Instance.ApplyUpgrade(itemCode);
         } else
         {
             return;

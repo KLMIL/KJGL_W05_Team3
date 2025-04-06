@@ -73,4 +73,10 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public void StartNewDay()
+    {
+        playerManager.LanternInstance.Charge();
+        playerManager.NewDay();
+    }
 }

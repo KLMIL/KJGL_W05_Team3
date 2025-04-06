@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Escalator
   m_EditorClassIdentifier: 
-  productName: Escalator
+  productName: "\uC5D0\uC2A4\uCEEC\uB808\uC774\uD130 \uC218\uB9AC"
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 0
     figure: 10
   - ingredient: 1
     figure: 10
-  productInfo: Hi I am Escalator
+  productInfo: "\uC5D0\uC2A4\uCEEC\uB808\uC774\uD130\uB97C \uD0C0\uACE0 \uB2E4\uC74C
+    \uC9C0\uC5ED\uC73C\uB85C \uAC08 \uC218 \uC788\uB2E4."

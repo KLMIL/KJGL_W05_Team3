@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Boots
   m_EditorClassIdentifier: 
-  productName: Boots
+  productName: "\uB530\uB73B\uD55C \uBD80\uCE20"
   productImage: {fileID: 7902364575885455685, guid: f242582e1d2698c4f84fcf2e6d3e2b26, type: 3}
   productRequirements:
   - ingredient: 0
