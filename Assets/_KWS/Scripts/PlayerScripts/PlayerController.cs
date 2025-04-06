@@ -1,6 +1,5 @@
-using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.InputSystem.XInput;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +8,8 @@ public class PlayerController : MonoBehaviour
     // Other Object
     Camera mainCamera;
 
-
     // Assign on Inspector
-    InputController inputController;
+    private InputController inputController; // private 유지
     [SerializeField] CameraController cameraController;
     [SerializeField] PlayerInteractionTrigger interactionTrigger;
     [SerializeField] GameObject playerHand;
@@ -22,41 +20,34 @@ public class PlayerController : MonoBehaviour
     PlayerActionLook actionLook;
     PlayerActionInteract actionInteract;
 
-
     // Player Inputs
     Vector2 moveInput;
     Vector2 lookInput;
 
-
     // Player Status    
-
     [SerializeField] float moveSpeed = 5f;
     bool isMoving = false;
 
     #endregion
-
-
 
     #region LifeCycle Functions
 
     private void Awake()
     {
         mainCamera = Camera.main;
-        inputController = new InputController();
-        inputController.Initialize(this);
-
-        actionMove = new PlayerActionMove(transform, moveSpeed);
-        //actionLook = new PlayerActionLook(transform, mainCamera);
-        actionLook = new PlayerActionLook(playerHandContainer.transform, mainCamera);
-        actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
+        InitializeInputController(); // Awake에서만 초기화
     }
-
 
     private void OnEnable()
     {
+        if (inputController == null)
+        {
+            InitializeInputController(); // 혹시 모를 경우 대비
+        }
         if (inputController != null)
         {
             inputController.EnablePlayerInputActions();
+            Debug.Log("PlayerController OnEnable - Input Actions 활성화");
         }
     }
 
@@ -65,6 +56,7 @@ public class PlayerController : MonoBehaviour
         if (inputController != null)
         {
             inputController.DisablePlayerInputActions();
+            Debug.Log("PlayerController OnDisable - Input Actions 비활성화");
         }
     }
 
@@ -73,6 +65,11 @@ public class PlayerController : MonoBehaviour
         cameraController.ChangeLensSize(isMoving);
         actionMove.Execute(Time.deltaTime);
         actionLook.Execute();
+
+        // Legacy 입력 디버깅
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        Debug.Log($"Legacy Input: X={moveX}, Y={moveY}");
     }
 
     private void OnDestroy()
@@ -80,23 +77,32 @@ public class PlayerController : MonoBehaviour
         inputController?.DisablePlayerInputActions();
     }
 
+    private void InitializeInputController()
+    {
+        inputController = new InputController(); // 항상 새로 생성
+        inputController.Initialize(this);
+        Debug.Log("InputController 생성 및 초기화");
+
+        // 액션 인스턴스 초기화
+        if (actionMove == null)
+            actionMove = new PlayerActionMove(transform, moveSpeed);
+        if (actionLook == null)
+            actionLook = new PlayerActionLook(playerHandContainer.transform, mainCamera);
+        if (actionInteract == null)
+            actionInteract = new PlayerActionInteract(interactionTrigger, playerHand.transform);
+    }
+
     #endregion
-
-
 
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        // Inspector에서 moveSpeed 변경 시 즉시 반영
-
         if (actionMove != null)
         {
             actionMove.SetMoveSpeed(moveSpeed);
         }
     }
-
 #endif
-
 
     #region Input Action Functions
 
