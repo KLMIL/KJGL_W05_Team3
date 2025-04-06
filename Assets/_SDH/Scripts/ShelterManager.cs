@@ -52,6 +52,7 @@ public class ShelterManager : MonoBehaviour
     public void NPC()
     {
         Debug.Log("talk to NPC");
+        UIManager.Instance.ToggleCraftCanavs(); // on
     }
 
     public bool Craft(ProductSO product)

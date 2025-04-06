@@ -21,6 +21,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Product
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cd05b27563b88346930b437ca761478
+    m_Address: Conveyor
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Product
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bc4f01bffa272499e36622f2795bd8
+    m_Address: Escalator
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Product
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca9ea6dd6e228fb41a3a2337199fa1ed
+    m_Address: Escape
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Product
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e17ee9599bdf65440a256a49239e2d0b
     m_Address: Boots
     m_ReadOnly: 0

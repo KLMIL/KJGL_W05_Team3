@@ -1,11 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class DatabaseManager : MonoBehaviour
 {
     static DatabaseManager _instance;
     public static DatabaseManager Instance => _instance;
+
+    public ProductSO[] Products => products;
+    private ProductSO[] products;
 
     private void Awake()
     {
@@ -17,46 +22,34 @@ public class DatabaseManager : MonoBehaviour
         _instance = this;
     }
 
-    /*private readonly List<ProductSO> _products = new();
-
-    // 생성자
-    public CraftingDatabase() // get every "Product" label (ProductSO)
+    private void Start()
     {
+        GetProducts();
+    }
+
+    private void GetProducts() // get every "Product" label (ProductSO)
+    {
+        products = new ProductSO[GameManager.Instance.UpgradeNames.Count];
+
         Addressables.LoadResourceLocationsAsync("Product").Completed += (handle) =>
         {
             foreach (IResourceLocation item in handle.Result)
             {
                 Addressables.LoadAssetAsync<ProductSO>(item.PrimaryKey).Completed += (op) =>
                 {
-                    _products.Add(op.Result);
+                    for(int i=0;i< GameManager.Instance.UpgradeNames.Count; i++)
+                    {
+                        if (GameManager.Instance.UpgradeNames[i] == op.Result.productName)
+                        {
+                            products[i] = op.Result;
+                        }
+                    }
+
                     Addressables.Release(op);
                 };
             }
         };
     }
-
-    public ProductSO GetProduct(string productName)
-    {
-        for(int i = 0; i < _products.Count; i++)
-        {
-            if (_products[i].productName == productName)
-            {
-                return GetProduct(i);
-            }
-        }
-
-        return null;
-    }
-
-    public ProductSO GetProduct(int productIndex)
-    {
-        if (productIndex < 0 || productIndex > _products.Count - 1)
-        {
-            return null;
-        }
-
-        return _products[productIndex];
-    }*/
 
     public InteractableSO GetInteractable(string interactableName)
     {
