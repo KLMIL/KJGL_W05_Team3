@@ -49,7 +49,7 @@ public class ShelterManager : MonoBehaviour
         UIManager.Instance.ToggleShelterCanvas(); // off
     }
 
-    public void NPC()
+    public void TalkNPCAndOpenCrafting()
     {
         Debug.Log("talk to NPC");
         UIManager.Instance.ToggleConversationCanvas(); // on
