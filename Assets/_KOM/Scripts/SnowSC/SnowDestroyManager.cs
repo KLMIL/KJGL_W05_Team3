@@ -3,10 +3,23 @@ using System.Collections.Generic;
 
 public class SnowDestroyManager : MonoBehaviour
 {
+    static SnowDestroyManager _instance;
+    public static SnowDestroyManager Instance => _instance;
+
     Transform tileParent;
     Dictionary<Vector2, GameObject> tileMap = new Dictionary<Vector2, GameObject>();
 
     float tileSize = 0.25f;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+    }
 
     void Start()
     {

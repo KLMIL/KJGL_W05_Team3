@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     bool freezing = false;
     bool canTakeDamage = true;
     public bool NearCampfire { get; set; }
+
     
 
     private void Awake()
