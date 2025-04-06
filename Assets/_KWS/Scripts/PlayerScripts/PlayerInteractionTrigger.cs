@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,31 +21,21 @@ public class PlayerInteractionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.CompareTag("Interactable"))
-        //{
-        //    if (!nearbyInteractables.Contains(collision.gameObject))
-        //    {
-        //        nearbyInteractables.Add(collision.gameObject);
-        //    }
-        //} else 
-        
-        
-        if (collision.gameObject.CompareTag("NPC"))
+        // Campfire의 적용 범위 트리거는 검사하지 않음
+        if (collision.gameObject.CompareTag("Campfire") && collision.isTrigger) return;
+
+        if (
+            collision.gameObject.CompareTag("NPC")
+            || collision.gameObject.CompareTag("Transition")
+            || collision.gameObject.CompareTag("Conveyor")
+            || collision.gameObject.CompareTag("Campfire")
+            )
         {
             if (!nearbyInteractables.Contains(collision.gameObject))
             {
+                Debug.Log($"{collision.gameObject.name} has added");
                 nearbyInteractables.Add(collision.gameObject);
             }
-        } else if (collision.gameObject.CompareTag("Transition"))
-        {
-            if (!nearbyInteractables.Contains(collision.gameObject))
-            {
-                nearbyInteractables.Add(collision.gameObject);
-            }
-        }
-        else
-        {
-            /* Do Nothing on else */
         }
     }
 

@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour
         actionLook.Execute();
 
         // Legacy 입력 디버깅
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        Debug.Log($"Legacy Input: X={moveX}, Y={moveY}");
+        //float moveX = Input.GetAxisRaw("Horizontal");
+        //float moveY = Input.GetAxisRaw("Vertical");
+        //Debug.Log($"Legacy Input: X={moveX}, Y={moveY}");
     }
 
     private void OnDestroy()
