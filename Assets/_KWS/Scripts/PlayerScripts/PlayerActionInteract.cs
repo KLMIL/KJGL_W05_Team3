@@ -25,6 +25,17 @@ public class PlayerActionInteract
             return;
         }
 
+        // TEMP. Conveyor belt에 말 걸 때
+        if (nearestObj != null && nearestObj.CompareTag("Conveyor") && heldItem != null)
+        {
+            var interactable = ShelterManager.Instance._disassembleSystem.Disassemble(heldItem);
+
+            ShelterManager.Instance._chestSystem.AddIngredients(interactable);
+            ShelterManager.Instance._chestSystem.RenewIngredients();
+
+            PlayerManager.Instance.SetHeldItem(null);
+        }
+
 
         // 2. 이동 오브젝트와 상호작용 했을 때
         if (nearestObj != null && nearestObj.CompareTag("Transition"))
