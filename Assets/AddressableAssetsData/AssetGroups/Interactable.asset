@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Interactable
+  m_EditorClassIdentifier: 
+  m_GroupName: Interactable
+  m_GUID: 58a519f71fac99b4eae47a6c513011ab
+  m_SerializeEntries:
+  - m_GUID: 8cd05b27563b88346930b437ca761478
+    m_Address: Conveyor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bc4f01bffa272499e36622f2795bd8
+    m_Address: Escalator
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca9ea6dd6e228fb41a3a2337199fa1ed
+    m_Address: Escape
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fad46ae8603c5584c9e6b49b18d11e15
+    m_Address: Test
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Interactable
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 50ea65af664f08340b2b0385c8e0d6a1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8f575107ff81568429253041cae8c909, type: 2}
+    - {fileID: 11400000, guid: a0e0f1b6c114b394d80a9235a191dd22, type: 2}

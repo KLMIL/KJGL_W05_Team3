@@ -5,7 +5,8 @@ using UnityEngine.SocialPlatforms;
 
 
 public class UI_Moodle : MonoBehaviour
-{    
+{
+    /*
     Image cold;
     Image wet;
     Image isCold;
@@ -72,4 +73,5 @@ public class UI_Moodle : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
+    */
 }

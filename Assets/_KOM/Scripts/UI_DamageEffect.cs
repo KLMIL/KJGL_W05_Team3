@@ -4,12 +4,13 @@ using System.Collections;
 
 public class UI_DamageEffect : MonoBehaviour
 {
+    /*
     Image effectImage;
     Coroutine flickerCor;
     void Start()
     {
         effectImage = GetComponent<Image>();
-        //¿ÃπÃ¡ˆ √ﬂ∞°
+        //Ïù¥ÎØ∏ÏßÄ Ï∂îÍ∞Ä
     }
     private void Update()
     {
@@ -59,4 +60,5 @@ public class UI_DamageEffect : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
+    */
 }
