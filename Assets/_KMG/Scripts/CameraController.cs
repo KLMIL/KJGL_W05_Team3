@@ -21,24 +21,24 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            if (!_isShaking)
-            {
-                ShakeCamera(5, 5);
-                _isShaking = true;
-            }
-            else
-            {
-                ShakeCamera(0, 0);
-                _isShaking = false;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    if (!_isShaking)
+        //    {
+        //        ShakeCamera(5, 5);
+        //        _isShaking = true;
+        //    }
+        //    else
+        //    {
+        //        ShakeCamera(0, 0);
+        //        _isShaking = false;
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            UIManager.Instance.CallFadeInFadeOut();
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    UIManager.Instance.CallFadeInFadeOut();
+        //}
 
 
     }

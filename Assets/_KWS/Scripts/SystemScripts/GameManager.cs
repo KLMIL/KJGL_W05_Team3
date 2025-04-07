@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     Dictionary<int, string> upgradeNames = new Dictionary<int, string>();
     public Dictionary<int, string> UpgradeNames => upgradeNames;
 
-    Transform startPos;
+    [SerializeField] Transform startPos;
 
     // Game Status
     private int _currFloor = 0;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ToggleShelterCanvas();
         playerManager.LanternInstance.Charge();
         playerManager.NewDay();
-        playerManager.transform.position = startPos.position;
+        playerManager.GetPlayerController().transform.position = startPos.position;
     }
 
     public void SetFloor(int floorNumber)

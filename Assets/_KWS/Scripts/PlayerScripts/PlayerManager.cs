@@ -78,13 +78,13 @@ public class PlayerManager : MonoBehaviour
             {
                 freezing = false;
                 UIManager.Instance.ToggleColdEffect(false);
-                UIManager.Instance.ToggleDamageEffect();
+                UIManager.Instance.ToggleDamageEffect(false);
             }
         }
         if (freezing && canTakeDamage)
         {
             canTakeDamage = false;
-            UIManager.Instance.ToggleDamageEffect();
+            UIManager.Instance.ToggleDamageEffect(true);
             StartCoroutine(TakeFreezeDamage());
         }
     }
@@ -136,6 +136,7 @@ public class PlayerManager : MonoBehaviour
         isCold = false;
         freezing = false;
         health = 100f;
+        DamagePlayer(0f);
     }
 
     public void SetColdState(bool state)

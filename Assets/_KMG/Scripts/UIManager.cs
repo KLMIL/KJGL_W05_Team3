@@ -224,10 +224,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ToggleDamageEffect()
+    public void ToggleDamageEffect(bool state)
     {
         Image damageEffect = FindAnyObjectByType<UI_DamageEffect>().GetComponent<Image>();
-        damageEffect.enabled = !damageEffect.enabled;
+        damageEffect.enabled = state;
     }
 
     public void ToggleColdMoodle()
