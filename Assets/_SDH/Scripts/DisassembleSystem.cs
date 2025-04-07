@@ -18,6 +18,7 @@ public class DisassembleSystem
             return null;
         }
 
+        PlayerManager.Instance.SetHeldItem(null);
         Object.Destroy(item);
 
         return interactable;
