@@ -17,11 +17,11 @@ MonoBehaviour:
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 0
-    figure: 999
+    figure: 20
   - ingredient: 1
-    figure: 999
-  - ingredient: 2
-    figure: 999
+    figure: 20
   - ingredient: 3
-    figure: 999
+    figure: 20
+  - ingredient: 2
+    figure: 20
   productInfo: "\uD0C8\uCD9C\uAD6C\uC758 \uC804\uC6D0\uC744 \uC791\uB3D9\uC2DC\uD0A8\uB2E4."

@@ -17,8 +17,12 @@ MonoBehaviour:
   productImage: {fileID: 0}
   productRequirements:
   - ingredient: 0
-    figure: 10
+    figure: 0
   - ingredient: 1
-    figure: 10
+    figure: 2
+  - ingredient: 3
+    figure: 5
+  - ingredient: 2
+    figure: 3
   productInfo: "\uC5D0\uC2A4\uCEEC\uB808\uC774\uD130\uB97C \uD0C0\uACE0 \uB2E4\uC74C
     \uC9C0\uC5ED\uC73C\uB85C \uAC08 \uC218 \uC788\uB2E4."

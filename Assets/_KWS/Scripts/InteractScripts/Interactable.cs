@@ -24,7 +24,6 @@ public class Interactable : MonoBehaviour
     {
         interactableSO = DatabaseManager.Instance.GetInteractable(id);
 
-        GetComponent<SpriteRenderer>().sprite = interactableSO.interactableImage;
     }
 
     public void Interact(Transform playerHand)
@@ -54,7 +53,7 @@ public class Interactable : MonoBehaviour
 
     public void OnDamaged()
     {
-        if(wastePrefab != null)
+        if (wastePrefab != null)
         {
             Destroy(gameObject);
             Instantiate(wastePrefab, transform.position, Quaternion.identity);
