@@ -11,7 +11,7 @@ public class IntroMenuController : MonoBehaviour
 
     private TextMeshProUGUI _startText;
     private TextMeshProUGUI _howToPlayText;
-    private TextMeshProUGUI _settingsText;
+    //private TextMeshProUGUI _settingsText;
     private TextMeshProUGUI _quitText;
     private Image _backgroundImage;
 
@@ -48,7 +48,7 @@ public class IntroMenuController : MonoBehaviour
 
         _startText = _uiManager.startText;
         _howToPlayText = _uiManager.howToPlayText;
-        _settingsText = _uiManager.settingsText;
+        //_settingsText = _uiManager.settingsText;
         _quitText = _uiManager.quitText;
         _backgroundImage = _uiManager.backgroundImage;
 
@@ -59,8 +59,8 @@ public class IntroMenuController : MonoBehaviour
         if (_howToPlayText != null) _howToPlayText.text = "조작법 설명";
         else Debug.LogError("_howToPlayText가 null입니다!");
 
-        if (_settingsText != null) _settingsText.text = "설정";
-        else Debug.LogError("_settingsText가 null입니다!");
+        //if (_settingsText != null) _settingsText.text = "설정";
+        //else Debug.LogError("_settingsText가 null입니다!");
 
         if (_quitText != null) _quitText.text = "게임 종료";
         else Debug.LogError("_quitText가 null입니다!");
@@ -72,7 +72,7 @@ public class IntroMenuController : MonoBehaviour
         // 이벤트 설정
         SetupTextEvents(_startText, "시작!", OnStartClick, OnStartHover, OnExitHover);
         SetupTextEvents(_howToPlayText, "조작법!", OnHowToPlayClick);
-        SetupTextEvents(_settingsText, "설정!", OnSettingsClick);
+        //SetupTextEvents(_settingsText, "설정!", OnSettingsClick);
         SetupTextEvents(_quitText, "종료!", OnQuitClick);
     }
 
@@ -102,7 +102,7 @@ public class IntroMenuController : MonoBehaviour
         {
             if (text == _startText) text.text = "게임 시작";
             else if (text == _howToPlayText) text.text = "조작법 설명";
-            else if (text == _settingsText) text.text = "설정";
+            //else if (text == _settingsText) text.text = "설정";
             else if (text == _quitText) text.text = "게임 종료";
             if (exitAction != null) exitAction.Invoke();
         });
@@ -128,10 +128,10 @@ public class IntroMenuController : MonoBehaviour
         Debug.Log("조작 방법 표시");
     }
 
-    private void OnSettingsClick()
-    {
-        Debug.Log("환경 설정 표시");
-    }
+    //private void OnSettingsClick()
+    //{
+    //    Debug.Log("환경 설정 표시");
+    //}
 
     private void OnQuitClick()
     {
