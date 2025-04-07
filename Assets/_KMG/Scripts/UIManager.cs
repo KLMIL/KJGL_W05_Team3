@@ -179,11 +179,12 @@ public class UIManager : MonoBehaviour
     public void UpdateCraftingUI()
     {
         Button[] craftButtons = _craftCanvas.transform.GetComponentsInChildren<Button>();
-        ProductSO[] products = DatabaseManager.Instance.Products.ToArray();
+        List<ProductSO> products = DatabaseManager.Instance.Products;
+        products.Sort((ProductSO a, ProductSO b) => { return a.productIndex.CompareTo(b.productIndex); });
 
-        if (products.Length != GameManager.Instance.upgrades.Length || products.Length != craftButtons.Length)
+        if (products.Count != GameManager.Instance.upgrades.Length || products.Count != craftButtons.Length)
         {
-            Debug.Log("Products = " + products.Length + ", GameManager Upgrades = " + GameManager.Instance.upgrades.Length + ", craft Buttons = " + craftButtons.Length);
+            Debug.Log("Products = " + products.Count + ", GameManager Upgrades = " + GameManager.Instance.upgrades.Length + ", craft Buttons = " + craftButtons.Length);
         }
 
         for (int i = 0; i < GameManager.Instance.upgrades.Length; i++)
