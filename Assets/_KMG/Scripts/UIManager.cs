@@ -144,7 +144,7 @@ public class UIManager : MonoBehaviour
                 message = "금 간 벽들은 부술 수 있습니다.";
                 break;
             case 5:
-                message = "그는 매일 약을 필요로 합니다… 조금 귀찮지만 우린 그가 필요해요";
+                message = "비록 점장은 부상당했지만 당신을 위해 열심히 물건을 분해해줍니다.";
                 break;
             case 6:
                 message = "당신은 I S K 백화점의 “ ISK “의 의미를 알고 있나요?";
@@ -179,7 +179,7 @@ public class UIManager : MonoBehaviour
         ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
         ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
         ingredientUI.GetChild(8).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
-        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
+        // ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
     }
 
     public void UpdateCraftingUI()

@@ -40,6 +40,7 @@ public class ShelterManager : MonoBehaviour
 
         PlayerManager.Instance.SetColdState(false);
         PlayerManager.Instance.SetFreeze(false);
+        PlayerManager.Instance.SetVeryCold((false));
         UIManager.Instance.ToggleColdMoodle();
         UIManager.Instance.ToggleColdEffect(false);
         UIManager.Instance.ToggleDamageEffect(false);

@@ -26,11 +26,12 @@ public class PlayerManager : MonoBehaviour
 
     float health = 100;
     public float Health => health;
-    float coldGage = 30;
+    float coldGage = 67;
     float currentColdGage;
     float coldGageAmount = 1;
     float coldClothRevision = 1;
     [SerializeField] bool isCold = false;
+    bool isVeryCold = false;
     bool freezing = false;
     bool canTakeDamage = true;
     public bool NearCampfire { get; set; } = false;
@@ -63,12 +64,16 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("Player is on cold state");
             currentColdGage += Time.deltaTime * coldGageAmount * coldClothRevision;
-            if(currentColdGage >= coldGage)
+            if(currentColdGage >= coldGage * 0.7 && !isVeryCold)
             {
                 Debug.Log("Player is Cold");
-
-                freezing = true;
+                isVeryCold = true;
                 UIManager.Instance.ToggleColdEffect(true);
+            }
+
+            if (currentColdGage >= coldGage)
+            {
+                freezing = true;
             }
         }
         if (NearCampfire)
@@ -124,8 +129,8 @@ public class PlayerManager : MonoBehaviour
 
     public IEnumerator TakeFreezeDamage()
     {
-        DamagePlayer(1f);
-        yield return new WaitForSeconds(0.5f);
+        DamagePlayer(2f);
+        yield return new WaitForSeconds(1f);
         canTakeDamage = true;
     }
 
@@ -143,6 +148,7 @@ public class PlayerManager : MonoBehaviour
     {
         currentColdGage = 0;
         isCold = false;
+        isVeryCold = false;
         freezing = false;
         health = 100f;
         DamagePlayer(0f);
@@ -156,6 +162,11 @@ public class PlayerManager : MonoBehaviour
     public void SetFreeze(bool state)
     {
         freezing = state;
+    }
+
+    public void SetVeryCold(bool state)
+    {
+        isVeryCold = state;
     }
 
     public void SetColdGage(float gage)

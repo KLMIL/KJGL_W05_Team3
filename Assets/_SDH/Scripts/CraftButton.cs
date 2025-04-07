@@ -18,7 +18,7 @@ public class CraftButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Init()
     {
-        GetComponent<Image>().sprite = product.productImage;
+        // GetComponent<Image>().sprite = product.productImage;
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = product.productName;
 
         info = itemInfo.GetComponentsInChildren<TextMeshProUGUI>();
