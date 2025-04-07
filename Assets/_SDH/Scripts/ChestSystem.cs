@@ -28,7 +28,7 @@ public class ChestSystem
     {
         if (interactable == null)
         {
-            Debug.Log("interactable null");
+            //Debug.Log("interactable null");
             return;
         }
 

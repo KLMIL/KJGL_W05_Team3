@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (inputController != null)
         {
             inputController.EnablePlayerInputActions();
-            Debug.Log("PlayerController OnEnable - Input Actions 활성화");
+            //Debug.Log("PlayerController OnEnable - Input Actions 활성화");
         }
     }
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         inputController = new InputController(); // 항상 새로 생성
         inputController.Initialize(this);
-        Debug.Log("InputController 생성 및 초기화");
+        //Debug.Log("InputController 생성 및 초기화");
 
         // 액션 인스턴스 초기화
         if (actionMove == null)

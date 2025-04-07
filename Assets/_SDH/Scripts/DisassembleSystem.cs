@@ -6,7 +6,7 @@ public class DisassembleSystem
     {
         if (!item)
         {
-            Debug.Log("No item");
+            //Debug.Log("No item");
             return null;
         }
 

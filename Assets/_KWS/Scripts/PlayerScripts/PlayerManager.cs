@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("PlayerManager Update Excuted");
+        //Debug.Log("PlayerManager Update Excuted");
 
         if (isCold && !freezing && !NearCampfire)
         {

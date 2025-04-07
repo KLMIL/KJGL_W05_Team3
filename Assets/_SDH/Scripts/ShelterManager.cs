@@ -35,7 +35,7 @@ public class ShelterManager : MonoBehaviour
 
     public void EnterShelter() // 들고 온 것 분해
     {
-        Debug.Log("You enter shelter");
+        //Debug.Log("You enter shelter");
         UIManager.Instance.ToggleShelterCanvas(); // on
 
         PlayerManager.Instance.SetColdState(false);
@@ -61,8 +61,9 @@ public class ShelterManager : MonoBehaviour
 
     public void TalkNPCAndOpenCrafting()
     {
-        Debug.Log("talk to NPC");
+        //Debug.Log("talk to NPC");
         UIManager.Instance.ToggleConversationCanvas(); // on
+        PlayerManager.Instance.GetPlayerController().isPlaying = false;
     }
 
     public bool Craft(ProductSO product)

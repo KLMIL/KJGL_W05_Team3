@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_KWS/Scenes/IntroScene.unity
-    guid: 033bb4275c916b54789518f97d270252
+    path: Assets/Scenes/IntroScene.unity
+    guid: 1fe6e6729e5a7b04cab574938ef8a3ca
   - enabled: 1
-    path: Assets/_KWS/Scenes/MainScene.unity
-    guid: 0ccb5784ebe43474db5a121f54f96780
+    path: Assets/Scenes/MainScene.unity
+    guid: 5f08ea51de5117a469231a565831b44e
   - enabled: 1
-    path: Assets/_KWS/Scenes/OutroScene.unity
-    guid: 7056daa44a547874dabb5a33bd66198d
+    path: Assets/Scenes/OutroScene.unity
+    guid: 8dd46d56b2222964f96c59177a273383
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6c377a673c62660409eee383325105c3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

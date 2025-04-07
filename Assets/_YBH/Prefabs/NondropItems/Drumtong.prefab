@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1890320927823945196}
   m_Layer: 0
   m_Name: Drumtong
-  m_TagString: Campfire
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

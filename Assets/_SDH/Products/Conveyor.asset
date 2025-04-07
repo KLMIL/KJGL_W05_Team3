@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productIndex: 2
   productName: Conveyor
-  productImage: {fileID: 854361138, guid: 0a506271d9376b14e83a24b22b70eeff, type: 3}
+  productImage: {fileID: 21300000, guid: 620055cfb7a179048946e50e943b2e44, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 6
