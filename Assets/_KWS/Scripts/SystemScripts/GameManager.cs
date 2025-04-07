@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.CallFadeInFadeOut();
         UIManager.Instance.ToggleConversationCanvas();
+        UIManager.Instance.ToggleShelterCanvas();
         playerManager.LanternInstance.Charge();
         playerManager.NewDay();
         playerManager.transform.position = startPos.position;
