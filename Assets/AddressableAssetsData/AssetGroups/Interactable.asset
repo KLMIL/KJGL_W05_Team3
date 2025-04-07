@@ -18,47 +18,62 @@ MonoBehaviour:
   - m_GUID: 043a8f1c2b5f6b74bbc74ac589a2c61e
     m_Address: Clothes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 244244b1e9ab9b242aecd0dbbe0b2970
     m_Address: Plastics
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4758094157bceba4e8e957bddde2ffff
     m_Address: WoodPlastic
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5067a45cb91b43a4e8061d5ce3ad8a68
     m_Address: Machine
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7546cf61d10d6754a99d4225519c9404
     m_Address: WoodThings
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d5b431f3c4dab0469c1a69c3fbb3806
     m_Address: WoodIronPlastic
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b73dc92600f8e8d46a01915b33e8bb8a
     m_Address: Mannequin
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8c64236a4cba4241bf75cbb5da94acb
     m_Address: IronThings
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eba36d061c7b7a94c8fcf8213d4fa26c
     m_Address: Bed
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Interactable
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fad46ae8603c5584c9e6b49b18d11e15
+    m_Address: Test
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Interactable
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 50ea65af664f08340b2b0385c8e0d6a1, type: 2}

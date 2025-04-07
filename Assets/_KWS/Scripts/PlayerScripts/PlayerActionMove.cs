@@ -26,6 +26,8 @@ public class PlayerActionMove
     {
         if (targetTransform == null) return;
 
+        if (moveInput.x < 0) targetTransform.rotation = Quaternion.Euler(new(0, 180, 0));
+        else if (moveInput.x > 0) targetTransform.rotation = Quaternion.Euler(new(0, 0, 0));
         Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * moveSpeed * deltaTime;
         targetTransform.position += movement;
         SnowDestroyManager.Instance.DestroyTilesInRadius(targetTransform.position, 0.3f);
