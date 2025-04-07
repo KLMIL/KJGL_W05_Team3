@@ -34,7 +34,7 @@ public class IntroMenuController : MonoBehaviour
         // IntroMenuUIManager에서 UI 요소 가져오기
         if (_uiManager == null)
         {
-            _uiManager = FindObjectOfType<IntroMenuUIManager>();
+            _uiManager = FindAnyObjectByType<IntroMenuUIManager>();
             if (_uiManager == null)
             {
                 Debug.LogError("IntroMenuUIManager를 찾을 수 없습니다!");
@@ -53,16 +53,16 @@ public class IntroMenuController : MonoBehaviour
         _backgroundImage = _uiManager.backgroundImage;
 
         // UI 초기화 및 할당 확인
-        if (_startText != null) _startText.text = "Start Game";
+        if (_startText != null) _startText.text = "게임 시작";
         else Debug.LogError("_startText가 null입니다!");
 
-        if (_howToPlayText != null) _howToPlayText.text = "How To Play";
+        if (_howToPlayText != null) _howToPlayText.text = "조작법 설명";
         else Debug.LogError("_howToPlayText가 null입니다!");
 
-        if (_settingsText != null) _settingsText.text = "Settings";
+        if (_settingsText != null) _settingsText.text = "설정";
         else Debug.LogError("_settingsText가 null입니다!");
 
-        if (_quitText != null) _quitText.text = "Quit Game";
+        if (_quitText != null) _quitText.text = "게임 종료";
         else Debug.LogError("_quitText가 null입니다!");
 
         if (_backgroundImage != null && _defaultBackground != null)
@@ -70,10 +70,10 @@ public class IntroMenuController : MonoBehaviour
         else Debug.LogError("_backgroundImage 또는 _defaultBackground가 null입니다!");
 
         // 이벤트 설정
-        SetupTextEvents(_startText, "Start!", OnStartClick, OnStartHover, OnExitHover);
-        SetupTextEvents(_howToPlayText, "How To Play!", OnHowToPlayClick);
-        SetupTextEvents(_settingsText, "Settings!", OnSettingsClick);
-        SetupTextEvents(_quitText, "Quit Game!", OnQuitClick);
+        SetupTextEvents(_startText, "시작!", OnStartClick, OnStartHover, OnExitHover);
+        SetupTextEvents(_howToPlayText, "조작법!", OnHowToPlayClick);
+        SetupTextEvents(_settingsText, "설정!", OnSettingsClick);
+        SetupTextEvents(_quitText, "종료!", OnQuitClick);
     }
 
     private void SetupTextEvents(TextMeshProUGUI text, string hoverText, UnityEngine.Events.UnityAction clickAction = null,
@@ -100,10 +100,10 @@ public class IntroMenuController : MonoBehaviour
         EventTrigger.Entry exitEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
         exitEntry.callback.AddListener((data) =>
         {
-            if (text == _startText) text.text = "Start Game";
-            else if (text == _howToPlayText) text.text = "How To Play";
-            else if (text == _settingsText) text.text = "Settings";
-            else if (text == _quitText) text.text = "Quit Game";
+            if (text == _startText) text.text = "게임 시작";
+            else if (text == _howToPlayText) text.text = "조작법 설명";
+            else if (text == _settingsText) text.text = "설정";
+            else if (text == _quitText) text.text = "게임 종료";
             if (exitAction != null) exitAction.Invoke();
         });
         trigger.triggers.Add(exitEntry);
