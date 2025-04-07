@@ -35,7 +35,7 @@ public class OutroMenuController : MonoBehaviour
 
         if (_gameEndText != null)
         {
-            _gameEndText.text = "Game End";
+            _gameEndText.text = "게임 클리어";
             _gameEndText.gameObject.SetActive(false); // 텍스트 숨김
         }
 
@@ -60,7 +60,7 @@ public class OutroMenuController : MonoBehaviour
         if (_gameEndText != null)
         {
             _gameEndText.gameObject.SetActive(true); // 텍스트 활성화
-            SetupTextEvents(_gameEndText, "Back to Main", OnGameEndClick); // 이벤트 설정
+            SetupTextEvents(_gameEndText, "메뉴로 돌아가기", OnGameEndClick); // 이벤트 설정
         }
     }
 
@@ -82,7 +82,7 @@ public class OutroMenuController : MonoBehaviour
         EventTrigger.Entry exitEntry = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
         exitEntry.callback.AddListener((data) =>
         {
-            text.text = "Game End"; // 기본 텍스트로 복구
+            text.text = "게임 클리어"; // 기본 텍스트로 복구
         });
         trigger.triggers.Add(exitEntry);
 
