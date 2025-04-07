@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: e1a15551eaff84f4a9097a2c12d63fe9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hiddenGrid: {fileID: 5057109451055112735, guid: 7f97498d4a2ae8447b0f14411b167968, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
