@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Chara_IdleClip
+  m_Name: Chara_Walk_Warm
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -131,7 +131,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Walk_0
+    path: CharacterBasic_0
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -160,11 +160,11 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
+    attribute: m_Enabled
     path: CharacterBasic_0
-    classID: 1
+    classID: 212
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -179,7 +179,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.0166667
+        time: 1
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -190,11 +190,11 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: CharacterBasic_0
-    classID: 212
+    attribute: m_IsActive
+    path: Walk_0
+    classID: 1
     script: {fileID: 0}
-    flags: 0
+    flags: 16
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -203,13 +203,38 @@ AnimationClip:
     - time: 0.25
       value: {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - time: 0.5
-      value: {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
+      value: {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - time: 0.75
       value: {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - time: 1
       value: {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     attribute: m_Sprite
     path: Walk_0
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.23333333
+      value: {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.25
+      value: {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.48333332
+      value: {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.5
+      value: {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.73333335
+      value: {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.75
+      value: {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 0.98333335
+      value: {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - time: 1
+      value: {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    attribute: m_Sprite
+    path: Walk_0/Walk_Cap_Warm_0
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -225,15 +250,6 @@ AnimationClip:
       attribute: 1
       script: {fileID: 0}
       typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 714332764
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
       customType: 0
       isPPtrCurve: 0
       isIntCurve: 0
@@ -258,6 +274,24 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 714332764
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 714332764
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3879927802
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -268,9 +302,18 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
-    - {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
+    - {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - {fileID: -9137050769125491003, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
     - {fileID: -6366103722600426233, guid: c49344d725b9e604f8858abcc925c16a, type: 3}
+    - {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -5271158011007663914, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
+    - {fileID: -7813156434567202012, guid: 78f3969d66a119a49bd197addfa4b42f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -579,7 +622,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Walk_0
+    path: CharacterBasic_0
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -608,11 +651,11 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
+    attribute: m_Enabled
     path: CharacterBasic_0
-    classID: 1
+    classID: 212
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -627,7 +670,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.0166667
+        time: 1
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -638,11 +681,11 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: CharacterBasic_0
-    classID: 212
+    attribute: m_IsActive
+    path: Walk_0
+    classID: 1
     script: {fileID: 0}
-    flags: 0
+    flags: 16
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
