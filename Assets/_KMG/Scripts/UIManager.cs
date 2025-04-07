@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     UI_HPbar hpBar;
     UI_Battery battery;
+    TextMeshProUGUI loadingText;
 
     static UIManager _instance;
     public static UIManager Instance => _instance;
@@ -90,12 +91,15 @@ public class UIManager : MonoBehaviour
     public void CallFadeInFadeOut()
     {
         RawImage fade = _fadeInFadeOut.GetComponentInChildren<RawImage>();
+        loadingText = _fadeInFadeOut.GetComponentInChildren<TextMeshProUGUI>();
         float changeSpeed = 2f;
-        StartCoroutine(FadeInFadeOut(fade, changeSpeed));
+        StartCoroutine(FadeInFadeOut(fade, loadingText, changeSpeed));
     }
 
-    IEnumerator FadeInFadeOut(RawImage fade, float changeSpeed)
+    IEnumerator FadeInFadeOut(RawImage fade, TextMeshProUGUI loadingText, float changeSpeed)
     {
+        LoadingImageText();
+        loadingText.color = new Color(loadingText.color.r, loadingText.color.g, 1f);
         while (fade.color.a < 1f)
         {
             float currentAlpha = fade.color.a;
@@ -105,7 +109,7 @@ public class UIManager : MonoBehaviour
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         while (fade.color.a > 0f)
         {
@@ -115,7 +119,40 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
+        loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, 0f);
     }
+    private void LoadingImageText()
+    {
+        int TextNum = UnityEngine.Random.Range(1, 8);
+        string message = "";
+
+        switch (TextNum)
+        {
+            case 1:
+                message = "파란 드럼통과 나무가 있다면 우리는 따뜻해질 수 있습니다.";
+                break;
+            case 2:
+                message = "대부분의 기물은 부서질 수 있습니다.  ;) 당신의 신체까지도";
+                break;
+            case 3:
+                message = "젠장! 건물 안의 냉방 장치가 고장이 난 것 같습니다!";
+                break;
+            case 4:
+                message = "금 간 벽들은 부술 수 있습니다.";
+                break;
+            case 5:
+                message = "그는 매일 약을 필요로 합니다… 조금 귀찮지만 우린 그가 필요해요";
+                break;
+            case 6:
+                message = "당신은 I S K 백화점의 “ ISK “의 의미를 알고 있나요?";
+                break;
+            case 7:
+                message = "1층은 비교적 안전합니다… 아마도요?";
+                break;
+        }
+        loadingText.text = message;
+    }
+
 
     public void UpdateHealthUI(float health)
     {
