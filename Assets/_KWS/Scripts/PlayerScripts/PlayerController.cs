@@ -142,4 +142,12 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+
+
+    public void SetMoveSpeed()
+    {
+        moveSpeed = 8;
+        actionMove.SetMoveSpeed(moveSpeed);
+    }
 }

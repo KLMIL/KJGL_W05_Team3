@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour
     float coldGage = 10;
     float currentColdGage;
     float coldGageAmount = 1;
+    float coldClothRevision = 1;
     [SerializeField] bool isCold = false;
     bool freezing = false;
     bool canTakeDamage = true;
@@ -61,7 +62,7 @@ public class PlayerManager : MonoBehaviour
         if (isCold && !freezing && !NearCampfire)
         {
             Debug.Log("Player is on cold state");
-            currentColdGage += Time.deltaTime * coldGageAmount;
+            currentColdGage += Time.deltaTime * coldGageAmount * coldClothRevision;
             if(currentColdGage >= coldGage)
             {
                 Debug.Log("Player is Cold");
@@ -145,5 +146,15 @@ public class PlayerManager : MonoBehaviour
     public void SetColdGage(float gage)
     {
         coldGageAmount = 1 + gage * 0.2f;
+    }
+
+    public void UpgradeCloths()
+    {
+        coldClothRevision = 0.5f;
+    }
+
+    public void UpgradeBoots()
+    {
+        playerController.SetMoveSpeed();
     }
 }
