@@ -8398,7 +8398,7 @@ Animator:
   m_GameObject: {fileID: 385638695}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d380660cab782e54ba87388c5be19486, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3eadbdc09d173cf49a54897380ea803c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8667,6 +8667,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 610371675744704007, guid: 3837405e8179f9644b31ccb981d610c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 764170687300385270, guid: 3837405e8179f9644b31ccb981d610c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1546807336423231791, guid: 3837405e8179f9644b31ccb981d610c2, type: 3}
       propertyPath: playerHand
       value: 
@@ -8717,6 +8725,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3051898058724390284, guid: 3837405e8179f9644b31ccb981d610c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360025584971647041, guid: 3837405e8179f9644b31ccb981d610c2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13734,6 +13746,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &627876606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6164671101207162346, guid: ba2e0009a7ee0584690fcb3da1fbaad3, type: 3}
+  m_PrefabInstance: {fileID: 49989461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &628247444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37439,6 +37456,14 @@ PrefabInstance:
       propertyPath: startPos
       value: 
       objectReference: {fileID: 70222000}
+    - target: {fileID: 2265061297358289612, guid: 74cd4b4a5b1d67849bb8e29de9024fbe, type: 3}
+      propertyPath: conveyor1
+      value: 
+      objectReference: {fileID: 385638695}
+    - target: {fileID: 2265061297358289612, guid: 74cd4b4a5b1d67849bb8e29de9024fbe, type: 3}
+      propertyPath: conveyor2
+      value: 
+      objectReference: {fileID: 627876606}
     - target: {fileID: 2265061297358289612, guid: 74cd4b4a5b1d67849bb8e29de9024fbe, type: 3}
       propertyPath: mapManager
       value: 
