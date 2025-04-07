@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        //interactableSO = DatabaseManager.Instance.GetInteractable(id);
+        interactableSO = DatabaseManager.Instance.GetInteractable(id);
     }
 
     public void Interact(Transform playerHand)
