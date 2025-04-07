@@ -8,6 +8,7 @@ public class IntroMenuController : MonoBehaviour
     [Header("Assign Sprites")]
     [SerializeField] Sprite _defaultBackground;
     [SerializeField] Sprite _startHoverBackground;
+    [SerializeField] GameObject HowToPlayBackground;
 
     private TextMeshProUGUI _startText;
     private TextMeshProUGUI _howToPlayText;
@@ -125,12 +126,12 @@ public class IntroMenuController : MonoBehaviour
 
     private void OnStartClick()
     {
-        SceneController.Instance.LoadMainScene();
+        SceneController.Instance.LoadLoadingScene();
     }
 
     private void OnHowToPlayClick()
     {
-        Debug.Log("조작 방법 표시");
+        HowToPlayBackground.SetActive(true);
     }
 
     //private void OnSettingsClick()
