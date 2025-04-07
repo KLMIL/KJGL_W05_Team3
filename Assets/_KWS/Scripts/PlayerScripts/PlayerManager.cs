@@ -124,6 +124,5 @@ public class PlayerManager : MonoBehaviour
         isCold = false;
         freezing = false;
         health = 100f;
-
     }
 }
