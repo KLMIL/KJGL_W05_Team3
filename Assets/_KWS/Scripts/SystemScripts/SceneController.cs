@@ -68,7 +68,7 @@ public class SceneController : MonoBehaviour
     private System.Collections.IEnumerator InitializeIntroMenuAfterLoad()
     {
         yield return new WaitForEndOfFrame(); // 첫 프레임 대기
-        IntroMenuController introMenu = FindObjectOfType<IntroMenuController>();
+        IntroMenuController introMenu = FindFirstObjectByType<IntroMenuController>();
         if (introMenu != null)
         {
             Debug.Log("IntroMenuController 초기화 시작");
@@ -83,7 +83,7 @@ public class SceneController : MonoBehaviour
     private System.Collections.IEnumerator InitializeOutroMenuAfterLoad()
     {
         yield return new WaitForEndOfFrame(); // 첫 프레임 대기
-        OutroMenuController outroMenu = FindObjectOfType<OutroMenuController>();
+        OutroMenuController outroMenu = FindFirstObjectByType<OutroMenuController>();
         if (outroMenu != null)
         {
             Debug.Log("OutroMenuController 초기화 시작");
