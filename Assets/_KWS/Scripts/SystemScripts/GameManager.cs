@@ -40,8 +40,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Application.targetFrameRate = 61;
-
         upgradeNames.Add(0, "Boots");
         upgradeNames.Add(1, "Clothing");
         upgradeNames.Add(2, "Escalator");

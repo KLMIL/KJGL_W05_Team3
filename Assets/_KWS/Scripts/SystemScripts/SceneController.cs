@@ -33,8 +33,8 @@ public class SceneController : MonoBehaviour
 
     public void LoadMainScene()
     {
-        Debug.Log("LoadMainScene 호출");
-        SceneManager.LoadScene("MainScene");
+        Debug.Log("LoadMainScene 호출을 위한 로딩씬 호출");
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void LoadOutroScene()
