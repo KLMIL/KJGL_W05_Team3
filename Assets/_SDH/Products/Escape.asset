@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productIndex: 4
   productName: Escape
-  productImage: {fileID: 0}
+  productImage: {fileID: 7576205787943468351, guid: 0a506271d9376b14e83a24b22b70eeff, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 20

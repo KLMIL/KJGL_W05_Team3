@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productIndex: 2
   productName: Conveyor
-  productImage: {fileID: 0}
+  productImage: {fileID: 854361138, guid: 0a506271d9376b14e83a24b22b70eeff, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 6
@@ -24,4 +24,5 @@ MonoBehaviour:
     figure: 6
   - ingredient: 3
     figure: 8
-  productInfo: "\uC790\uC6D0\uC744 \uBE60\uB974\uAC8C \uBCF4\uB0BC \uC218 \uC788\uB2E4."
+  productInfo: "\uAC00\uAD6C\uB97C \uC740\uC2E0\uCC98\uAE4C\uC9C0 \uC790\uB3D9\uC73C\uB85C
+    \uD3B8\uD558\uAC8C \uC62E\uACA8\uC900\uB2E4."
