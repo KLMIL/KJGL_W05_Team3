@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CampfireSystem : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CampfireSystem : MonoBehaviour
     [SerializeField] Sprite campfireOnSprite;
     [SerializeField] Sprite campfireOffSprite;
 
-    Light lightRef;
+    Light2D Light2DRef;
     ParticleSystem fireParticle;
     SpriteRenderer spriteRenderer;
 
@@ -17,14 +18,14 @@ public class CampfireSystem : MonoBehaviour
 
     private void Awake()
     {
-        lightRef = GetComponent<Light>();
+        Light2DRef = GetComponent<Light2D>();
         fireParticle = GetComponent<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        lightRef.enabled = false;
+        Light2DRef.enabled = false;
         fireParticle.Stop();
     }
 
@@ -48,7 +49,7 @@ public class CampfireSystem : MonoBehaviour
     {
         _isIgnited = true;
         _currTime = 0;
-        lightRef.enabled = true;
+        Light2DRef.enabled = true;
         fireParticle.Play();
         spriteRenderer.sprite = campfireOnSprite;
         PlayerManager.Instance.NearCampfire = true;
@@ -58,7 +59,7 @@ public class CampfireSystem : MonoBehaviour
     public void PutoutCampfire()
     {
         _isIgnited = false;
-        lightRef.enabled = false;
+        Light2DRef.enabled = false;
         fireParticle.Stop();
         spriteRenderer.sprite = campfireOffSprite;
         PlayerManager.Instance.NearCampfire = false;

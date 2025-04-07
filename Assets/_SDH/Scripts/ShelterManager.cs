@@ -53,7 +53,7 @@ public class ShelterManager : MonoBehaviour
     public void ExitShelter()
     {
         Debug.Log("You exit shelter");
-        UIManager.Instance.ToggleShelterCanvas(); // off
+        //UIManager.Instance.ToggleShelterCanvas(); // off
 
         PlayerManager.Instance.SetColdState(true);
         UIManager.Instance.ToggleColdMoodle();

@@ -1,6 +1,4 @@
 using System.Collections;
-using UnityEditor.SceneManagement;
-using UnityEditor.XR;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
