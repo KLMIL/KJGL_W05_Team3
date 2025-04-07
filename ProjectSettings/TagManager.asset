@@ -8,6 +8,8 @@ TagManager:
   - SlipGround
   - NPC
   - Transition
+  - Conveyor
+  - Campfire
   layers:
   - Default
   - TransparentFX

@@ -67,32 +67,32 @@ public class InputController
     private void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveInput = context.ReadValue<Vector2>();
-        Debug.Log($"OnMove: {moveInput}");
+        //Debug.Log($"OnMove: {moveInput}");
         _playerController?.SetMoveInput(moveInput);
     }
 
     private void OnLook(InputAction.CallbackContext context)
     {
         Vector2 lookInput = context.ReadValue<Vector2>();
-        Debug.Log($"OnLook: {lookInput}");
+        //Debug.Log($"OnLook: {lookInput}");
         _playerController?.SetLookInput(lookInput);
     }
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("OnInteract");
+        //Debug.Log("OnInteract");
         _playerController?.PerformInteract();
     }
 
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("OnAttack");
+        //Debug.Log("OnAttack");
         _playerController?.PerformAttack();
     }
 
     private void OnLantern(InputAction.CallbackContext context)
     {
-        Debug.Log("OnLantern");
+        //Debug.Log("OnLantern");
         _playerController?.PerformLantern();
     }
 }
