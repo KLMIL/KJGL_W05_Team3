@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] bool isCold = false;
     bool freezing = false;
     bool canTakeDamage = true;
-    public bool NearCampfire { get; set; }
+    public bool NearCampfire { get; set; } = false;
 
     
 
