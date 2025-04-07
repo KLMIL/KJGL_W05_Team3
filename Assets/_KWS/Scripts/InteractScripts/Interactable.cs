@@ -36,10 +36,12 @@ public class Interactable : MonoBehaviour
         transform.SetParent(playerHand);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        transform.GetComponent<Collider2D>().enabled = false;
     }
 
     public void OnDropped(Vector2 dropPosition, Vector2 playerPosition)
     {
+        transform.GetComponent<Collider2D>().enabled = true;
         transform.position = dropPosition;
         SlipableItem slipable = GetComponent<SlipableItem>();
         if (slipable != null)
