@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     // Player Status    
     [SerializeField] float moveSpeed = 5f;
     bool isMoving = false;
+    public bool isPlaying = true;
 
     #endregion
 
@@ -64,15 +65,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        cameraController.ChangeLensSize(isMoving);
-        playerAnimation.Walking = isMoving;
-        actionMove.Execute(Time.deltaTime);
-        actionLook.Execute();
+        if (isPlaying)
+        {
+            cameraController.ChangeLensSize(isMoving);
+            playerAnimation.Walking = isMoving;
+            actionMove.Execute(Time.deltaTime);
+            actionLook.Execute();
 
-        // Legacy 입력 디버깅
-        //float moveX = Input.GetAxisRaw("Horizontal");
-        //float moveY = Input.GetAxisRaw("Vertical");
-        //Debug.Log($"Legacy Input: X={moveX}, Y={moveY}");
+            // Legacy 입력 디버깅
+            //float moveX = Input.GetAxisRaw("Horizontal");
+            //float moveY = Input.GetAxisRaw("Vertical");
+            //Debug.Log($"Legacy Input: X={moveX}, Y={moveY}");
+        }
     }
 
     private void OnDestroy()

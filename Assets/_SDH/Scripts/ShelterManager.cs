@@ -39,7 +39,10 @@ public class ShelterManager : MonoBehaviour
         UIManager.Instance.ToggleShelterCanvas(); // on
 
         PlayerManager.Instance.SetColdState(false);
+        PlayerManager.Instance.SetFreeze(false);
         UIManager.Instance.ToggleColdMoodle();
+        UIManager.Instance.ToggleColdEffect(false);
+        PlayerManager.Instance.ResetCurrentColdGage();
 
         var interactable = _disassembleSystem.Disassemble(PlayerManager.Instance.GetHeldItem());
         _chestSystem.AddIngredients(interactable);

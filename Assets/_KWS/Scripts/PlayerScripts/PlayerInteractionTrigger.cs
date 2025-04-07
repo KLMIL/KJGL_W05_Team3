@@ -21,6 +21,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"{collision.gameObject.name} has entered");
         // Campfire의 적용 범위 트리거는 검사하지 않음
         if (collision.gameObject.CompareTag("Campfire") && collision.isTrigger) return;
 

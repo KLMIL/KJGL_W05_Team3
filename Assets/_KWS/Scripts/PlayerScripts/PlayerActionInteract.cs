@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class PlayerActionInteract
 {
@@ -24,7 +24,7 @@ public class PlayerActionInteract
             GameManager.Instance.ShelterManger.TalkNPCAndOpenCrafting();
             return;
         }
-
+        
         // TEMP. Conveyor belt에 말 걸 때
         if (nearestObj != null && nearestObj.CompareTag("Conveyor") && heldItem != null)
         {

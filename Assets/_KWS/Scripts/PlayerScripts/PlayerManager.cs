@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
         currentColdGage = 0;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Debug.Log("PlayerManager Update Excuted");
 
@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Player is Cold");
 
                 freezing = true;
-                UIManager.Instance.ToggleColdEffect();
+                UIManager.Instance.ToggleColdEffect(true);
             }
         }
         if (NearCampfire)
@@ -77,7 +77,7 @@ public class PlayerManager : MonoBehaviour
             if (freezing && currentColdGage < coldGage)
             {
                 freezing = false;
-                UIManager.Instance.ToggleColdEffect();
+                UIManager.Instance.ToggleColdEffect(false);
                 UIManager.Instance.ToggleDamageEffect();
             }
         }
@@ -143,6 +143,11 @@ public class PlayerManager : MonoBehaviour
         isCold = state;
     }
 
+    public void SetFreeze(bool state)
+    {
+        freezing = state;
+    }
+
     public void SetColdGage(float gage)
     {
         coldGageAmount = 1 + gage * 0.2f;
@@ -156,5 +161,10 @@ public class PlayerManager : MonoBehaviour
     public void UpgradeBoots()
     {
         playerController.SetMoveSpeed();
+    }
+
+    public void ResetCurrentColdGage()
+    {
+        currentColdGage = 0;
     }
 }

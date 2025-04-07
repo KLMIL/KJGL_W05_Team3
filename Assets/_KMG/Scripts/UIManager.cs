@@ -96,6 +96,8 @@ public class UIManager : MonoBehaviour
 
     IEnumerator FadeInFadeOut(RawImage fade, TextMeshProUGUI loadingText, float changeSpeed)
     {
+        PlayerManager.Instance.GetPlayerController().isPlaying = false;
+
         LoadingImageText();
         loadingText.color = new Color(loadingText.color.r, loadingText.color.g, 1f);
         while (fade.color.a < 1f)
@@ -118,6 +120,8 @@ public class UIManager : MonoBehaviour
         }
         fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
         loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, 0f);
+
+        PlayerManager.Instance.GetPlayerController().isPlaying = true;
     }
     private void LoadingImageText()
     {
@@ -232,15 +236,16 @@ public class UIManager : MonoBehaviour
         coldMoodle.enabled = !coldMoodle.enabled;
     }
 
-    public void ToggleColdEffect()
+    public void ToggleColdEffect(bool state)
     {
         Debug.Log("Cold Effect Enable");
         Image isColdEffect = FindAnyObjectByType<UI_IsColdEffect>().GetComponent<Image>();
         Image[] snowFlakes = isColdEffect.transform.GetComponentsInChildren<Image>();
         foreach (Image sf in snowFlakes)
         {
-            sf.enabled = !sf.enabled;
+            Debug.Log("Enable this");
+            sf.enabled = state;
         }
-        isColdEffect.enabled = !isColdEffect.enabled;
+        isColdEffect.enabled = state;
     }
 }
