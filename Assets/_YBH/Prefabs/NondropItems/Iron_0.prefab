@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3104046595552651409}
   - component: {fileID: 3816249597299778321}
-  - component: {fileID: -7220529879910549014}
+  - component: {fileID: 7175994563736127166}
   m_Layer: 0
   m_Name: Iron_0
   m_TagString: Interactable
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7220529879910549014
+--- !u!114 &7175994563736127166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

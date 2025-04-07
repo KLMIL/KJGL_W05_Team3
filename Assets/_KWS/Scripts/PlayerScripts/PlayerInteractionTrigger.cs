@@ -1,5 +1,3 @@
-using Mono.Cecil.Cil;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +19,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"{collision.gameObject.name} has entered");
+        //Debug.Log($"{collision.gameObject.name} has entered");
         // Campfire의 적용 범위 트리거는 검사하지 않음
         if (collision.gameObject.CompareTag("Campfire") && collision.isTrigger) return;
 
@@ -34,7 +32,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
         {
             if (!nearbyInteractables.Contains(collision.gameObject))
             {
-                Debug.Log($"{collision.gameObject.name} has added");
+                //Debug.Log($"{collision.gameObject.name} has added");
                 nearbyInteractables.Add(collision.gameObject);
             }
         }

@@ -18,17 +18,17 @@ public class ChestSystem
     public ChestSystem()
     {
         ingredients = new int[System.Enum.GetNames(typeof(Ingredients)).Length];
-        ingredients[0] = 100;
-        ingredients[1] = 100;
-        ingredients[2] = 100;
-        ingredients[3] = 100;
+        //ingredients[0] = 100;
+        //ingredients[1] = 100;
+        //ingredients[2] = 100;
+        //ingredients[3] = 100;
     }
 
     public void AddIngredients(InteractableSO interactable)
     {
         if (interactable == null)
         {
-            Debug.Log("interactable null");
+            //Debug.Log("interactable null");
             return;
         }
 

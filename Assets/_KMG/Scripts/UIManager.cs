@@ -84,6 +84,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         _conversationCanvas.enabled = !_conversationCanvas.enabled;
+        if (_conversationCanvas.enabled == false) PlayerManager.Instance.GetPlayerController().isPlaying = true;
     }
 
     public void CallFadeInFadeOut()
@@ -224,10 +225,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ToggleDamageEffect()
+    public void ToggleDamageEffect(bool state)
     {
         Image damageEffect = FindAnyObjectByType<UI_DamageEffect>().GetComponent<Image>();
-        damageEffect.enabled = !damageEffect.enabled;
+        damageEffect.enabled = state;
     }
 
     public void ToggleColdMoodle()
@@ -238,12 +239,12 @@ public class UIManager : MonoBehaviour
 
     public void ToggleColdEffect(bool state)
     {
-        Debug.Log("Cold Effect Enable");
+        //Debug.Log("Cold Effect Enable");
         Image isColdEffect = FindAnyObjectByType<UI_IsColdEffect>().GetComponent<Image>();
         Image[] snowFlakes = isColdEffect.transform.GetComponentsInChildren<Image>();
         foreach (Image sf in snowFlakes)
         {
-            Debug.Log("Enable this");
+            //Debug.Log("Enable this");
             sf.enabled = state;
         }
         isColdEffect.enabled = state;

@@ -35,13 +35,14 @@ public class ShelterManager : MonoBehaviour
 
     public void EnterShelter() // 들고 온 것 분해
     {
-        Debug.Log("You enter shelter");
+        //Debug.Log("You enter shelter");
         UIManager.Instance.ToggleShelterCanvas(); // on
 
         PlayerManager.Instance.SetColdState(false);
         PlayerManager.Instance.SetFreeze(false);
         UIManager.Instance.ToggleColdMoodle();
         UIManager.Instance.ToggleColdEffect(false);
+        UIManager.Instance.ToggleDamageEffect(false);
         PlayerManager.Instance.ResetCurrentColdGage();
 
         var interactable = _disassembleSystem.Disassemble(PlayerManager.Instance.GetHeldItem());
@@ -52,7 +53,7 @@ public class ShelterManager : MonoBehaviour
     public void ExitShelter()
     {
         Debug.Log("You exit shelter");
-        UIManager.Instance.ToggleShelterCanvas(); // off
+        //UIManager.Instance.ToggleShelterCanvas(); // off
 
         PlayerManager.Instance.SetColdState(true);
         UIManager.Instance.ToggleColdMoodle();
@@ -60,8 +61,9 @@ public class ShelterManager : MonoBehaviour
 
     public void TalkNPCAndOpenCrafting()
     {
-        Debug.Log("talk to NPC");
+        //Debug.Log("talk to NPC");
         UIManager.Instance.ToggleConversationCanvas(); // on
+        PlayerManager.Instance.GetPlayerController().isPlaying = false;
     }
 
     public bool Craft(ProductSO product)

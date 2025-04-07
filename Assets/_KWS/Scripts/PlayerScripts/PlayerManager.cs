@@ -1,6 +1,4 @@
 using System.Collections;
-using UnityEditor.SceneManagement;
-using UnityEditor.XR;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -57,7 +55,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("PlayerManager Update Excuted");
+        //Debug.Log("PlayerManager Update Excuted");
 
         if (isCold && !freezing && !NearCampfire)
         {
@@ -78,13 +76,13 @@ public class PlayerManager : MonoBehaviour
             {
                 freezing = false;
                 UIManager.Instance.ToggleColdEffect(false);
-                UIManager.Instance.ToggleDamageEffect();
+                UIManager.Instance.ToggleDamageEffect(false);
             }
         }
         if (freezing && canTakeDamage)
         {
             canTakeDamage = false;
-            UIManager.Instance.ToggleDamageEffect();
+            UIManager.Instance.ToggleDamageEffect(true);
             StartCoroutine(TakeFreezeDamage());
         }
     }
@@ -136,6 +134,7 @@ public class PlayerManager : MonoBehaviour
         isCold = false;
         freezing = false;
         health = 100f;
+        DamagePlayer(0f);
     }
 
     public void SetColdState(bool state)

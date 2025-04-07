@@ -10,7 +10,7 @@ public class InputController
     {
         _inputActions = new InputSystem_Actions();
         _inputActions.Enable();
-        Debug.Log("InputController 생성자 - InputActions 활성화");
+        //Debug.Log("InputController 생성자 - InputActions 활성화");
     }
 
     public void Initialize(PlayerController playerController)
@@ -21,7 +21,7 @@ public class InputController
             return;
         }
         _playerController = playerController;
-        Debug.Log("InputController 초기화 - PlayerController 연결");
+        //Debug.Log("InputController 초기화 - PlayerController 연결");
     }
 
     public void EnablePlayerInputActions()
@@ -48,7 +48,7 @@ public class InputController
         _inputActions.Player.Attack.performed += OnAttack;
         _inputActions.Player.Lantern.performed += OnLantern;
 
-        Debug.Log("Player Input Actions 활성화");
+        //Debug.Log("Player Input Actions 활성화");
     }
 
     public void DisablePlayerInputActions()

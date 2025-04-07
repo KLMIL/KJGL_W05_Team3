@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productIndex: 3
   productName: Escalator
-  productImage: {fileID: 21300000, guid: f7dcbe9e3c219c6449ed9f5069f14152, type: 3}
+  productImage: {fileID: 21300000, guid: 55b218f653cff1442b72064024983c51, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 0

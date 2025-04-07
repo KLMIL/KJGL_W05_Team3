@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2493571986813751381}
   - component: {fileID: 1217820198481638423}
   - component: {fileID: 472275739181522903}
-  - component: {fileID: -7859570742528550880}
+  - component: {fileID: -5502086299930188549}
   m_Layer: 0
   m_Name: IceWall
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-7859570742528550880
+--- !u!114 &-5502086299930188549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

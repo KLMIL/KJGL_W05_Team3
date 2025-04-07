@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 641422459480794679}
   - component: {fileID: 8615275876482725676}
   - component: {fileID: -7889829148883171526}
-  - component: {fileID: 5920073234689733161}
+  - component: {fileID: -2981549102872579892}
   m_Layer: 0
   m_Name: FoodObject_2
   m_TagString: Interactable
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5625, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &5920073234689733161
+--- !u!114 &-2981549102872579892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
