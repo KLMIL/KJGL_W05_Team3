@@ -181,4 +181,16 @@ public class UIManager : MonoBehaviour
             return;
         }
     }
+
+    public void ToggleDamageEffect()
+    {
+        Image damageEffect = FindAnyObjectByType<UI_DamageEffect>().GetComponent<Image>();
+        damageEffect.enabled = !damageEffect.enabled;
+    }
+
+    public void ToggleColdMoodle()
+    {
+        Image coldMoodle = FindAnyObjectByType<Icon_Cold>().GetComponent<Image>();
+        coldMoodle.enabled = !coldMoodle.enabled;
+    }
 }
