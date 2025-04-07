@@ -20,8 +20,8 @@ MonoBehaviour:
     figure: 0
   - ingredient: 1
     figure: 0
-  - ingredient: 3
-    figure: 2
   - ingredient: 2
     figure: 5
+  - ingredient: 3
+    figure: 2
   productInfo: "\uB530\uB73B\uD55C \uC637\uC774\uB2E4"
