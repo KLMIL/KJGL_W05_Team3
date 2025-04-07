@@ -9,7 +9,7 @@ public class CampfireSystem : MonoBehaviour
     [SerializeField] Sprite campfireOnSprite;
     [SerializeField] Sprite campfireOffSprite;
 
-    Light light;
+    Light lightRef;
     ParticleSystem fireParticle;
     SpriteRenderer spriteRenderer;
 
@@ -17,14 +17,14 @@ public class CampfireSystem : MonoBehaviour
 
     private void Awake()
     {
-        light = GetComponent<Light>();
+        lightRef = GetComponent<Light>();
         fireParticle = GetComponent<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        light.enabled = false;
+        lightRef.enabled = false;
         fireParticle.Stop();
     }
 
@@ -48,7 +48,7 @@ public class CampfireSystem : MonoBehaviour
     {
         _isIgnited = true;
         _currTime = 0;
-        light.enabled = true;
+        lightRef.enabled = true;
         fireParticle.Play();
         spriteRenderer.sprite = campfireOnSprite;
         PlayerManager.Instance.NearCampfire = true;
@@ -58,7 +58,7 @@ public class CampfireSystem : MonoBehaviour
     public void PutoutCampfire()
     {
         _isIgnited = false;
-        light.enabled = false;
+        lightRef.enabled = false;
         fireParticle.Stop();
         spriteRenderer.sprite = campfireOffSprite;
         PlayerManager.Instance.NearCampfire = false;
