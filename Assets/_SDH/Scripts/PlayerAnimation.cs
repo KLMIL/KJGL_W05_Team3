@@ -16,10 +16,10 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        // 기본 애니메이터: 걷기 애니메이션 실행
+        // 걷기 애니메이션 설정
         animator.SetBool("isWalking", walking);
 
-        // 공격 모션 실행 (예: 마우스 왼쪽 버튼 클릭)
+        // 좌클릭 시 공격 모션 실행
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Attacking");
