@@ -17,6 +17,11 @@ public class IntroMenuController : MonoBehaviour
 
     private IntroMenuUIManager _uiManager;
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 61;
+    }
+
     private void Start()
     {
         Initialize();
