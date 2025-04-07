@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productIndex: 3
   productName: Escalator
-  productImage: {fileID: 0}
+  productImage: {fileID: 21300000, guid: f7dcbe9e3c219c6449ed9f5069f14152, type: 3}
   productRequirements:
   - ingredient: 0
     figure: 0
@@ -24,5 +24,5 @@ MonoBehaviour:
     figure: 3
   - ingredient: 3
     figure: 5
-  productInfo: "\uC5D0\uC2A4\uCEEC\uB808\uC774\uD130\uB97C \uD0C0\uACE0 \uB2E4\uC74C
-    \uC9C0\uC5ED\uC73C\uB85C \uAC08 \uC218 \uC788\uB2E4."
+  productInfo: "2\uCE35\uC73C\uB85C \uAC00\uAE30 \uC704\uD574\uC11C \uC218\uB9AC\uD574\uC57C
+    \uD55C\uB2E4."
