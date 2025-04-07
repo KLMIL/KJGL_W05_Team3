@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
     public bool HasBoots { get; set; }
     public bool HasClothing { get; set; }
 
+
     float health = 100;
     public float Health => health;
     float coldGage = 10;
