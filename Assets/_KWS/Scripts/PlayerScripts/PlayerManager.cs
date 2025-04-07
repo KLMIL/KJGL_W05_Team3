@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
 
     float health = 100;
     public float Health => health;
-    float coldGage = 10;
+    float coldGage = 30;
     float currentColdGage;
     float coldGageAmount = 1;
     float coldClothRevision = 1;

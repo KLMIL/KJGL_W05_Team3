@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a056bb3d-ea1b-40f3-8cf7-c08cbed18427" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KJGL_W05_Team3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KJGL_W05_Team3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Scenes/Main_YBH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Scenes/Main_YBH.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_KWS/Scripts/PlayerScripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_KWS/Scripts/PlayerScripts/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SDH/Assets/ISKDepartment.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SDH/Assets/ISKDepartment.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SDH/Scripts/ChestSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SDH/Scripts/ChestSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Prefabs/ConveyorBelt (2).controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Prefabs/ConveyorBelt (2).controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Prefabs/ConveyorBelt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Prefabs/ConveyorBelt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Prefabs/NondropItems/WarningTape_broke2 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Prefabs/NondropItems/WarningTape_broke2 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_YBH/Prefabs/NondropItems/WarningTape_broke2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_YBH/Prefabs/NondropItems/WarningTape_broke2.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,19 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;0403YBH&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.39f1\Editor\Unity.exe" />
@@ -97,6 +102,7 @@
       <workItem from="1743646655099" duration="9098000" />
       <workItem from="1743732134544" duration="372000" />
       <workItem from="1743818427666" duration="694000" />
+      <workItem from="1744035346482" duration="619000" />
     </task>
     <servers />
   </component>
