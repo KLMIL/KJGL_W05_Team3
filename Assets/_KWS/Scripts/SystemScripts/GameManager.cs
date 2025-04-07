@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     Dictionary<int, string> upgradeNames = new Dictionary<int, string>();
     public Dictionary<int, string> UpgradeNames => upgradeNames;
 
+    Transform startPos;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -80,5 +82,6 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ToggleConversationCanvas();
         playerManager.LanternInstance.Charge();
         playerManager.NewDay();
+        playerManager.transform.position = startPos.position;
     }
 }
