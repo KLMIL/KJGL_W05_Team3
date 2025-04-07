@@ -41,13 +41,6 @@ public class DatabaseManager : MonoBehaviour
                 };
             }
         };
-
-        products.Sort((ProductSO a, ProductSO b) => { return a.productIndex.CompareTo(b.productIndex); });
-
-        foreach(var elem in products)
-        {
-            Debug.Log("SDHCounter " + elem.productName);
-        }
     }
 
     public InteractableSO GetInteractable(string interactableName)
