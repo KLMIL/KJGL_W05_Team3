@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Escape
   m_EditorClassIdentifier: 
+  productIndex: 4
   productName: Escape
   productImage: {fileID: 0}
   productRequirements:
