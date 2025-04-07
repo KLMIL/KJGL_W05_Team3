@@ -91,5 +91,6 @@ public class GameManager : MonoBehaviour
     public void SetFloor(int floorNumber)
     {
         _currFloor = floorNumber;
+        PlayerManager.Instance.SetColdGage(_currFloor);
     }
 }

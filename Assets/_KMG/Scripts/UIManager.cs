@@ -193,4 +193,9 @@ public class UIManager : MonoBehaviour
         Image coldMoodle = FindAnyObjectByType<Icon_Cold>().GetComponent<Image>();
         coldMoodle.enabled = !coldMoodle.enabled;
     }
+
+    public void ToggleColdEffect()
+    {
+        Debug.Log("Cold Effect Enable");
+    }
 }

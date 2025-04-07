@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.SceneManagement;
 using UnityEditor.XR;
 using UnityEngine;
 
@@ -55,25 +56,34 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("PlayerManager Update Excuted");
+
         if (isCold && !freezing && !NearCampfire)
         {
+            Debug.Log("Player is on cold state");
             currentColdGage += Time.deltaTime * coldGageAmount;
             if(currentColdGage >= coldGage)
             {
+                Debug.Log("Player is Cold");
+
                 freezing = true;
+                UIManager.Instance.ToggleColdEffect();
             }
         }
         if (NearCampfire)
         {
             currentColdGage -= Time.deltaTime * coldGageAmount;
-            if (currentColdGage < coldGage)
+            if (freezing && currentColdGage < coldGage)
             {
                 freezing = false;
+                UIManager.Instance.ToggleColdEffect();
+                UIManager.Instance.ToggleDamageEffect();
             }
         }
         if (freezing && canTakeDamage)
         {
             canTakeDamage = false;
+            UIManager.Instance.ToggleDamageEffect();
             StartCoroutine(TakeFreezeDamage());
         }
     }
@@ -125,5 +135,15 @@ public class PlayerManager : MonoBehaviour
         isCold = false;
         freezing = false;
         health = 100f;
+    }
+
+    public void SetColdState(bool state)
+    {
+        isCold = state;
+    }
+
+    public void SetColdGage(float gage)
+    {
+        coldGageAmount = 1 + gage * 0.2f;
     }
 }
