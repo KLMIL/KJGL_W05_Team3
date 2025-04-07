@@ -38,6 +38,9 @@ public class ShelterManager : MonoBehaviour
         Debug.Log("You enter shelter");
         UIManager.Instance.ToggleShelterCanvas(); // on
 
+        PlayerManager.Instance.SetColdState(false);
+        UIManager.Instance.ToggleColdMoodle();
+
         var interactable = _disassembleSystem.Disassemble(PlayerManager.Instance.GetHeldItem());
         _chestSystem.AddIngredients(interactable);
         _chestSystem.RenewIngredients();
@@ -47,6 +50,9 @@ public class ShelterManager : MonoBehaviour
     {
         Debug.Log("You exit shelter");
         UIManager.Instance.ToggleShelterCanvas(); // off
+
+        PlayerManager.Instance.SetColdState(true);
+        UIManager.Instance.ToggleColdMoodle();
     }
 
     public void TalkNPCAndOpenCrafting()

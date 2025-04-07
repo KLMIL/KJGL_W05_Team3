@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     Transform startPos;
 
+    // Game Status
+    private int _currFloor = 0;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -84,5 +87,11 @@ public class GameManager : MonoBehaviour
         playerManager.LanternInstance.Charge();
         playerManager.NewDay();
         playerManager.transform.position = startPos.position;
+    }
+
+    public void SetFloor(int floorNumber)
+    {
+        _currFloor = floorNumber;
+        PlayerManager.Instance.SetColdGage(_currFloor);
     }
 }
