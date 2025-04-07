@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] ShelterManager shelterManager;
     [SerializeField] MapManager mapManager;
 
+    [SerializeField] GameObject conveyor1;
+    [SerializeField] GameObject conveyor2;
+
     [HideInInspector] public bool[] upgrades = new bool[] { false, false, false, false, false };
     Dictionary<int, string> upgradeNames = new Dictionary<int, string>();
     public Dictionary<int, string> UpgradeNames => upgradeNames;
@@ -69,6 +72,9 @@ public class GameManager : MonoBehaviour
                 break;
             case 3:
                 Debug.Log("Upgraded Conveyor");
+                conveyor1.GetComponent<Animator>().SetBool("IsWorking", true);
+                conveyor2.GetComponent<Animator>().SetBool("IsWorking", true);
+
                 mapManager.UnlockConveyor();
                 break;
             case 4:
