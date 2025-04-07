@@ -1566,6 +1566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 5753908726070667291, guid: 72c83564caa469e4283364ec230cd0c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6115429895260820221, guid: 72c83564caa469e4283364ec230cd0c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.49
