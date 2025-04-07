@@ -104,6 +104,7 @@ public class PlayerActionInteract
 
     private void DropItem(Vector2 playerPosition, Vector2 dir, GameObject heldItem)
     {
+        heldItem.transform.GetComponent<Collider2D>().enabled = true;
         heldItem.transform.SetParent(null);
         heldItem.GetComponent<Interactable>()?.OnDropped(playerPosition + dir * 1f, playerPosition);
     }
