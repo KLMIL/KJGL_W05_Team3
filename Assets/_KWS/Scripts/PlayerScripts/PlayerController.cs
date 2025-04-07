@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     // Other Object
     Camera mainCamera;
+    PlayerAnimation playerAnimation;
 
     // Assign on Inspector
     private InputController inputController; // private 유지
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
+        playerAnimation = GetComponentInChildren<PlayerAnimation>();
         InitializeInputController(); // Awake에서만 초기화
     }
 
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         cameraController.ChangeLensSize(isMoving);
+        playerAnimation.Walking = isMoving;
         actionMove.Execute(Time.deltaTime);
         actionLook.Execute();
 
