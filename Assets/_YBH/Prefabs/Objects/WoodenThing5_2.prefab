@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2178427106529180689}
   - component: {fileID: 1641084339782294735}
   m_Layer: 0
-  m_Name: WoodenThing4 1
+  m_Name: WoodenThing5_2
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: WoodThings
   wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
