@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Lantern _lantern;
     public Lantern LanternInstance => _lantern;
 
+    [SerializeField] GameObject shelterObj;
+
     // Player Status
     [SerializeField] GameObject heldItem;
     [SerializeField] GameObject lastHoveredObject;
@@ -84,6 +86,15 @@ public class PlayerManager : MonoBehaviour
             canTakeDamage = false;
             UIManager.Instance.ToggleDamageEffect(true);
             StartCoroutine(TakeFreezeDamage());
+        }
+
+        if (health <= 0)
+        {
+            health = 100f;
+            UIManager.Instance.CallFadeInFadeOut();
+            DamagePlayer(0f);
+            _lantern.Charge();
+            playerController.transform.position = shelterObj.gameObject.transform.position;
         }
     }
 
