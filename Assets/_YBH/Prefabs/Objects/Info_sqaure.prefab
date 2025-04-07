@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3324863632196766183}
   - component: {fileID: 5667891931025846998}
   m_Layer: 0
-  m_Name: Interiors_free_16x16_268 (1)
+  m_Name: Info_sqaure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3331956307316049786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.000000007450581}
-  m_LocalPosition: {x: -0.905, y: -0.026994467, z: -0.16500658}
+  m_LocalPosition: {x: -0.905, y: -0.19, z: -0.16500658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3283677672763555665}
   - component: {fileID: 6902658667812036632}
   m_Layer: 0
-  m_Name: Interiors_free_16x16_268
+  m_Name: Info_sqaure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,9 +113,9 @@ Transform:
   m_GameObject: {fileID: 6751874110202326320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000007450581, w: 1}
-  m_LocalPosition: {x: 0.9029987, y: -0.09700596, z: -0.09359907}
+  m_LocalPosition: {x: 0.9029987, y: -0.19, z: -0.09359907}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2136560683500785451}
   m_LocalEulerAnglesHint: {x: 0, y: 43.976, z: -90}
@@ -203,8 +203,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.26474953, y: 0.26474953, z: -0.6556735, w: 0.6556735}
   m_LocalPosition: {x: 0.49399918, y: -0.81900144, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3283677672763555665}
   - {fileID: 3324863632196766183}
