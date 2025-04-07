@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4258045032948843195}
   - component: {fileID: 7954351259757692961}
   - component: {fileID: 3418958758382372399}
+  - component: {fileID: 5422837008209031815}
   m_Layer: 0
   m_Name: Sofa3
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +135,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 28, y: 15}
   m_EdgeRadius: 0
+--- !u!114 &5422837008209031815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462286971848530399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}

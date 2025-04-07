@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5890975316973277573}
   - component: {fileID: 1789429241952975058}
+  - component: {fileID: -3680361393622651369}
   m_Layer: 0
   m_Name: Refridge5
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,3 +88,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3680361393622651369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246266227631735520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}

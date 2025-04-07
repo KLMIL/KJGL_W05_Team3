@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1798178677774109870}
   - component: {fileID: 7705053760390596026}
+  - component: {fileID: 1418396041146155026}
   m_Layer: 0
   m_Name: Desk9
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +81,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.8, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1418396041146155026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874445748441076630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
 --- !u!1 &5827247331315200283
 GameObject:
   m_ObjectHideFlags: 0
