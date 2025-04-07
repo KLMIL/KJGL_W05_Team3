@@ -57,6 +57,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Interactable
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7fcf777858b96145b00eac91bda4252
+    m_Address: None
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8c64236a4cba4241bf75cbb5da94acb
     m_Address: IronThings
     m_ReadOnly: 0
