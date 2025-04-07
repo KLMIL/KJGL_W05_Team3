@@ -54,11 +54,13 @@ public class GameManager : MonoBehaviour
             case 0:
                 Debug.Log("Crafted Boots");
                 playerManager.HasBoots = true;
+                PlayerManager.UpgradeBoots();
                 FindAnyObjectByType<UI_Equipment>().CraftShoes();
                 break;
             case 1:
                 Debug.Log("Crafted Clothing");
                 playerManager.HasClothing = true;
+                PlayerManager.UpgradeCloths();
                 FindAnyObjectByType<UI_Equipment>().CraftClothes();
                 break;
             case 2:

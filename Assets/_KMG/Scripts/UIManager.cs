@@ -212,6 +212,7 @@ public class UIManager : MonoBehaviour
         {
             GameManager.Instance.upgrades[itemCode] = true;
             GameManager.Instance.ApplyUpgrade(itemCode);
+            UpdateIngredientsUI(ShelterManager.Instance._chestSystem.Ingredients, ShelterManager.Instance._chestSystem.Medicines);
         }
         else
         {
