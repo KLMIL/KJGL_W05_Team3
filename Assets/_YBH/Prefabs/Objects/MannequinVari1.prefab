@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: Mannequin
   wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
