@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2493571986813751381}
   - component: {fileID: 1217820198481638423}
   - component: {fileID: 472275739181522903}
-  - component: {fileID: -7859570742528550880}
+  - component: {fileID: -5502086299930188549}
   m_Layer: 0
   m_Name: IceWall
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-7859570742528550880
+--- !u!114 &-5502086299930188549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: None
-  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
+  id: 
+  wastePrefab: {fileID: 0}

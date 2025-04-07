@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7117458356232728643}
   - component: {fileID: 4331018290778235346}
   - component: {fileID: 4566369248615543328}
+  - component: {fileID: 7788627871893915566}
   m_Layer: 0
   m_Name: Cabinet_noneItem
   m_TagString: Untagged
@@ -148,4 +149,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: None
+  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
+--- !u!114 &7788627871893915566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003987797264262082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
   wastePrefab: {fileID: 0}

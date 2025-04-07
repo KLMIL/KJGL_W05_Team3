@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2248570303585416770}
   - component: {fileID: 6930471289338418157}
   - component: {fileID: 5390863169987334226}
-  - component: {fileID: 4380455425535816452}
+  - component: {fileID: -1821927677504413911}
   m_Layer: 0
   m_Name: DoorFrontV2
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4380455425535816452
+--- !u!114 &-1821927677504413911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: None
-  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
+  id: 
+  wastePrefab: {fileID: 0}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1885979593228030815}
   - component: {fileID: 6765350223171270165}
   - component: {fileID: -6940787122393376522}
+  - component: {fileID: 3807690343971168452}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -132,5 +133,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 13, y: 17}
+  m_Size: {x: 11, y: 15}
   m_EdgeRadius: 0
+--- !u!114 &3807690343971168452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760871771208899445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3e257edca0cf44bb3a7e5de013ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: None
+  wastePrefab: {fileID: 1911155331552748325, guid: 1fe8af23ca48d324f849e5a7f6eb7f2a, type: 3}
