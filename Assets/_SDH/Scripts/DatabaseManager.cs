@@ -9,8 +9,8 @@ public class DatabaseManager : MonoBehaviour
     static DatabaseManager _instance;
     public static DatabaseManager Instance => _instance;
 
-    public ProductSO[] Products => products;
-    private ProductSO[] products;
+    public List<ProductSO> Products => products;
+    private List<ProductSO> products = new();
 
     private void Awake()
     {
@@ -29,26 +29,20 @@ public class DatabaseManager : MonoBehaviour
 
     private void GetProducts() // get every "Product" label (ProductSO)
     {
-        products = new ProductSO[GameManager.Instance.UpgradeNames.Count];
-
         Addressables.LoadResourceLocationsAsync("Product").Completed += (handle) =>
         {
             foreach (IResourceLocation item in handle.Result)
             {
                 Addressables.LoadAssetAsync<ProductSO>(item.PrimaryKey).Completed += (op) =>
                 {
-                    for(int i=0;i< GameManager.Instance.UpgradeNames.Count; i++)
-                    {
-                        if (GameManager.Instance.UpgradeNames[i] == op.Result.productName)
-                        {
-                            products[i] = op.Result;
-                        }
-                    }
+                    products.Add(op.Result);
 
                     Addressables.Release(op);
                 };
             }
         };
+
+        products.Sort((ProductSO a, ProductSO b) => { return a.productIndex.CompareTo(b.productIndex); });
     }
 
     public InteractableSO GetInteractable(string interactableName)

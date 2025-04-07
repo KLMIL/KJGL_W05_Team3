@@ -145,7 +145,7 @@ public class UIManager : MonoBehaviour
     public void UpdateCraftingUI()
     {
         Button[] craftButtons = _craftCanvas.transform.GetComponentsInChildren<Button>();
-        ProductSO[] products = DatabaseManager.Instance.Products;
+        ProductSO[] products = DatabaseManager.Instance.Products.ToArray();
 
         if(products.Length != GameManager.Instance.upgrades.Length || products.Length != craftButtons.Length)
         {

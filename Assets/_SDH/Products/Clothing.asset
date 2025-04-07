@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b389b2e9f543498aaf39a86fb1048, type: 3}
   m_Name: Clothing
   m_EditorClassIdentifier: 
+  productIndex: 1
   productName: Clothing
   productImage: {fileID: -5859132328263440688, guid: c29f1cfd37760ea47af30a933e0724bd, type: 3}
   productRequirements:
