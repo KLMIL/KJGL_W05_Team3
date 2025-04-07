@@ -494,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3722665627484402164, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Name
-      value: PlasticIcon
+      value: FiberIcon
       objectReference: {fileID: 0}
     - target: {fileID: 3722665627484402164, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Layer
@@ -503,7 +503,7 @@ PrefabInstance:
     - target: {fileID: 3851471315305201292, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a4a4096402b70234abd97921e9e30af4, type: 3}
+      objectReference: {fileID: 21300000, guid: 0d7ebfbeb710add41932ea527f89611a, type: 3}
     - target: {fileID: 3851471315305201292, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -562,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570129322796780177, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Name
-      value: FiberIcon
+      value: PlasticIcon
       objectReference: {fileID: 0}
     - target: {fileID: 5570129322796780177, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Layer
@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 6803031974001290639, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d7ebfbeb710add41932ea527f89611a, type: 3}
+      objectReference: {fileID: 21300000, guid: a4a4096402b70234abd97921e9e30af4, type: 3}
     - target: {fileID: 6803031974001290639, guid: fcd581e0426fc5f4c83e7c02e81bd646, type: 3}
       propertyPath: m_Color.b
       value: 1
