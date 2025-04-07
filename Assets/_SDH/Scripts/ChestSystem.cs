@@ -64,4 +64,11 @@ public class ChestSystem
     {
         UIManager.Instance.UpdateIngredientsUI(ingredients, medicines);
     }
+
+    
+    // 캠프파이어 불 켤때, 나무 있는지 확인하는 함수
+    public bool IsWoodExist()
+    {
+        return ingredients[0] > 0;
+    }
 }

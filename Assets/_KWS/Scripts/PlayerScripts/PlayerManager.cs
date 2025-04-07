@@ -30,6 +30,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] bool isCold = false;
     bool freezing = false;
     bool canTakeDamage = true;
+    public bool NearCampfire { get; set; }
+
+    
 
     private void Awake()
     {
@@ -51,12 +54,20 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (isCold && !freezing)
+        if (isCold && !freezing && !NearCampfire)
         {
             currentColdGage += Time.deltaTime * coldGageAmount;
             if(currentColdGage >= coldGage)
             {
                 freezing = true;
+            }
+        }
+        if (NearCampfire)
+        {
+            currentColdGage -= Time.deltaTime * coldGageAmount;
+            if (currentColdGage < coldGage)
+            {
+                freezing = false;
             }
         }
         if (freezing && canTakeDamage)

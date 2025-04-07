@@ -28,5 +28,6 @@ public class PlayerActionMove
 
         Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * moveSpeed * deltaTime;
         targetTransform.position += movement;
+        SnowDestroyManager.Instance.DestroyTilesInRadius(targetTransform.position, 0.3f);
     }
 }
