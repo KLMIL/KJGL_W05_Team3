@@ -139,7 +139,7 @@ public class UIManager : MonoBehaviour
         ingredientUI.GetChild(6).GetComponent<TextMeshProUGUI>().text = ingredients[1].ToString();
         ingredientUI.GetChild(7).GetComponent<TextMeshProUGUI>().text = ingredients[2].ToString();
         ingredientUI.GetChild(8).GetComponent<TextMeshProUGUI>().text = ingredients[3].ToString();
-        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString() ;
+        ingredientUI.GetChild(9).GetComponent<TextMeshProUGUI>().text = medicine.ToString();
     }
 
     public void UpdateCraftingUI()
@@ -147,12 +147,12 @@ public class UIManager : MonoBehaviour
         Button[] craftButtons = _craftCanvas.transform.GetComponentsInChildren<Button>();
         ProductSO[] products = DatabaseManager.Instance.Products.ToArray();
 
-        if(products.Length != GameManager.Instance.upgrades.Length || products.Length != craftButtons.Length)
+        if (products.Length != GameManager.Instance.upgrades.Length || products.Length != craftButtons.Length)
         {
             Debug.Log("Products = " + products.Length + ", GameManager Upgrades = " + GameManager.Instance.upgrades.Length + ", craft Buttons = " + craftButtons.Length);
         }
 
-        for(int i = 0; i < GameManager.Instance.upgrades.Length; i++)
+        for (int i = 0; i < GameManager.Instance.upgrades.Length; i++)
         {
             CraftButton craftButton = craftButtons[i].AddComponent<CraftButton>();
 
@@ -176,7 +176,8 @@ public class UIManager : MonoBehaviour
         {
             GameManager.Instance.upgrades[itemCode] = true;
             GameManager.Instance.ApplyUpgrade(itemCode);
-        } else
+        }
+        else
         {
             return;
         }
@@ -197,5 +198,12 @@ public class UIManager : MonoBehaviour
     public void ToggleColdEffect()
     {
         Debug.Log("Cold Effect Enable");
+        Image isColdEffect = FindAnyObjectByType<UI_IsColdEffect>().GetComponent<Image>();
+        Image[] snowFlakes = isColdEffect.transform.GetComponentsInChildren<Image>();
+        foreach (Image sf in snowFlakes)
+        {
+            sf.enabled = !sf.enabled;
+        }
+        isColdEffect.enabled = !isColdEffect.enabled;
     }
 }
