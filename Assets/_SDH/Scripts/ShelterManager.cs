@@ -28,10 +28,6 @@ public class ShelterManager : MonoBehaviour
         _disassembleSystem = new DisassembleSystem();
     }
 
-    private void Start()
-    {
-        //Invoke(nameof(TMP), 1f);
-    }
 
     public void EnterShelter() // 들고 온 것 분해
     {

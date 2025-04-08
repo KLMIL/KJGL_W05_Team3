@@ -16,6 +16,10 @@ MonoBehaviour:
   interactableRewards:
   - ingredient: 0
     figure: 1
+  - ingredient: 1
+    figure: 0
   - ingredient: 2
     figure: 1
+  - ingredient: 3
+    figure: 0
   interactableInfo: Bed
